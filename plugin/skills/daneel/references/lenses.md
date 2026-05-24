@@ -90,8 +90,21 @@ audit enumerates all uses of the same pattern, classifies each
 (SAME BUG / DIFFERENT CONTEXT), and widens the fix scope to all
 wrong instances.
 
+The enumeration is itself a completeness claim
+(`foundations.md`) — the basis cites every **plausible reference
+shape** the audit grep covered. A pattern can hide behind
+**bare-form** (just the identifier or call shape), **path-form**
+(qualified module path), **parent-module name**, **string-target
+references** (`mock.patch`, `monkeypatch.setattr`,
+`importlib.import_module` targets — string, invisible to
+symbol-only greps), **docstrings**, **comments**, and
+**config/data files**. A narrow-shape audit grep (one form only)
+declaring the pattern enumerated is missing its true-unit
+basis — unenumerated shapes are unsearched scope.
+
 *Scope:* any fix proposal where the root cause classification is
 architectural / systemic (not isolated typo / one-off mistake).
+The enumeration spans src + tests + docs + config.
 
 ## Coupled-change
 

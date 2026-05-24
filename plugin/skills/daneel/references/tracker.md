@@ -127,6 +127,25 @@ still resting on its assumption when the design reaches [READY]
 becomes [AUTO-ACCEPTED] — the AI's committed recommendation taken
 as default — in both modes (`SKILL.md`).
 
+**Amendment of a [VERIFIED] or [AUTO-ACCEPTED] verdict is
+contradiction.** Any change to a [VERIFIED] or [AUTO-ACCEPTED]
+verdict's recorded **resolution** — the root-cause classification,
+the fix-approach scope, completeness counts (e.g.,
+pattern-repetition instance count), or basis evidence-source — is,
+per `foundations.md` basis rule, contradiction of the basis that
+supported the prior verification. The verdict flips through
+[INVALIDATED] → [PENDING]; the phase holds at [NOT READY] until
+re-verification; the cycle-another recommendation is forced on
+the cycle that landed the amendment. A silent in-place edit —
+same [VERIFIED] status, different recorded resolution than its
+prior verification rested on — is a malformed artifact: the
+status-flip is the load-bearing record of the contradiction; an
+unchanged tag alongside an amended resolution is the
+silent-substitution shape (`foundations.md`). Basis-only
+refinement (the sub-annotation form above: same status, same
+summary, strengthened basis) is *not* amendment — the resolution
+is unchanged.
+
 **Hypothesis-list completeness.** DANEEL's hypothesis-enumeration
 discipline (`lenses.md`) makes the hypothesis list itself a
 completeness claim: every plausible root cause for the observed
