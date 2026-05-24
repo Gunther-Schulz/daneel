@@ -211,10 +211,9 @@ latest line per entry. Appending rather than rewriting is
 cheaper, and the un-rewritten history is the run's audit trail.
 This holds in both modes.
 
-Not every change is substantive. A **basis-only refinement** on
-an entry at its terminal status — [VERIFIED], or [AUTO-ACCEPTED]
-in auto-battle — where the status and summary are unchanged and
-only the basis strengthens (an execution trace now grounds what
+A **basis-only refinement** on a terminal-status entry
+([VERIFIED], or [AUTO-ACCEPTED] in auto-battle) — same status and
+summary, strengthened basis (an execution trace now grounds what
 previously rested on a code read) — is appended as a
 **sub-annotation** under the entry, not as a new peer-level
 ledger line. Format: an indented bullet beneath the entry's
