@@ -1,18 +1,201 @@
-# DANEEL investigate-design
+# investigate-design
 
-Render pending. Source: `diligence-framework/spec/core.md` §4.1.
+The first phase of a DANEEL run: a loop of cycles that builds
+understanding of the observed wrong behavior, enumerates and
+eliminates candidate root causes, and produces a locked root
+cause + fix approach. It ends at [READY].
 
-This phase will carry DANEEL's root-cause investigation cycles —
-adaptation of the framework's investigate-design phase, domain-bound to
-*debugging wrong behavior*. Includes:
+## The cycle
 
-- **Cycle loop:** investigation pass (ad-hoc) + standardized inspection
-  pass (DANEEL lenses). Findings recorded in the tracker.
-- **[READY]:** root cause identified + classified, fix approach
-  selected, fresh-session implementability test passed.
-- **Verification map** (component states) renders onto findings track.
-- **Hypothesis list** (root-cause alternatives) renders onto
-  design-decision track — [PENDING] = untested, [VERIFIED] = confirmed,
-  [INVALIDATED] = eliminated.
+investigate-design runs as a loop of cycles. Each cycle has two
+passes, in order:
 
-Render to be authored in Phase 2 of scaffold.
+1. **Investigation pass.** Investigate the surfaces the wrong
+   behavior touches — ad-hoc, by a method derived from the
+   target, not a prescribed one. The standardized lens set
+   (`lenses.md`) is known going in and informs what to attend
+   to, not how to investigate. Record every observation as a
+   finding (verification-map entry) in the tracker.
+2. **Standardized inspection pass.** Apply each standardized
+   lens whose scope this cycle's investigation touched —
+   incremental, over what this cycle produced. Emit the
+   standardized-pass artifact (`tracker.md`): one line for each
+   in-scope lens — a finding, or a one-line cited reason it is
+   clean. A lens out of scope this cycle is not lined; the set
+   is not re-attested every cycle — it is accounted for whole
+   once, at [READY].
+
+The standardized inspection pass runs every cycle — not only the
+first, not only when something feels off.
+
+## Hypothesis enumeration
+
+When a symptom is identified (an observable wrong behavior with
+expected vs actual divergence located), DANEEL's
+**hypothesis-enumeration** lens (`lenses.md`) requires the
+complete hypothesis list be generated BEFORE investigating
+mechanisms. Each candidate root cause is recorded as a design
+decision in the tracker:
+
+- [OUTLINED] for hypotheses named but not yet investigated
+- Status moves toward [VERIFIED] (this IS the root cause) or
+  [INVALIDATED] (eliminated) through evidence
+
+A cycle that locks a hypothesis verdict ([VERIFIED] /
+[INVALIDATED]) does so on evidence per the basis rule
+(`foundations.md`). A theory ("might be," "could be") triggers
+the **theory-resolution** lens: stop investigation, add the
+theory to the hypothesis list as [OUTLINED], surface for next
+target.
+
+The investigation order is governed by the **source-before-result**
+and **origin-not-symptom** lenses: verify state at the source
+before investigating downstream transformations; trace backward
+to where wrongness enters, not investigate where the symptom
+surfaces.
+
+## Design decisions
+
+Across the cycle, form and update design decisions
+(`tracker.md`) from the cycle's findings. For DANEEL, design
+decisions include:
+
+- **Hypothesis verdicts** — candidate root causes with their
+  status (eliminated / verified / conditional)
+- **Root-cause classification** — once the surviving hypothesis
+  is locked, classify per `references/debugging-disciplines.md`
+  D6.1 (incorrect implementation / invalid state / component
+  mismatch / missing operation / wrong model)
+- **Fix approach** — the committed fix recommendation
+  (thorough-fix-shaped per `foundations.md` Recommendation
+  discipline) and its scope (simple → stay in DANEEL, complex →
+  hand off to Clippy per `phases/implement.md`)
+- **Pattern-repetition** — for architectural root causes, the
+  enumeration of all instances and which are SAME BUG vs
+  DIFFERENT CONTEXT
+
+The locked design is the body of these decisions; it locks as
+each reaches [VERIFIED] or [AUTO-ACCEPTED].
+
+Every design decision is **self-resolved**. For each one:
+
+- [ ] Is this decision recorded in the tracker as a committed
+  resolution — a chosen direction with its basis
+  (`foundations.md`)?
+  - NO → CANNOT proceed. A design decision is a committed
+    position, never an open question and never a choice posed to
+    the operator. A posed choice is the absence of a resolution
+    — it yields no valid design-decision artifact, so the
+    design-decision track cannot hold one. Resolve the decision:
+    commit to a recommendation, record it with its basis.
+  - YES → Evidence: the tracker entry, its committed resolution,
+    and its basis.
+
+Do not pose design decisions to the operator as choices to make.
+A choice to defer, exclude, or not investigate further is itself
+a committed decision — "defer X, because Y" is recorded with its
+basis, not left as an absence.
+
+A decision that rests on an assumption — including one only the
+operator could confirm — is still committed, not posed: record
+it [CONDITIONAL], the AI's committed recommendation carrying the
+operator-resolvable assumption as its named basis
+(`foundations.md`). At [READY], a [CONDITIONAL] decision still
+resting on its assumption becomes [AUTO-ACCEPTED] (`tracker.md`).
+
+## Scope
+
+The investigation scope — the set of components and surfaces in
+scope to verify — is the foundational design decision.
+Establish it first; every other decision is investigated within
+it. By the basis rule (`foundations.md`) the scope is a
+completeness claim: its basis is a repo-wide search of the
+failure surface (call paths leading to the wrong behavior,
+components in the symptom's domain), not a recalled model. It
+reaches [VERIFIED] only when search-established. When a later
+cycle grows the failure surface, the scope decision re-opens and
+is re-searched. Because [READY] requires every design decision
+[VERIFIED] or [AUTO-ACCEPTED], an unestablished scope holds the
+phase at [NOT READY].
+
+## [READY]
+
+[READY] is reached when the working context judges the
+investigation complete — root cause identified, fix approach
+selected, every concern resolved, every design decision at its
+terminal, and the last cycle's standardized inspection pass
+producing no material finding. The supporting facts are recorded
+across the run:
+
+- **Standardized coverage** — the standardized lens set is
+  accounted for whole: every lens applied in the cycle(s) where
+  its scope was touched, or carrying a cited reason it was out
+  of scope for the run; no lens silently absent; the last
+  cycle's pass left no material finding.
+- **Tracker state** — no finding is [INVALIDATED], no
+  load-bearing finding is below [VERIFIED], every design
+  decision is [VERIFIED] or [AUTO-ACCEPTED] (`tracker.md`), and
+  exactly one hypothesis is [VERIFIED] (the established root
+  cause) with all others [INVALIDATED] or [AUTO-ACCEPTED]
+  (per the hypothesis-enumeration discipline).
+
+These are the status the tracker carries — a notebook of where
+each concern stands — that the AI reads when it judges the
+investigation complete. They are not gate-conditions a separate
+evaluation re-derives.
+
+The supporting facts above check that everything *recorded* is
+at terminal. The judgment must also test whether the recording
+is *complete*. The strongest single test is **fresh-session
+implementability**: would a session with only the tracker (no
+chat context, no current-session memory) implement the fix
+without surfacing a new design decision? If not, another cycle
+is warranted regardless of recorded statuses.
+
+The AI recommends cycle-another whenever the fresh-session
+implementability test fails, or a lens in scope was not applied
+in the cycle that touched its scope. Cost-asymmetry does not
+enter the recommendation; per `foundations.md` Recommendation
+discipline, the operator judges cost.
+
+**[READY]'s judgment is artifact-produced.** The fresh-session
+implementability test produces a named result line in the closed
+artifact at [READY] presentation: PASSED (with a one-line cited
+reason — "the fix could be implemented from the tracker alone")
+or FAILED (with the specific gap identified). Without this
+artifact line, the closed-artifact form (`SKILL.md`) is
+malformed; the [READY] declaration is unenforced. In auto-battle
+(no closed-artifact presentation), the result line is recorded
+in the tracker for post-run review.
+
+At [READY] the AI does not certify itself ready: it presents the
+investigation result — the tracker, the established root cause,
+the recorded fix approach, the fresh-session-implementability
+result line, and a recommendation — for the operator's
+judgment. The operator's decision to proceed is the transition
+to implement; until the operator proceeds, the phase continues
+and the loop may run further cycles.
+
+Until the working context judges the investigation complete, the
+phase is [NOT READY] and the loop continues — another cycle.
+
+## Advancing the loop
+
+In **interactive** mode the operator advances the loop: after
+each cycle, present the tracker — its findings and recorded
+design decisions — with a recommendation, and the operator
+selects from the menu (run another cycle, or proceed) or
+overrides free-form. In **auto-battle** mode the loop
+self-advances without the per-cycle menu, running cycles until
+the working context judges the investigation complete ([READY]).
+The mode is detected at run start (`SKILL.md`). In either mode
+the operator, seeing the recorded decisions, retains free-form
+override at any point.
+
+In interactive mode the menu **persists**. It is the last
+element of every response until the operator selects
+run-another-cycle or proceed. When the operator interjects
+free-form instead of selecting — a question, a comment, an
+override — answer the question or apply the override, **then**
+re-present the menu as the last element of that same response.
+The operator never loses the advance choice.

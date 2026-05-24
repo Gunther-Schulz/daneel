@@ -1,10 +1,151 @@
-# DANEEL post-run review
+# Post-run review
 
-Render pending. Source: `diligence-framework/spec/modules.md` §4.
+An optional final step: after verify reports [PASSED] (or after
+handoff to Clippy on the complex-fix path), surface what the
+protocol missed or got wrong, to inform the next iteration. It
+is the framework's empirical-validation procedure (specified in
+the framework spec `modules.md` §4); DANEEL operates it as
+below.
 
-Auto-battle mode's post-run review for DANEEL: surfaces hypotheses that
-became [AUTO-ACCEPTED] (one-remaining at [READY]), recorded
-de-prioritizations, and any [INVALIDATED] cross-decision contradictions
-the run carried.
+## When and how
 
-Render to be authored in Phase 2 of scaffold.
+After verify reports [PASSED] (simple-fix path) or after Clippy
+completes the handoff fix (complex-fix path), the run is
+complete. The operator **may** request a post-run review — a
+free-text instruction like "post-run review" or "review the
+run." Do **not** prompt for it; the operator decides when a run
+warrants the analysis.
+
+## Output, no persistence
+
+Conduct the review **in the session** — output to the operator.
+Do **not** persist the review or its findings to a file in the
+project. Persisting prior-run analysis to the project directory
+would pollute future runs (a later run reading prior-run
+conclusions is biased by them) and clutter the project tree.
+The operator carries forward what matters by their own means.
+
+## Standing questions
+
+Ask all four. Phrase each **artifact-forcing**. Four primary
+dimensions: misses (Q1), cost (Q3), gaps (Q4), attribution (Q2).
+
+### Q1. Investigation defects — misses (the keystone)
+
+List every investigation defect the run produced. Classify each
+as an **escape** (implement, verify, or the fix's behavior in
+production recorded it past [READY]) or an **operator catch**
+(the operator caught it at the [READY] presentation, before
+the run proceeded). For each: name which investigate-design
+check (a specific lens — source-before-result,
+hypothesis-enumeration, evidence-over-theories,
+origin-not-symptom, etc.; the basis rule; the [READY]
+judgment) should have caught it and why it didn't; or state
+"no existing check covers this class."
+
+Q1 measures the investigation phase's true failure rate. Zero
+defects means the investigation phase is working autonomously;
+an operator catch means the investigation phase missed but the
+[READY] presentation caught (protocol-as-designed); an escape
+means both missed (caught only by implement-loopback, verify,
+or production — the most expensive catch). Each non-zero count
+names a concrete blind spot in the debugging discipline.
+
+For DANEEL specifically, common escape shapes to watch for:
+- Hypothesis-list was incomplete at [READY] (a candidate root
+  cause that should have been enumerated was missing)
+- Theory accepted without verification (jumped from "might be
+  X" to fix without [VERIFIED])
+- Symptom fix mistaken for root-cause fix (the wrong
+  divergence point was treated as origin)
+- Pattern-repetition audit skipped or incomplete (architectural
+  fix that missed instances)
+
+### Q3. Grind — cost
+
+Where did this run's effort go: token-heavy or time-heavy
+regions, repeated work, fixed-shape attestation? Identify any
+work the protocol forced but the run didn't need — quote the
+specific procedure parts that felt unnecessary. Specific
+examples, not impressions.
+
+Cost matters. A protocol that catches everything but costs many
+times what it should is broken in its own way. Artifact-forcing:
+name the procedure parts, quote the tracker lines or pass
+artifacts, don't generalize.
+
+For DANEEL specifically, watch for: per-cycle standardized
+inspection passes that produced cited-clean for lenses
+genuinely out of scope (over-attestation); hypothesis
+re-investigation that the verification map already eliminated
+(re-doing work).
+
+### Q4. Ad-hoc additions — gaps
+
+Did you add any ad-hoc check, step, or instruction not in the
+protocol this run? For each: quote the ad-hoc work verbatim,
+name the gap it was covering, and say whether the gap is
+particular to this task or generalizable across runs.
+
+Ad-hoc additions are how protocol gaps surface — the AI noticed
+something the protocol didn't cover and patched it. This is the
+most directly-actionable signal for protocol completeness.
+
+For DANEEL specifically, common ad-hoc shapes: improvised
+debugging discipline not in `references/debugging-disciplines.md`,
+heuristics for hypothesis prioritization beyond what
+`lenses.md` specifies, cross-instance handoff details not in
+`phases/implement.md`.
+
+### Q2. Value attribution
+
+Tag every finding F1..Fn by what surfaced it — a standardized
+lens / ad-hoc investigation / the basis rule forcing a search /
+a cycle re-examination / verify / the regression check. Give
+the counts.
+
+Descriptive data on which mechanisms produced findings this
+run. This is **not** a verdict on whether a lens "earns its
+rent" — a lens's job is the rare-but-critical catch, and
+yield-counting undervalues insurance. A lens that catches a
+disaster once in ten runs has terrible yield and pays enormous
+rent. Judge a lens by its **misses** (Q1 — what its absence
+let escape), not by its hit-rate (Q2).
+
+## Artifact-forcing throughout
+
+A generic "did DANEEL help" yields sycophantic mush. A forced
+artifact yields data that can be wrong and checked. Use:
+
+- **"Quote it verbatim"** — a specific tracker line, a lens
+  output, a finding, a basis.
+- **"Give the count"** — a number, not a hedge.
+- **"Classify into one of N"** — a forced choice instead of
+  waffle.
+- **"Diff against retained run X"** — the retained
+  `.daneel/runs/<run>/` tracker directories are available;
+  compare this run against a prior one (especially the last run
+  under a previous DANEEL version, to measure a release's
+  effect).
+
+## What outcomes mean
+
+The review surfaces; the operator decides what to do. The
+framework's triage applies (`foundations.md`,
+diligence-framework `development-process.md` practice 1):
+
+- A **render gap** — the plugin file does not faithfully carry
+  the spec → re-render.
+- A **spec gap** — the render is faithful and was followed, and
+  it still broke → a finding for the framework or the DANEEL
+  spec.
+- An **adherence gap** — a faithful render of an unambiguous,
+  evidence-bearing rule, violated anyway → the irreducible
+  residual the verify, operator, and loopback backstops carry.
+
+## What this is not
+
+A general code review. A confidence check ("did it help"). A
+graded report. The review's only job is to surface what the
+*protocol* missed or got wrong, in a form the operator can act
+on.

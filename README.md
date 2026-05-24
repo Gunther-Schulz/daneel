@@ -74,13 +74,6 @@ Both instances inherit the framework's structural discipline (basis
 rule, status-state machine, phase pipeline). They differ in their
 domain binding and lens set.
 
-## Render status
-
-**v0.1.0 (scaffold):** plugin structure in place; skill files are
-placeholders pending full render from framework spec. The prior
-standalone protocol at `legacy/DANEEL.md` remains usable as
-attach-to-chat in the interim.
-
 ## Development
 
 The skill content is rendered from the framework spec, not authored

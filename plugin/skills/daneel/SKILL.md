@@ -1,51 +1,259 @@
 ---
 name: daneel
-description: This skill should be used when the user invokes DANEEL on a debugging task — by saying "daneel", "use daneel", "debug X", "investigate why X is wrong", or requesting a structured investigation pipeline for finding root causes of observed wrong behavior.
+description: This skill should be used when the user invokes DANEEL on a debugging task — by saying "daneel", "use daneel", "debug X", "investigate why X is wrong", "find the root cause of Y", or requesting a structured investigate-design / implement / verify pass on observed wrong behavior.
 license: MIT
 ---
 
 # DANEEL
 
-Evidence-based debugging for Claude Code. The debugging instance of the
-diligence-framework — parallel to Clippy (building new behavior),
-specialized for *investigating wrong behavior in coding* through
-systematic root-cause hunt.
-
-**Scaffold state (v0.1.0):** Skill files below are placeholders pending
-render from the framework spec. The full render produces the
-investigate-design / implement / verify phase files and the foundations
-/ lenses / tracker / post-run-review / debugging-disciplines references.
+DANEEL conducts a debugging task through three phases —
+investigate-design, implement, verify — holding their
+transitions, honoring loopbacks, and surfacing anything it
+cannot resolve. The implement phase has two paths: simple fixes
+complete inline; complex fixes hand off to Clippy.
 
 ## Load this now
 
-When triggered, load `phases/investigate-design.md`,
-`references/foundations.md`, `references/debugging-disciplines.md`,
-`references/lenses.md`, and `references/tracker.md`. These are the
-files the AI executes from during a DANEEL run.
+- [ ] `references/foundations.md`, `references/tracker.md`,
+  `references/lenses.md`, and `references/debugging-disciplines.md`
+  (paths relative to this skill's directory) all read this
+  session?
+  - NO → CANNOT proceed. Read each now.
+  - YES → Evidence: name the four files.
 
-## File dependencies
+## Run start
 
-| Document | Purpose | Derived from |
-|---|---|---|
-| `phases/investigate-design.md` | Root-cause investigation cycles (hypothesis enumeration + systematic elimination) | framework `spec/core.md` §4.1 |
-| `phases/implement.md` | Simple fixes inline; complex fixes hand off to Clippy | framework `spec/core.md` §4.2 |
-| `phases/verify.md` | Confirm fix corrects observed wrong behavior | framework `spec/core.md` §4.3 |
-| `references/foundations.md` | Basis rule, evidence-bearing artifacts, recommendation discipline | framework `spec/core.md` §§1-3 |
-| `references/lenses.md` | DANEEL standardized lens set (source-before-result, evidence-over-theories, single-focus, regression-awareness, etc.) | framework `spec/modules.md` §2 + DANEEL.md D-sections |
-| `references/tracker.md` | Verification map + hypothesis list + status-state machine | framework `spec/modules.md` §3 + `spec/core.md` §5 |
-| `references/post-run-review.md` | Post-run review (auto-battle mode) | framework `spec/modules.md` §4 |
-| `references/debugging-disciplines.md` | DANEEL-specific debugging principles (D2 Purpose, D3 Ground Truth, D4 Domain Modeling, D5 Concrete Tracing, D6 Root Cause Analysis) | `legacy/DANEEL.md` D-sections, adapted |
+Detect the run's mode. A run is **interactive** by default; it
+is **auto-battle** only when auto-battle is explicitly requested
+at invocation. Then locate the run's tracker (see Run lifecycle)
+and enter the run's phase — investigate-design for a fresh run,
+the saved phase for a resumed one.
 
-## Relationship to Clippy
+## The pipeline
 
-DANEEL handles investigation up through root-cause identification + fix
-selection. Simple fixes (1-3 components, no architectural change)
-complete inline. Complex fixes (multi-component, architectural,
-pattern-repetition audit needed) hand off to Clippy's implement phase
-via explicit cross-instance handoff.
+A run advances through three phases in order —
+investigate-design → implement → verify. Each phase has its own
+procedure file; on entering a phase, load and follow it:
 
-## Render status
+- investigate-design → `phases/investigate-design.md`
+- implement → `phases/implement.md` — two paths: simple
+  fixes complete inline; complex fixes hand off to Clippy via
+  cross-instance handoff
+- verify → `phases/verify.md` — conducted in isolation;
+  runs only on the simple-fix path
 
-Phase 2 of the scaffold (render from framework spec) is pending. See
-`legacy/DANEEL.md` for the prior standalone protocol that this instance
-replaces.
+Enter a phase only when its predecessor has reported completion.
+The investigate-design → implement transition is [READY]
+(`phases/investigate-design.md`): investigate-design ends at
+[READY] when the working context judges the investigation
+complete (root cause established, fix approach selected) and
+presents it, and the operator, presented the result, decides to
+proceed. The implement → verify transition is not gated on the
+simple-fix path — verify is itself the check on implement. On
+the complex-fix path, DANEEL's implement ends when the handoff
+artifact is produced and Clippy is invoked; Clippy's verify
+governs the fix's verification.
+
+implement opens with an impl plan (`phases/implement.md`):
+dispatch units derived from the locked fix, dependency-ordered,
+parallel-eligibility marked with a search-established
+disjointness basis (`references/foundations.md`). For DANEEL's
+simple-fix path, the plan typically has one unit (the fix
+itself). When the plan contains two or more units, dispatch
+each unit's work to a **subagent** isolated from the run's
+working context — brief it to load this skill's
+`references/foundations.md`, `references/tracker.md`, and
+`phases/implement.md`, and provide the tracker (default: full;
+reduction requires a cited cause per the basis rule). The
+subagent implements the in-scope decisions; before returning
+state, it self-checks its diff against the locked fix using
+**Coupled-change**, **Failure-path** (`references/lenses.md`) —
+findings returned with state as fixed-shape ledger lines (see
+`phases/implement.md`, Self-check at dispatch boundary). The
+subagent does not design.
+
+The orchestrator owns the tracker append: a dispatched subagent
+returns its state on completion or halt — findings, the unit's
+commit SHA, a loopback signal where applicable — and the
+orchestrator appends in deterministic order, preserving the
+append-only model (`references/tracker.md`). A subagent finding
+major new scope halts and returns a loopback-required result
+with four fields (trigger / scope / basis / affected_decisions);
+the orchestrator then halts other parallel subagents in flight,
+preserves their committed work and tracker state, and returns
+the run to investigate-design with the four-field result feeding
+the new cycle.
+
+verify is conducted in **isolation** from the run's working
+context. The agent that wrote the fix does not check it. At the
+implement → verify transition (simple-fix path only), establish
+the isolated context (in DANEEL, by spawning a subagent) and
+brief it to load this skill's `references/foundations.md`,
+`references/tracker.md`, `references/lenses.md`, and
+`phases/verify.md`, then conduct verify per `verify.md` against
+the run's tracker, the produced code, and the originally-observed
+failure case — recording its findings to the tracker. It reports
+[PASSED] or [ISSUES FOUND]; honor the loopback below. The
+isolation is the load-bearing property and is unconditional —
+not a judgment made per task; the subagent-spawn is DANEEL's
+mechanism for achieving it.
+
+Record verify's result with the context it was conducted in —
+isolated, or without isolation — so a [PASSED] carries whether
+the check was independent.
+
+## Loopbacks
+
+A phase may return the run to an earlier phase. Honor the
+return rather than proceeding:
+
+- implement returns to investigate-design when major new scope
+  surfaces during implementation.
+- an [INVALIDATED] finding or hypothesis verdict reopens
+  investigation work.
+- verify ending [ISSUES FOUND] returns the run to resolve
+  those findings; verify then re-runs.
+
+## Modes
+
+In **interactive** mode the operator advances the run. After
+each investigate-design cycle and at each phase boundary,
+present a **closed artifact** — the tracker (its findings,
+recorded hypothesis verdicts, root cause classification, fix
+approach), a recommendation, and the menu — **and nothing
+else**. Do not pose design decisions to the operator as
+questions or choices: they are recorded in the tracker as
+committed decisions (`phases/investigate-design.md`,
+`references/tracker.md`), never surfaced as a choice for the
+operator to make. The **menu** carries only loop control — the
+operator selects one option: continue the loop, or proceed to
+the next phase. The operator's input on a design decision is
+free-form override against the recorded tracker — never an
+answer to a posed choice. Posing a binary or n-ary choice ("A
+or B?") is the line: it constrains the operator's input to
+selected options and is not permitted.
+
+The menu **persists**. It is the last element of every
+response until the operator selects continue or proceed. The
+operator may interject free-form instead of selecting — a
+question, a comment, an override; answer the question or apply
+the override, **then** re-present the menu as the last element
+of that same response.
+
+**Closed-artifact form.** The closed artifact contains these
+named sections in this order. Each section is required;
+missing or out-of-order sections make the artifact malformed:
+
+1. **State summary** — what the operator decides on first:
+   counts (findings + decisions by status), the last cycle's
+   standardized-pass status (clean or line items), the
+   fresh-session implementability result line (PASSED / FAILED
+   per `phases/investigate-design.md`), named blockers
+   preventing [READY] (open [PENDING] decisions, weak-basis
+   tracker entries, incomplete hypothesis list). Decision-
+   relevant content first; detail follows.
+2. **Inventories** — findings (verification map) and
+   hypothesis verdicts + fix approach (design decisions) as
+   scannable one-per-line ledger entries with status tag and
+   identifier at the start; not paragraph-prose summaries.
+3. **Persisted artifacts** — citations to where detail lives
+   (the tracker file at `.daneel/runs/<run>.md`, the
+   standardized-pass artifact alongside). The closed artifact
+   references; it does not paragraph-summarize.
+4. **Recommendation** — the AI's next-step proposal
+   (thorough-fix-shaped per `references/foundations.md`
+   Recommendation discipline); rationale and any "not
+   recommended because…" callouts in this section. **For each
+   open [CONDITIONAL] decision, the AI's committed default
+   surfaces crisply** — what the operator accepts by selecting
+   proceed; the [CONDITIONAL] then records [AUTO-ACCEPTED]
+   (`references/tracker.md`). For [READY] specifically, the
+   recommendation includes: the established root cause, the
+   selected fix approach (simple inline / complex handoff to
+   Clippy), and the impact-trace assessment. Operator's
+   free-form override against the tracker is available at any
+   moment.
+5. **Menu** — continue / proceed only; plain; no inline
+   annotations.
+
+**Presentation.** Search commands, file paths, tracker
+citations, code locations are presented as code, not buried in
+prose.
+
+Operator review at presentation is the catcher.
+
+**Auto-battle is interactive minus the operator.** Every
+protocol behavior — cycle loop, lens application, basis-rule
+discipline, tracker shape, dispatch self-check, verify
+isolation, [CONDITIONAL] handling, hypothesis-enumeration — is
+identical to interactive. The single difference is the
+operator slot at decision moments: in interactive, an operator
+selects continue or proceed at the closed-artifact
+presentation; in auto-battle, no operator is present, so the
+AI's committed recommendation is taken as default
+automatically.
+
+In **auto-battle** mode the loop self-advances without
+per-cycle operator input. Cycles run until the working context
+judges the investigation complete ([READY],
+`phases/investigate-design.md`). At [READY], where interactive
+presents the closed artifact and waits for the operator's
+proceed-selection, auto-battle skips the presentation and
+proceeds directly — the same default-take of the AI's
+recommendation, just without the operator-present-to-attest.
+
+A [CONDITIONAL] decision still resting on its assumption when
+the design reaches [READY] is recorded [AUTO-ACCEPTED]
+(`references/tracker.md`) in both modes. Every [AUTO-ACCEPTED]
+decision is, by its tag, surfaced in the tracker for the
+operator's review of the completed run — never silently.
+
+## Run lifecycle
+
+A run starts at investigate-design and ends when verify reports
+[PASSED] (simple-fix path) or when Clippy completes the handoff
+fix (complex-fix path). Each run has its own tracker — an
+append-only ledger file under `.daneel/runs/`
+(`references/tracker.md`); a new entry or a status change
+appends a line rather than rewriting, and a run never
+overwrites another run's tracker.
+
+At run start, scan `.daneel/runs/` for an **in-progress** run —
+a tracker whose run has not reached terminal:
+
+- an in-progress run for the current debugging task → resume it
+  from its tracker and phase rather than restarting.
+- an in-progress run for a different task → surface it to the
+  operator (a prior run left unfinished), then start a fresh
+  run for the current task.
+- none in progress → start a fresh run.
+
+A fresh run opens a new tracker file under `.daneel/runs/`.
+Completed runs' tracker files are kept — `.daneel/runs/` is the
+project's accumulated DANEEL history; nothing is overwritten.
+On first creating `.daneel/`, add it to the repository's
+`.gitignore` (creating that file if absent) and note the
+change.
+
+## Post-run review (optional)
+
+After verify reports [PASSED] (simple-fix path) or after Clippy
+completes the handoff fix (complex-fix path), the operator may
+request a **post-run review** to surface what the protocol
+missed or got wrong this run — a free-text instruction like
+"post-run review" or "review the run." Do **not** prompt for
+it; the operator decides when a run warrants the analysis.
+
+On request, load `references/post-run-review.md` and conduct
+the review per that procedure. Output goes to the operator in
+the session — do **not** persist the review or its findings to
+a file in the project.
+
+## Halt and surface
+
+When the run cannot advance — a phase cannot complete — halt
+the run and surface the reason; do not advance past the
+incomplete phase. A decision that needs the operator is not
+such a case: in interactive mode it is held [CONDITIONAL]
+until the operator resolves it; in auto-battle it becomes
+[AUTO-ACCEPTED] and the run proceeds (see **Modes**).
