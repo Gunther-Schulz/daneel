@@ -120,6 +120,8 @@ phase at [NOT READY].
 
 ## [READY]
 
+### Judgment criteria
+
 [READY] is reached when the working context judges the
 investigation complete — root cause identified, fix approach
 selected, every concern resolved, every design decision at its
@@ -156,16 +158,7 @@ chat context, no current-session memory) implement the fix
 without surfacing a new design decision? If not, another cycle
 is warranted regardless of recorded statuses.
 
-The AI recommends cycle-another whenever the fresh-session
-implementability test fails, or a lens in scope was not applied
-in the cycle that touched its scope. Cost-asymmetry does not
-enter the recommendation; per `foundations.md` Recommendation
-discipline, the operator judges cost. **The recommendation's
-justification enumerates observations** — open findings,
-[PENDING] hypotheses, lens-applications still required,
-fresh-session-implementability gaps — not costs (effort,
-budget, time, "cheaper than"). A justification framed in cost
-comparison is malformed.
+### Artifact-produced result line
 
 **[READY]'s judgment is artifact-produced.** The fresh-session
 implementability test produces a named result line in the closed
@@ -176,6 +169,19 @@ artifact line, the closed-artifact form (`SKILL.md`) is
 malformed; the [READY] declaration is unenforced. In auto-battle
 (no closed-artifact presentation), the result line is recorded
 in the tracker for post-run review.
+
+### Cycle-another recommendation
+
+The AI recommends cycle-another whenever the fresh-session
+implementability test fails, or a lens in scope was not applied
+in the cycle that touched its scope. Cost-asymmetry does not
+enter the recommendation; per `foundations.md` Recommendation
+discipline, the operator judges cost. **The recommendation's
+justification enumerates observations** — open findings,
+[PENDING] hypotheses, lens-applications still required,
+fresh-session-implementability gaps — not costs (effort,
+budget, time, "cheaper than"). A justification framed in cost
+comparison is malformed.
 
 At [READY] the AI does not certify itself ready: it presents the
 investigation result — the tracker, the established root cause,

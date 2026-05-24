@@ -69,6 +69,8 @@ A basis must cover the claim's true unit, not a coarser proxy.
   as its unit. Its basis is a read to the construct's visible
   close, not a window that catches part of it.
 
+### Complete cause-set as completeness claim
+
 A hypothesis claiming a **complete cause set** (all places where a
 failure pattern could originate) carries an implicit completeness
 claim: that all candidate origins have been enumerated and
@@ -140,9 +142,8 @@ Every fix recommendation the AI commits — every closed-artifact
 fix proposal, every menu's next-step, every [CONDITIONAL]
 default-take — defaults to the **thorough-fix shape**: the option
 that addresses the root cause at its actual scope, not pre-clipped
-on perceived cost. Cost is the operator's judgment, surfaced via
-free-form override (interactive) or visible in the [AUTO-ACCEPTED]
-tag at post-run review (auto-battle).
+on perceived cost. Cost is the operator's judgment (`tracker.md`
+carries the mode-specific surfacing mechanics).
 
 This is the structural enforcement on what goes IN every recorded
 fix recommendation (`tracker.md`) and every recommendation in the
