@@ -115,8 +115,29 @@ verify ends in one of two results:
   investigate-design completes another cycle and implement
   applies the revised fix.
 
+The terminal result is recorded as an **evidence-bearing
+artifact** (`foundations.md`): the result line is paired with a
+**finding-status ledger** enumerating every recorded finding's
+current status ([VERIFIED] / [PENDING] / [INVALIDATED]). A
+[PASSED] declaration alongside any finding short of [VERIFIED]
+in the ledger is a malformed artifact — the contradiction is
+mechanically detectable at operator review or by a checker.
+
 The recorded result names the context verify was conducted in —
 isolated, or without isolation. A [PASSED] is recorded with that
 context, so it carries whether the check was independent; a
 [PASSED] without isolation is never recorded as though it were
 independent.
+
+## Re-run scope
+
+DANEEL re-runs after [ISSUES FOUND] default to **fresh verify
+pass** — full re-attest of the three checks. The framework's
+delta-verify mechanism (`core.md` §4.3) is parameterized by an
+instance-bound "behavior-preserving" classification of the
+closing fix; for DANEEL the closing fix is by design a
+behavior-changing fix (the bug fix changes what the code does —
+that is the whole point). Behavior-preserving re-verify
+therefore rarely applies in DANEEL's domain. Default fresh
+verify pass; do not invoke delta-verify without explicit operator
+direction.
