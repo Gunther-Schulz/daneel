@@ -37,15 +37,18 @@ observed wrong behavior originates in a specific component. A
 premise with no named basis is an assumption and holds the run
 short of [READY] until grounded.
 
-Design-decision premises embed implicit claims: a decision
-naming a target (e.g., path, filename, module, new helper
-module for the fix) or asserting a completeness count (e.g.,
-"all instances of this pattern are X") carries an implicit
-premise about that target's current state. The implicit premise
-is load-bearing; its basis is a re-runnable read or grep at
-decision-lock time, not at recall. A target-naming or count
-claim with no negative-evidence basis is missing its true-unit
-basis and cannot reach [VERIFIED].
+This rule also reaches **claims embedded within larger
+statements** — implicit premises in target-naming decisions
+(path/filename/module, new helper module for the fix), cited
+rules or prior decisions, completeness counts asserted as facts
+("all instances of this pattern are X"). Each embedded claim
+carries the basis-rule requirement *separately* from the
+surrounding statement: the surrounding claim's basis does not
+cover the embedded one. An embedded claim with no separate
+basis is an assumption and cannot reach [VERIFIED]. A
+re-runnable basis at decision-lock time (grep, file:line read,
+located reference for a cited rule, execution-trace excerpt) is
+the artifact; recall is not.
 
 ### True-unit basis
 

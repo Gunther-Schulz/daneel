@@ -160,7 +160,12 @@ The AI recommends cycle-another whenever the fresh-session
 implementability test fails, or a lens in scope was not applied
 in the cycle that touched its scope. Cost-asymmetry does not
 enter the recommendation; per `foundations.md` Recommendation
-discipline, the operator judges cost.
+discipline, the operator judges cost. **The recommendation's
+justification enumerates observations** — open findings,
+[PENDING] hypotheses, lens-applications still required,
+fresh-session-implementability gaps — not costs (effort,
+budget, time, "cheaper than"). A justification framed in cost
+comparison is malformed.
 
 **[READY]'s judgment is artifact-produced.** The fresh-session
 implementability test produces a named result line in the closed
