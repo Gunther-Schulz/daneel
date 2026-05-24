@@ -134,10 +134,14 @@ across the run:
   cycle's pass left no material finding.
 - **Tracker state** — no finding is [INVALIDATED], no
   load-bearing finding is below [VERIFIED], every design
-  decision is [VERIFIED] or [AUTO-ACCEPTED] (`tracker.md`), and
+  decision is [VERIFIED] or [AUTO-ACCEPTED] (`tracker.md`),
   exactly one hypothesis is [VERIFIED] (the established root
   cause) with all others [INVALIDATED] or [AUTO-ACCEPTED]
-  (per the hypothesis-enumeration discipline).
+  (per the hypothesis-enumeration discipline), and every
+  [VERIFIED] design decision's embedded target-naming and count
+  premises carry a re-runnable basis (per
+  `references/foundations.md` basis-naming for design-decision
+  premises).
 
 These are the status the tracker carries — a notebook of where
 each concern stands — that the AI reads when it judges the

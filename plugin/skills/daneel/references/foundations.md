@@ -31,11 +31,21 @@ The rule has two edges — basis-naming and true-unit basis.
 ### Basis-naming
 
 Every load-bearing claim and every hypothesis names its basis or
-stands as an assumption. This reaches **investigation premises**,
-not findings alone — such as the premise that an observed wrong
-behavior originates in a specific component. A premise with no
-named basis is an assumption and holds the run short of [READY]
-until grounded.
+stands as an assumption. This reaches **investigation
+premises**, not findings alone — such as the premise that an
+observed wrong behavior originates in a specific component. A
+premise with no named basis is an assumption and holds the run
+short of [READY] until grounded.
+
+Design-decision premises embed implicit claims: a decision
+naming a target (e.g., path, filename, module, new helper
+module for the fix) or asserting a completeness count (e.g.,
+"all instances of this pattern are X") carries an implicit
+premise about that target's current state. The implicit premise
+is load-bearing; its basis is a re-runnable read or grep at
+decision-lock time, not at recall. A target-naming or count
+claim with no negative-evidence basis is missing its true-unit
+basis and cannot reach [VERIFIED].
 
 ### True-unit basis
 
