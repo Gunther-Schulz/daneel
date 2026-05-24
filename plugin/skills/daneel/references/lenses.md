@@ -126,3 +126,24 @@ root cause" recommendation is a thorough-fix violation.
 *Scope:* any committed position the cycle produces — hypothesis
 verdicts ([VERIFIED] or [INVALIDATED]) and the cycle's fix
 recommendation in the closed artifact.
+
+## Target-locality
+
+*Question:* for a fix recommendation naming a new file, module,
+or package as a target (new helper location, new module for
+extracted logic, new file for the fix's added code), does the
+fix's basis include a re-runnable grep of the target's parent
+directory establishing that no existing module already serves
+the purpose? A "new file" claim with no negative-evidence basis
+is missing its true-unit basis — the implicit completeness
+claim ("no existing nearby module is suitable") was not
+grounded. The lens catches the clear-but-wrong-target failure
+shape: a fix that would implement cleanly but lands in the
+wrong location because the neighborhood was not surveyed.
+
+*Scope:* any fix recommendation naming a new target (file,
+module, package) for code being added, moved, or extracted as
+part of the fix. Symmetric: when an existing file is named as
+target, the basis includes the file's current contents (read),
+not recall.
+
