@@ -124,14 +124,14 @@ phase at [NOT READY].
 investigation complete — root cause identified, fix approach
 selected, every concern resolved, every design decision at its
 terminal, and the last cycle's standardized inspection pass
-producing no material finding. The supporting facts are recorded
+producing no load-bearing finding. The supporting facts are recorded
 across the run:
 
 - **Standardized coverage** — the standardized lens set is
   accounted for whole: every lens applied in the cycle(s) where
   its scope was touched, or carrying a cited reason it was out
   of scope for the run; no lens silently absent; the last
-  cycle's pass left no material finding.
+  cycle's pass left no load-bearing finding.
 - **Tracker state** — no finding is [INVALIDATED], no
   load-bearing finding is below [VERIFIED], every design
   decision is [VERIFIED] or [AUTO-ACCEPTED] (`tracker.md`),

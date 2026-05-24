@@ -73,17 +73,13 @@ re-run of the failure case that does NOT produce correct output
 is an issue (the fix does not address the symptom; the run
 returns to investigate-design via [ISSUES FOUND]).
 
-Any non-failure output the executable verification surfaces —
-warnings, deprecations, style notes from linters or type
-checkers — is also a finding unless the project has explicitly
-de-prioritized that output class. **De-prioritization** requires
-either: a project config artifact (linter ignore file,
-suppression comment with reason) naming the class; OR a tracker
-entry recording the class + reason. A loose "we don't worry
-about that" without an artifact is not a de-prioritization; the
-output is a finding. An unflagged warning treated as "context
-only" is the silent-substitution shape (`foundations.md`) the
-rule rejects.
+Any non-failure output the executable verification surfaces is
+also a finding unless the project has explicitly de-prioritized
+that output class. **De-prioritization** requires an artifact: a
+project config naming the class, or a tracker entry recording
+the class + reason. De-prioritization without an artifact is
+the silent-substitution shape (`foundations.md`) the rule
+rejects.
 
 Record every divergence or issue as a finding (`tracker.md`),
 entering the finding track at [PENDING].
