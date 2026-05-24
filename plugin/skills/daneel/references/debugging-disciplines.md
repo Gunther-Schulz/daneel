@@ -196,7 +196,7 @@ thorough-fix violation — the fix would address only the
 originally-observed instance, leaving repeated bugs as
 technical debt.
 
-### D6.6 Verify logical constraints
+### D6.5 Verify logical constraints
 
 After fix implementation, verify (per `phases/verify.md`):
 
