@@ -1,0 +1,11 @@
+{
+  "name": "daneel",
+  "version": "0.1.0",
+  "description": "Evidence-based debugging for Claude Code: systematic root-cause investigation with verification map, hypothesis-elimination, and user-controlled scope.",
+  "author": {
+    "name": "Gunther Schulz"
+  },
+  "repository": "https://github.com/Gunther-Schulz/daneel",
+  "license": "MIT",
+  "keywords": ["debugging", "investigation", "root-cause", "verification", "protocol", "pair-programming"]
+}

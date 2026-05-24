@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "daneel",
+  "description": "Systematic AI debugging protocol for finding root causes through evidence-based investigation",
+  "owner": {
+    "name": "Gunther Schulz"
+  },
+  "plugins": [
+    {
+      "name": "daneel",
+      "description": "Evidence-based debugging for Claude Code: systematic root-cause investigation with verification map, hypothesis-elimination, and user-controlled scope.",
+      "source": "./plugin"
+    }
+  ]
+}
