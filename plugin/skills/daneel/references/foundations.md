@@ -147,7 +147,7 @@ carries the mode-specific surfacing mechanics).
 
 This is the structural enforcement on what goes IN every recorded
 fix recommendation (`tracker.md`) and every recommendation in the
-closed artifact (`SKILL.md`): the artifact's content is
+closed artifact (`closed-artifact.md`): the artifact's content is
 thorough-fix-shaped, not cost-clipped. A cost-clipped
 recommendation is a malformed artifact, catchable at operator
 review (interactive) or at the Thorough-fix-default lens

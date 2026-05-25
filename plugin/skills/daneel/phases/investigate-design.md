@@ -165,8 +165,9 @@ implementability test produces a named result line in the closed
 artifact at [READY] presentation: PASSED (with a one-line cited
 reason — "the fix could be implemented from the tracker alone")
 or FAILED (with the specific gap identified). Without this
-artifact line, the closed-artifact form (`SKILL.md`) is
-malformed; the [READY] declaration is unenforced. In auto-battle
+artifact line, the closed-artifact form
+(`references/closed-artifact.md`) is malformed; the [READY]
+declaration is unenforced. In auto-battle
 (no closed-artifact presentation), the result line is recorded
 in the tracker for post-run review.
 
