@@ -144,16 +144,16 @@ For each open V-N in `diligence-framework/spec/validation-watch.md`
 (excluding RESOLVED): walk the V-N's production signal against
 this run's tracker. Classify each as **confirms** (cite the
 evidence), **refutes** (cite the evidence), or **no relevant
-evidence in this run**. Walk every open V-N — "no evidence"
-across many V-Ns is itself useful signal (a watch entry nobody
-exercises warrants its own scrutiny).
+evidence in this run**.
 
 Q7 actively closes the watch loop. The triage routing below
 captures signals passively — it surfaces only Q1-Q4 findings
 that happen to bear on a V-N. Q7 forces the per-entry walk so
 signals accumulate systematically rather than waiting for
-fortuitous correlations. The operator decides which V-N's to
-update from the walk's findings.
+fortuitous correlations. "No relevant evidence" across many V-Ns
+is itself useful signal — a watch entry nobody exercises warrants
+its own scrutiny. The operator decides which V-Ns to update from
+the walk's findings.
 
 ### Q2. Value attribution
 
