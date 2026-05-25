@@ -116,8 +116,11 @@ The orchestrator owns the tracker append. A dispatched subagent
 does not write directly; on completion or halt it returns
 state — findings, the unit's commit SHA, a loopback signal where
 applicable — and the orchestrator appends in deterministic
-order. The append-only model (`tracker.md`) is preserved without
-concurrency machinery.
+order. Subagent return-state findings carry no identifier; the
+orchestrator assigns identifiers at append time, and cross-
+references between findings within a return batch are by content,
+not by identifier (which is not yet assigned). The append-only
+model (`tracker.md`) is preserved without concurrency machinery.
 
 ### Loopback across the subagent boundary
 
@@ -133,11 +136,18 @@ loopback-required result with four fields:
   or extended (cited by tracker identifier)
 
 On receiving it, the orchestrator halts other in-flight parallel
-subagents — required because their work may rest on the
-disjoint-scope claim the new finding contradicts — preserves
-committed work and tracker state, and returns the run to
-investigate-design with the four-field result feeding the new
-cycle.
+subagents and audits the work-state at halt. **Parallel-completed
+units** (committed before the halt arrived) are audited against
+the new finding's `affected_decisions` and `scope`: a unit whose
+scope does not intersect the new finding's invalidated scope
+preserves its commit and tracker entry; a unit whose scope does
+intersect reverts (commit dropped, tracker entry moved to
+[INVALIDATED]). **Halted subagents' uncommitted work** in the
+working tree is preserved for redo inheritance — the new
+investigate-design cycle reads it alongside the tracker, and the
+redesign may incorporate, audit, or discard. Tracker state is
+preserved across all cases. The run returns to investigate-design
+with the four-field result feeding the new cycle.
 
 If investigate-design's new cycle reclassifies the fix as
 complex (per the path classification above), the next [READY]

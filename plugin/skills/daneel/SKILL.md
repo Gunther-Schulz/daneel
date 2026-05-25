@@ -80,9 +80,12 @@ append-only model (`references/tracker.md`). A subagent finding
 major new scope halts and returns a loopback-required result
 with four fields (trigger / scope / basis / affected_decisions);
 the orchestrator then halts other parallel subagents in flight,
-preserves their committed work and tracker state, and returns
-the run to investigate-design with the four-field result feeding
-the new cycle.
+audits the work-state at halt per `phases/implement.md` (parallel-
+completed units preserve or revert by scope-disjointness audit
+against the new finding; uncommitted working-tree changes preserve
+for redo inheritance), preserves tracker state, and returns the
+run to investigate-design with the four-field result feeding the
+new cycle.
 
 verify is conducted in **isolation** from the run's working
 context. The agent that wrote the fix does not check it. At the

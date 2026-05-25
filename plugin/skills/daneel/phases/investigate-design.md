@@ -28,6 +28,11 @@ passes, in order:
 The standardized inspection pass runs every cycle — not only the
 first, not only when something feels off.
 
+**Cycle numbering** is continuous across the run. A loopback from
+a downstream phase (implement major-new-scope, verify [ISSUES
+FOUND]) returns to investigate-design at the next cycle number,
+not at cycle 1. Each cycle number is unique within the run.
+
 ## Hypothesis enumeration
 
 When a symptom is identified (an observable wrong behavior with

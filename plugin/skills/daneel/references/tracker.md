@@ -201,16 +201,21 @@ standardized-pass findings artifact (above) is persisted
 alongside the tracker — a per-cycle run artifact — not filed
 into it.
 
-The tracker is **append-only**. A new entry, and every later
-change to an entry — a new status, a corrected summary — is a
-new fixed-shape ledger line appended to the file; existing lines
-are never edited or rewritten. Each line carries its entry's
-identifier (`F1`, `D3`, …); an entry's **current state is its
-latest line**. Where current state is needed — at [READY], the
-closed artifact, a resume — read the tracker reduced to the
-latest line per entry. Appending rather than rewriting is
-cheaper, and the un-rewritten history is the run's audit trail.
-This holds in both modes.
+The tracker is **append-only** at the **ledger** layer. A new
+entry, and every later change to an entry — a new status, a
+corrected summary — is a new fixed-shape ledger line appended to
+the file; existing ledger lines are never edited or rewritten.
+The header (named above — run status, current phase, task
+summary, mode) is mutable run-state distinct from the append-only
+ledger: updates to header fields at phase transitions or terminal
+moments (status in-progress → PASSED, phase investigate-design →
+implement) are not edits to ledger lines. Each ledger line
+carries its entry's identifier (`F1`, `D3`, …); an entry's
+**current state is its latest line**. Where current state is
+needed — at [READY], the closed artifact, a resume — read the
+tracker reduced to the latest line per entry. Appending rather
+than rewriting is cheaper, and the un-rewritten ledger history is
+the run's audit trail. This holds in both modes.
 
 A **basis-only refinement** on a terminal-status entry
 ([VERIFIED], or [AUTO-ACCEPTED] in auto-battle) — same status and
