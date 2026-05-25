@@ -167,14 +167,48 @@ is warranted regardless of recorded statuses.
 
 **[READY]'s judgment is artifact-produced.** The fresh-session
 implementability test produces a named result line in the closed
-artifact at [READY] presentation: PASSED (with a one-line cited
-reason — "the fix could be implemented from the tracker alone")
-or FAILED (with the specific gap identified). Without this
-artifact line, the closed-artifact form
-(`references/closed-artifact.md`) is malformed; the [READY]
-declaration is unenforced. In auto-battle
-(no closed-artifact presentation), the result line is recorded
-in the tracker for post-run review.
+artifact at [READY] presentation: PASSED with **per-implementer-
+step external evidence** — for each step a fresh implementer
+would take to carry out the locked fix, cite the file:line or
+grep output that grounds the step, drawn from re-reading source
+rather than paraphrasing the tracker — or FAILED with the
+specific gap identified. PASSED without per-step external
+citation is a malformed artifact: the test answers from the
+recall pool that wrote the design rather than from external
+evidence, the failure shape that allows false-[READY]s (V-5 in
+`diligence-framework/spec/validation-watch.md`). Without the
+result line itself, the closed-artifact form
+(`references/closed-artifact.md`) is also malformed and the
+[READY] declaration unenforced. In auto-battle the result line
+is recorded in the tracker for post-run review.
+
+### Convergence cycle requirement
+
+**[READY] requires a convergence cycle.** After the working
+context judges the supporting facts above met and the
+fresh-session implementability test produces a PASSED artifact,
+the [READY] declaration requires one more cycle — a **convergence
+cycle** — to produce **zero D-track deltas** (no new design
+decisions or hypothesis verdicts, no amendments to existing
+ones).
+
+A convergence cycle is a full cycle (investigation pass +
+standardized inspection pass), not a final lens application on
+accumulated state. Its investigation pass must enumerate **new
+surfaces investigated this cycle**, not merely re-attest prior
+findings; a convergence cycle that only re-attests is malformed.
+
+If the convergence cycle surfaces D-track deltas, the design is
+not [READY]: the deltas feed into the next cycle and the loop
+continues. [READY] is presented only after a convergence cycle is
+observed clean. The convergence cycle's outputs (investigation
+pass artifact + zero-D-delta status) form part of the [READY]
+artifact alongside the fresh-session result line.
+
+Per V-5 — the mechanism breaks the recall-pool failure shape that
+allows false-[READY]s, by switching the working context from
+self-assessment mode to fresh investigation mode. Fires in both
+interactive and auto-battle.
 
 ### Cycle-another recommendation
 
