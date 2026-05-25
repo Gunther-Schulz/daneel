@@ -27,8 +27,10 @@ The operator carries forward what matters by their own means.
 
 ## Standing questions
 
-Ask all four. Phrase each **artifact-forcing**. Four primary
-dimensions: misses (Q1), cost (Q3), gaps (Q4), attribution (Q2).
+Ask all seven. Phrase each **artifact-forcing**. Four outcome
+dimensions — misses (Q1), cost (Q3), gaps (Q4), attribution (Q2)
+— complemented by three protocol-mechanism dimensions: tracker
+(Q5), verify (Q6), validation-watch (Q7).
 
 ### Q1. Investigation defects — misses (the keystone)
 
@@ -96,6 +98,62 @@ debugging discipline not in `references/debugging-disciplines.md`,
 heuristics for hypothesis prioritization beyond what
 `lenses.md` specifies, cross-instance handoff details not in
 `phases/implement.md`.
+
+### Q5. Tracker integrity
+
+For this run's tracker (`.daneel/runs/<run>.md`): was append-only
+honored at the ledger layer (no edits to existing ledger lines —
+quote any apparent edit); were cycle numbers continuous across
+the run including any loopback re-entries (list the sequence);
+were F# / D# identifiers unique with no collisions (list any
+duplicates); did header updates stay within the header
+carve-out (mutable run-state — status, phase, terminal — not
+edits to ledger lines)?
+
+Q5 checks the tracker rules' actual adherence. The tracker is
+the run's audit trail (`tracker.md`); silent violations corrupt
+the record. Each clause is artifact-forceable (quotes, lists,
+counts). A violation triages as adherence-class unless the
+render or spec allowed the violating reading — then render or
+spec gap respectively.
+
+### Q6. Verify-phase audit
+
+For this run's verify (simple-fix path): was the recorded
+context "isolated" (quote the result line's context tag —
+DANEEL spawns a subagent for verify); were all three checks
+accounted for — planned-vs-actual (root cause, fix approach,
+pattern-repetition where architectural), standardized lenses
+(`lenses.md`, especially regression-awareness), executable
+verification including failure-case re-run — with no check
+silently absent (cite each); on [ISSUES FOUND], did the
+loopback route to investigate-design (quote the next-cycle
+entry); if in auto-battle and the convergence exception fired,
+did the finding's evidence field cite the [AUTO-ACCEPTED]
+decision by tracker identifier?
+
+Q6 checks verify-phase discipline (`phases/verify.md`). Verify
+is DANEEL's primary catcher; its discipline failing means the
+catcher itself is failing. Mechanical checks; adherence vs
+render vs spec triage applies. (Skip Q6 on the complex-fix
+path — Clippy's verify governs there.)
+
+### Q7. Validation-watch cross-check
+
+For each open V-N in `diligence-framework/spec/validation-watch.md`
+(excluding RESOLVED): walk the V-N's production signal against
+this run's tracker. Classify each as **confirms** (cite the
+evidence), **refutes** (cite the evidence), or **no relevant
+evidence in this run**. Walk every open V-N — "no evidence"
+across many V-Ns is itself useful signal (a watch entry nobody
+exercises warrants its own scrutiny).
+
+Q7 actively closes the watch loop. The triage routing below
+captures signals passively — it surfaces only Q1-Q4 findings
+that happen to bear on a V-N. Q7 forces the per-entry walk so
+signals accumulate systematically rather than waiting for
+fortuitous correlations. The operator decides which V-N's to
+update from the walk's findings.
 
 ### Q2. Value attribution
 
