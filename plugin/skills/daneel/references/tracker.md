@@ -186,22 +186,10 @@ plan is persisted alongside the tracker. Detail is in
 
 ## [READY]
 
-[READY] is investigate-design's terminal — the point at which the
-working context judges the root cause established and the fix
-approach selected. The tracker state it weighs in that judgment:
-no finding is [INVALIDATED], no load-bearing finding is left
-below [VERIFIED], every hypothesis is [VERIFIED]/[INVALIDATED]/
-[AUTO-ACCEPTED], and exactly one hypothesis is [VERIFIED] or
-[AUTO-ACCEPTED] as the root cause (all others [INVALIDATED]).
-[READY] also weighs the cycle-history conditions specified in
-the investigate-design phase.
-
-These are the status the tracker carries — a notebook of where
-each concern stands — that the AI reads when it judges the
-design complete and presents it. They are not gate-conditions a
-separate evaluation re-derives. Until they hold, the
-investigation is not complete and the loop continues — the
-phase is [NOT READY].
+[READY] criteria + judgment + fresh-session-implementability test
+per `phases/investigate-design.md` §[READY]. The tracker carries
+the recorded state — hypothesis terminals, design-decision
+terminals, lens-pass results — that the [READY] judgment weighs.
 
 ## Persistence
 
