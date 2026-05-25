@@ -11,10 +11,14 @@ the artifact malformed:
    counts (findings + decisions by status), the last cycle's
    standardized-pass status (clean or line items), the
    fresh-session implementability result line (PASSED / FAILED
-   per `phases/investigate-design.md`), named blockers
-   preventing [READY] (open [PENDING] decisions, weak-basis
-   tracker entries, incomplete hypothesis list). Decision-
-   relevant content first; detail follows.
+   per `phases/investigate-design.md`), **the convergence-cycle
+   status** when at [READY] (the convergence cycle's
+   investigation-pass artifact citation + zero-D-delta
+   confirmation per `phases/investigate-design.md` Convergence
+   cycle requirement), named blockers preventing [READY] (open
+   [PENDING] decisions, weak-basis tracker entries, incomplete
+   hypothesis list). Decision-relevant content first; detail
+   follows.
 2. **Inventories** — findings (verification map) and
    hypothesis verdicts + fix approach (design decisions) as
    scannable one-per-line ledger entries with status tag and
