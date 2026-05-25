@@ -32,7 +32,13 @@ each additional sentence carries a cited rationale or premise
 (the basis-rule discipline applies within the summary, not only
 at the basis field). An entry has **no narrative field**:
 floating uncited reasoning does not belong in the tracker — the
-tracker is the run's ledger, not its investigation narrative. The
+tracker is the run's ledger, not its investigation narrative.
+**Derivation walk-throughs** — multi-step prose tracing *how* a
+conclusion follows from the citations ("test X at file:A failed
+because of Y at file:B, which means Z, therefore root cause is…")
+— are the AI's working context, not basis content. Record citation
++ load-bearing conclusion; the inference between citations is reasoning, not
+evidence. The
 standardized-pass artifact (below) is a separate per-cycle
 artifact, persisted alongside the tracker, not part of it.
 
