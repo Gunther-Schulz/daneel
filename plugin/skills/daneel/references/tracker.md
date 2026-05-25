@@ -32,14 +32,11 @@ each additional sentence carries a cited rationale or premise
 (the basis-rule discipline applies within the summary, not only
 at the basis field). An entry has **no narrative field**:
 floating uncited reasoning does not belong in the tracker — the
-tracker is the run's ledger, not its investigation narrative. A
-basis sentence is **citation + load-bearing conclusion** — the
-cited artifact (file:line, test result, execution trace) and the
-specific claim it establishes. **Derivation walk-throughs** —
-multi-step prose tracing *how* a conclusion follows from citations
-("test X at file:A failed because of Y at file:B, which means Z,
-therefore root cause is…") — are working context: record the
-conclusion, omit the steps. The
+tracker is the run's ledger, not its investigation narrative.
+**Derivation walk-throughs** — multi-step prose tracing *how* a
+conclusion follows from citations ("test X at file:A failed because
+of Y at file:B, which means Z, therefore root cause is…") — are
+working context, not basis: record the conclusion, omit the steps. The
 standardized-pass artifact (below) is a separate per-cycle
 artifact, persisted alongside the tracker, not part of it.
 
