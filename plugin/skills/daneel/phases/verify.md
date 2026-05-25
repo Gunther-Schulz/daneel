@@ -111,9 +111,9 @@ verify ends in one of two results:
   now produces correct output, and no finding short of
   [VERIFIED].
 - **[ISSUES FOUND]** — otherwise. This returns the run to
-  resolve those findings; verify then re-runs after
-  investigate-design completes another cycle and implement
-  applies the revised fix.
+  investigate-design — the single locus for fix resolution. The
+  fix runs through the full procedure (investigate-design →
+  implement → verify); no in-place shortcut at verify-terminal.
 
 The result is recorded as an evidence-bearing artifact
 (`foundations.md`): the result line is paired with a
