@@ -175,16 +175,20 @@ operator's review of the completed run — never silently.
 
 Verify [ISSUES FOUND] in auto-battle triggers automatic loopback
 to investigate-design (Loopbacks above). The convergence
-exception: a verify finding that re-surfaces an existing
-[AUTO-ACCEPTED] design decision in the tracker — the same gap,
-now observed in the code or in the failure-case re-run — does
-not trigger loopback. Append it to the tracker as a re-surfacing
-notation alongside the original [AUTO-ACCEPTED] tag, and
-complete the run. The AI's prior judgment to defer the gap is
-preserved for the operator's post-run review of cost. Other halt
-conditions — phases that genuinely cannot complete on causes
-other than [ISSUES FOUND] — remain a separate, not-yet-undertaken
-effort.
+exception: a verify finding whose evidence field explicitly
+cross-references an existing [AUTO-ACCEPTED] design decision by
+its tracker ID — declaring the finding observes the same gap the
+decision deferred (in the code, or in the failure-case re-run) —
+does not trigger loopback. Append it to the tracker as a
+re-surfacing notation alongside the original [AUTO-ACCEPTED] tag,
+and complete the run; the AI's prior judgment to defer is
+preserved for the operator's post-run review. Without the explicit
+cross-reference, the finding is treated as a new gap and triggers
+loopback — the cross-reference is the artifact distinguishing the
+two cases, not the AI's judgment about whether the gaps "match."
+Other halt conditions — phases that genuinely cannot complete on
+causes other than [ISSUES FOUND] — remain a separate,
+not-yet-undertaken effort.
 
 ## Run lifecycle
 
