@@ -201,9 +201,8 @@ each cycle, present the tracker — its findings and recorded
 design decisions — with a recommendation, and the operator
 selects from the menu (run another cycle, or proceed) or
 overrides free-form. In **auto-battle** mode the loop
-self-advances without the per-cycle menu, running cycles until
-the working context judges the investigation complete ([READY]).
-The mode is detected at run start (`SKILL.md`). In either mode
+self-advances (`SKILL.md` Modes — auto-battle is interactive minus
+the operator). In either mode
 the operator, seeing the recorded decisions, retains free-form
 override at any point.
 
