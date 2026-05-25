@@ -12,10 +12,12 @@ trace), a behavioral test result. A free-text claim of having
 looked is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
-"obviously so" — is an **assumption**, not a basis. An assumption
-does not ground a verdict; it holds the run short of [READY] until
-converted to evidence or the operator resolves it. The mechanical
-tell of a blind spot is the basis the AI cannot produce.
+"obviously so" — or to deferral — "will verify in cycle N,"
+"impl-phase will produce," "TBD" — is an **assumption**, not a
+basis. An assumption does not ground a verdict; it holds the run
+short of [READY] until converted to evidence or the operator
+resolves it. The mechanical tell of a blind spot is the basis the
+AI cannot produce.
 
 **Load-bearing** means a claim or premise a hypothesis verdict, a
 root-cause classification, a fix recommendation, or [READY] rests
