@@ -9,12 +9,27 @@ below.
 
 ## When and how
 
-After verify reports [PASSED] (simple-fix path) or after Clippy
-completes the handoff fix (complex-fix path), the run is
-complete. The operator **may** request a post-run review — a
-free-text instruction like "post-run review" or "review the
-run." Do **not** prompt for it; the operator decides when a run
-warrants the analysis.
+**At any point during or after a run, at the operator's
+discretion** — at completion (verify [PASSED] simple-fix path or
+Clippy-handoff complete complex-fix path), mid-run after a
+[READY] presentation, after a verify result, after a cycle that
+surfaced unexpected findings, or after an interruption. The
+post-run review is an analysis tool for the *protocol's
+execution*, not a phase-gated artifact — invocable at any state
+the operator wants to inspect.
+
+Especially valuable after a release that changed DANEEL's
+behavior (the run is the change's empirical test) and after
+runs where the operator overrode a phase transition (e.g.,
+selected Continue at [READY]) — the override itself is data.
+
+The operator **may** request a review — a free-text instruction
+like "post-run review" or "review the run." Do **not** prompt
+for it; the operator decides when a run warrants the analysis.
+
+Q's that depend on a phase not yet reached (e.g., Q6 verify-
+phase audit before verify has fired) classify as **not yet
+applicable to this run state** rather than skipped silently.
 
 ## Output, no persistence
 
