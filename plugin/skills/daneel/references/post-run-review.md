@@ -176,7 +176,7 @@ path — Clippy's verify governs there.)
 
 ### Q7. Validation-watch cross-check
 
-For each V-N in `anneal-framework/spec/validation-watch.md`,
+For each V-N in `anneal-framework/dev-notes/validation-watch.md`,
 read the entry's Status line and respond per state:
 
 - **WATCHING**: walk the production signal against this run's

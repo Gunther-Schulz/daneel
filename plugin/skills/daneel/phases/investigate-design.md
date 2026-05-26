@@ -181,7 +181,7 @@ specific gap identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
 evidence, the failure shape that allows false-[READY]s (V-5 in
-`anneal-framework/spec/validation-watch.md`). Without the
+`anneal-framework/dev-notes/validation-watch.md`). Without the
 result line itself, the closed-artifact form
 (`references/closed-artifact.md`) is also malformed and the
 [READY] declaration unenforced. The result line is recorded in
