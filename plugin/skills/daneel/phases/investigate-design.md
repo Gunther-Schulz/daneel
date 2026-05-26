@@ -21,9 +21,14 @@ passes, in order:
    incremental, over what this cycle produced. Emit the
    standardized-pass artifact (`tracker.md`): one line for each
    in-scope lens — a finding, or a one-line cited reason it is
-   clean. A lens out of scope this cycle is not lined; the set
-   is not re-attested every cycle — it is accounted for whole
-   once, at [READY].
+   clean. **Each line cites this-cycle basis: a this-cycle
+   tracker entry (F# from this cycle's investigation pass, or D#
+   from this cycle's design work) or a surface (file:line, grep
+   query) introduced in this cycle. A line whose only basis is
+   prior-cycle entries is malformed — its lens was not touched
+   this cycle.** A lens out of scope this
+   cycle is not lined; the set is not re-attested every cycle —
+   it is accounted for whole once, at [READY].
 
 The standardized inspection pass runs every cycle — not only the
 first, not only when something feels off.
