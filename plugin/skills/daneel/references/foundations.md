@@ -6,10 +6,13 @@ reference at activation, before any phase runs.
 ## The basis rule
 
 Every load-bearing claim and every hypothesis carries a named
-**basis** — the evidence it rests on: a grep result, a file:line
-read, a state observation (database query, log entry, execution
-trace), a behavioral test result. A free-text claim of having
-looked is not a basis.
+**basis** — the evidence it rests on: a grep result with its
+query, a file:line read with the minimal verbatim content from
+the cited range that grounds the claim, a state observation
+(database query with its output, log entry, execution trace),
+a behavioral test result. A free-text claim of having looked, a
+paraphrase of what was read, or a summary in lieu of the content
+is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
@@ -47,10 +50,7 @@ rules or prior decisions, completeness counts asserted as facts
 carries the basis-rule requirement *separately* from the
 surrounding statement: the surrounding claim's basis does not
 cover the embedded one. An embedded claim with no separate
-basis is an assumption and cannot reach [VERIFIED]. A
-re-runnable basis at decision-lock time (grep, file:line read,
-located reference for a cited rule, execution-trace excerpt) is
-the artifact; recall is not.
+basis is an assumption and cannot reach [VERIFIED].
 
 ### True-unit basis
 

@@ -169,9 +169,9 @@ is warranted regardless of recorded statuses.
 implementability test produces a named result line in the closed
 artifact at [READY] presentation: PASSED with **per-implementer-
 step external evidence** — for each step a fresh implementer
-would take to carry out the locked fix, cite the file:line or
-grep output that grounds the step, drawn from re-reading source
-rather than paraphrasing the tracker — or FAILED with the
+would take to carry out the locked fix, cite the basis form per
+the basis rule (`foundations.md`): verbatim content for a read;
+executable query with output for a search. Or FAILED with the
 specific gap identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
@@ -179,8 +179,8 @@ evidence, the failure shape that allows false-[READY]s (V-5 in
 `diligence-framework/spec/validation-watch.md`). Without the
 result line itself, the closed-artifact form
 (`references/closed-artifact.md`) is also malformed and the
-[READY] declaration unenforced. In auto-battle the result line
-is recorded in the tracker for post-run review.
+[READY] declaration unenforced. The result line is recorded in
+the tracker for post-run review in both modes.
 
 ### Convergence cycle requirement
 
@@ -195,11 +195,14 @@ ones).
 A convergence cycle is a full cycle (investigation pass +
 standardized inspection pass), not a final lens application on
 accumulated state. Its investigation pass must enumerate **new
-surfaces investigated this cycle**, where each surface is cited
-as a file:line range or grep query that did not appear in any
-prior cycle's investigation-pass artifact this run. A
-convergence cycle that produces no new-surface citations (only
-re-attestations of prior surfaces) is malformed.
+surfaces investigated this cycle**, where each surface is
+**new** by at least one of: (a) cites a file path not in any
+prior cycle's artifact this run; (b) cites a grep query whose
+query string differs verbatim from every prior cycle's; (c)
+cites a file:line range with at least one line not covered by
+any prior cycle's same-file citation. A convergence cycle that
+produces no new-surface citations (only re-attestations of
+prior surfaces) is malformed.
 
 If the convergence cycle surfaces D-track deltas, the design is
 not [READY]: the deltas feed into the next cycle and the loop
