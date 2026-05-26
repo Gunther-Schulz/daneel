@@ -44,6 +44,16 @@ verify runs three checks over the applied fix:
    the fix approach (does the diff match the recorded scope and
    shape?), and the pattern-repetition results (if architectural:
    are all SAME BUG instances actually fixed in this diff?).
+   **Also check the code for material elements not covered by
+   any locked decision** (design-completeness audit): a material
+   element surfaces as a finding classifying why it wasn't
+   surfaced at design time (judged-non-material, forgotten,
+   scope-overflow, missed-pattern, or cited-other). "Material"
+   means a reasonable alternative would have produced different
+   observable behavior — external contract, error pattern,
+   API-surface naming, persisted behavior. Impl-detail (variable
+   naming, internal organization, test fixture choice) is not
+   material unless it affects observable behavior.
 2. **Standardized lenses.** Apply the standardized lens set
    (`lenses.md`) to the produced code. For DANEEL's fix-time
    verify, the most active lenses are **Coupled-change**,

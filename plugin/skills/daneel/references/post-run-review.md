@@ -9,6 +9,16 @@ below.
 
 ## When and how
 
+**Post-run review is a debugging tool, not a routine check.**
+Normal interactive runs and auto-battle runs do not invoke it.
+The operator invokes it only when investigating a specific
+issue, auditing a release's behavior, or empirically validating
+spec changes. The Q-set therefore does not need to fire on every
+run — it fires on suspicion. Mechanisms that need to fire on
+every run (e.g., catching ad-hoc impl decisions via verify's
+design-completeness audit, `phases/verify.md`) belong in-phase,
+not here.
+
 **At any point during or after a run, at the operator's
 discretion** — at completion (verify [PASSED] simple-fix path or
 Clippy-handoff complete complex-fix path), mid-run after a
@@ -146,8 +156,10 @@ spec gap respectively.
 For this run's verify (simple-fix path): was the recorded
 context "isolated" (quote the result line's context tag —
 DANEEL spawns a subagent for verify); were all three checks
-accounted for — planned-vs-actual (root cause, fix approach,
-pattern-repetition where architectural), standardized lenses
+accounted for — planned-vs-actual (decision-matching including
+root cause, fix approach, pattern-repetition where architectural,
+AND design-completeness audit per `phases/verify.md`),
+standardized lenses
 (`lenses.md`, especially regression-awareness), executable
 verification including failure-case re-run — with no check
 silently absent (cite each); on [ISSUES FOUND], did the
