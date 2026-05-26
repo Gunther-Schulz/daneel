@@ -57,7 +57,7 @@ classifications, quotes, walks, named symptoms); they do **not**
 prescribe actions on those artifacts. Action emerges from
 operator+AI judgment in the session, applying the framework's
 existing disciplines (the gap-triage and three-form enforcement
-enumeration in `diligence-framework/development-process.md`). A
+enumeration in `anneal-framework/development-process.md`). A
 Q that prescribes "ship X" / "observe Y" over-reaches the
 review's purpose — the session decides.
 
@@ -176,7 +176,7 @@ path — Clippy's verify governs there.)
 
 ### Q7. Validation-watch cross-check
 
-For each V-N in `diligence-framework/spec/validation-watch.md`,
+For each V-N in `anneal-framework/spec/validation-watch.md`,
 read the entry's Status line and respond per state:
 
 - **WATCHING**: walk the production signal against this run's
@@ -240,7 +240,7 @@ artifact yields data that can be wrong and checked. Use:
 
 The review surfaces; the operator decides what to do. The
 framework's triage applies (`foundations.md`,
-diligence-framework `development-process.md` practice 1):
+anneal-framework `development-process.md` practice 1):
 
 - A **render gap** — the plugin file does not faithfully carry
   the spec → re-render.

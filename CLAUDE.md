@@ -4,16 +4,16 @@ Rules for maintaining the DANEEL plugin itself.
 
 ## The skill content is rendered, not authored
 
-DANEEL is an *instance* of the Diligence framework — parallel to
+DANEEL is an *instance* of the Anneal framework — parallel to
 Clippy. The skill files — `plugin/skills/daneel/SKILL.md`, `phases/`,
 and `references/` — are **rendered** from the framework spec (the
-`diligence-framework` repo, `spec/`). They are not authored here, and
+`anneal-framework` repo, `spec/`). They are not authored here, and
 are never where a behavior change originates.
 
 A change to how DANEEL behaves goes to the framework spec first:
 committed there, then re-rendered into these files and verified in a
 separate context — the procedure is `development-process.md` in the
-`diligence-framework` repo. Hand-editing a skill file as if it were
+`anneal-framework` repo. Hand-editing a skill file as if it were
 source breaks re-derivability: the spec and the instance drift, and
 the change cannot be reproduced for another instance.
 
@@ -94,7 +94,7 @@ this transition.
 
 ## Rule-corpus edits
 
-When editing skill-craft, diligence-framework spec, or instance
+When editing skill-craft, anneal-framework spec, or instance
 skills (clippy / daneel / etc.): invoke the `skill-craft` skill
 via the Skill tool BEFORE the edit.
 

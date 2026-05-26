@@ -4,7 +4,7 @@ Evidence-based debugging for Claude Code: systematic root-cause
 investigation with verification map, hypothesis-elimination, and
 user-controlled scope.
 
-DANEEL is the [Diligence framework](https://github.com/Gunther-Schulz/diligence-framework)
+DANEEL is the [Anneal framework](https://github.com/Gunther-Schulz/anneal-framework)
 bound to debugging. For building new behavior, see
 [Clippy](https://github.com/Gunther-Schulz/coding-clippy).
 
@@ -67,7 +67,7 @@ flow:
 ## Architecture
 
 ```
-diligence-framework (spec/)
+anneal-framework (spec/)
         ↓ renders to
    ┌────────────┐
    │   Clippy   │  building new behavior
