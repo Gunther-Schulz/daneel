@@ -4,10 +4,9 @@ Evidence-based debugging for Claude Code: systematic root-cause
 investigation with verification map, hypothesis-elimination, and
 user-controlled scope.
 
-DANEEL is an instance of the [diligence-framework](https://github.com/Gunther-Schulz/diligence-framework),
-parallel to [Clippy](https://github.com/Gunther-Schulz/coding-clippy)
-— specialized for *debugging wrong behavior in coding* rather than
-*building new behavior*.
+DANEEL is the [Diligence framework](https://github.com/Gunther-Schulz/diligence-framework)
+bound to debugging. For building new behavior, see
+[Clippy](https://github.com/Gunther-Schulz/coding-clippy).
 
 ## Mission
 
@@ -24,9 +23,18 @@ parallel to [Clippy](https://github.com/Gunther-Schulz/coding-clippy)
 
 ## Installation
 
-```
-claude plugin add daneel
+```bash
+claude plugin marketplace add Gunther-Schulz/daneel
 claude plugin install daneel@daneel
+```
+
+Run `/reload-plugins` to activate.
+
+## Updating
+
+```bash
+claude plugin marketplace update daneel
+claude plugin update daneel@daneel
 ```
 
 Then `/reload-plugins`.
