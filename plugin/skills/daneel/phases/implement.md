@@ -65,7 +65,7 @@ planning artifact, not a new tracker construct.
 
 Parallel-eligibility is a load-bearing claim per the basis rule
 (`foundations.md`): a unit's file and contract scopes are listed
-and the disjointness from sibling units' scopes is
+and the disjointness from any in-flight unit's scope is
 search-established. A unit whose disjointness is not
 search-established is sequential.
 
@@ -90,6 +90,20 @@ basis for the reduction per the basis rule (`foundations.md`))
 and the locked contracts the unit honors. The subagent
 implements the in-scope decisions; it does not design — major
 new scope halts it (below).
+
+Parallel-eligible units may be dispatched concurrently; the
+disjointness basis makes that safe. **Dispatch is continuous,
+not wave-batched.** The orchestrator maintains a
+**dispatchable set** — the not-yet-dispatched units whose
+dependencies are all completed AND whose listed file and
+contract scopes are disjoint from every in-flight unit. After
+each subagent completion, the orchestrator recomputes the
+dispatchable set and fires every newly-eligible unit. A unit
+fires when it becomes dispatchable, not when a "wave" is
+reached; the disjointness check uses the same scope basis the
+impl plan declared at [READY]. (Typical DANEEL plans have one
+unit and run sequentially; this discipline applies when
+multi-unit fixes are planned.)
 
 ### Dispatch-brief template
 
