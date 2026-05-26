@@ -40,6 +40,16 @@ working context, not basis: record the conclusion, omit the steps. The
 standardized-pass artifact (below) is a separate per-cycle
 artifact, persisted alongside the tracker, not part of it.
 
+A finding may carry a `[FLAG]` annotation — a tag separate from
+the verification-status tag indicating the finding requires
+operator attention at the next closed-artifact presentation.
+Format: `F<N> [<status>] [FLAG] <summary> — basis: ...`. The
+annotation is orthogonal to verification state; `[VERIFIED]
+[FLAG]` and `[PENDING] [FLAG]` are both valid. The closed
+artifact's State summary auto-aggregates flagged findings
+(`references/closed-artifact.md`); the annotation is the
+un-fakeable artifact for that aggregation.
+
 A design decision may carry, as an optional sub-line under its
 peer entry, a structured **considered** field — one line per
 alternative hypothesis in the shape `considered: <hypothesis>
@@ -174,8 +184,10 @@ pass clean — without it, that [READY] condition is unauditable.
 
 ## The impl plan
 
-implement-phase produces an impl plan at phase start: dispatch
-units derived from the locked fix design, dependency-ordered,
+The impl plan is produced at [READY] presentation so the
+operator sees the unit list at the decision moment
+(`references/closed-artifact.md` State summary): dispatch units
+derived from the locked fix design, dependency-ordered,
 parallel-eligibility marked with a search-established
 disjointness basis (`foundations.md`). For DANEEL's simple-fix
 path the plan typically has one unit (the fix itself); the

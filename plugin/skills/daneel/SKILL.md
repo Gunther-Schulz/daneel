@@ -63,9 +63,11 @@ the complex-fix path, DANEEL's implement ends when the handoff
 artifact is produced and Clippy is invoked; Clippy's verify
 governs the fix's verification.
 
-implement opens with an impl plan (`phases/implement.md`):
-dispatch units derived from the locked fix, dependency-ordered,
-parallel-eligibility marked with a search-established
+the impl plan (`phases/implement.md`) is produced at [READY]
+presentation so the operator sees the unit list at the decision
+moment: dispatch units derived from the locked fix,
+dependency-ordered, parallel-eligibility marked with a
+search-established
 disjointness basis (`references/foundations.md`). For DANEEL's
 simple-fix path, the plan typically has one unit (the fix
 itself). When the plan contains two or more units, dispatch

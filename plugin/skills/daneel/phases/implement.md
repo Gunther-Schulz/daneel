@@ -53,13 +53,15 @@ investigate-design cycle loop.
 
 ### The impl plan
 
-implement opens with an impl plan: the locked fix's components
-grouped into **dispatch units**, dependency-ordered, with a
-parallel-eligibility marker on each. For DANEEL's simple-fix path
-the plan typically has one unit (the fix itself). A dispatch
-unit's entry cites the [VERIFIED] decisions it implements by
-their tracker identifiers. The impl plan is a planning artifact,
-not a new tracker construct.
+The impl plan is produced at [READY] presentation — the locked
+fix's components grouped into **dispatch units**, dependency-
+ordered, with a parallel-eligibility marker on each — so the
+operator sees the unit list at the decision moment
+(`references/closed-artifact.md` State summary). For DANEEL's
+simple-fix path the plan typically has one unit (the fix
+itself). A dispatch unit's entry cites the [VERIFIED] decisions
+it implements by their tracker identifiers. The impl plan is a
+planning artifact, not a new tracker construct.
 
 Parallel-eligibility is a load-bearing claim per the basis rule
 (`foundations.md`): a unit's file and contract scopes are listed
