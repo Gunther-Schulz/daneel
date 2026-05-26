@@ -107,8 +107,10 @@ multi-unit fixes are planned.)
 
 ### Dispatch-brief template
 
-Per-dispatch briefs carry only per-unit parameters (b)/(c)/(d);
-section (a) lives here and the subagent reads it on dispatch.
+Sections (a) and (d) live here and the subagent reads them on
+dispatch. Per-dispatch briefs carry only per-unit parameters
+(b) and (c) — the brief MUST NOT restate (a) or (d) content;
+it references them by section letter only.
 
 **(a) Load instructions** (uniform across dispatches in this
 run): the dispatched subagent reads, in order, `references/
@@ -135,13 +137,26 @@ below).
 ### Self-check at dispatch boundary
 
 Before returning state, the dispatched subagent (and the working
-context, for a single-unit plan) applies the standardized lenses
-most relevant to write-time issues — **Coupled-change**,
-**Failure-path** (`lenses.md`) — to its diff against the unit's
-in-scope locked design decisions. Findings are entered as
-fixed-shape ledger lines (`tracker.md`) and returned with state;
-the orchestrator appends per the Tracker writes discipline
-below.
+context, for a single-unit plan) applies these two write-time
+lenses to its diff against the unit's in-scope locked design
+decisions:
+
+- **Coupled-change** — does the fix force a coupled change
+  elsewhere for the system to stay coherent?
+- **Failure-path** — does the fix specify failure and
+  absent/invalid-precondition behaviors? A fix that introduces
+  new code paths must not let any error degrade without signal.
+
+Do NOT load `references/lenses.md` whole at dispatch — the two
+lens questions above are sufficient for self-check. The full lens
+catalogue (scopes, triggers, sub-shapes) lives in
+`references/lenses.md` and loads at the standardized inspection
+pass (per-cycle, via `phases/investigate-design.md`), not at impl
+dispatch.
+
+Findings are entered as fixed-shape ledger lines (`tracker.md`)
+and returned with state; the orchestrator appends per the
+Tracker writes discipline below.
 
 The self-check compounds with the design-time forcing function
 for delete/replace/amend decisions (`foundations.md`, True-unit
