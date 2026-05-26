@@ -98,6 +98,21 @@ mandatory; a verdict whose basis is an assumption cannot reach
 operator-resolvable assumption — never a posed choice; the
 operator overrides it free-form from the tracker.
 
+**Body shape.** A design decision body specifies: (a) the
+**target** — the named element being committed (file, function,
+hypothesis, fix-approach); (b) the **shape** — for fixes
+introducing new code: the contract surface (signature, types,
+error patterns) in inline backticks; for amendments: the change
+as a delta against current state; (c) the **acceptance
+criteria** — observable conditions for the verdict to count as
+implemented (the bug is fixed; the wrong behavior no longer
+occurs); (d) the **side effects and failure modes** — what's
+observable on success and at boundaries; (e) the **basis** per
+`foundations.md`. Multi-statement function bodies, validator
+internals, and migration SQL bodies are implementation outputs,
+not design content — they belong at impl phase, not in the
+design decision body.
+
 The verdict moves through:
 
 1. **[OUTLINED]** — a hypothesis named (candidate root cause);

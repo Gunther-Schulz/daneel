@@ -175,7 +175,7 @@ implementability test produces a named result line in the closed
 artifact at [READY] presentation: PASSED with **per-implementer-
 step external evidence** — for each step a fresh implementer
 would take to carry out the locked fix, cite the basis form per
-the basis rule (`foundations.md`): verbatim content for a read;
+the basis rule (`foundations.md`): citation + observable fact for a read;
 executable query with output for a search. Or FAILED with the
 specific gap identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the

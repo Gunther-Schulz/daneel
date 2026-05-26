@@ -6,13 +6,15 @@ reference at activation, before any phase runs.
 ## The basis rule
 
 Every load-bearing claim and every hypothesis carries a named
-**basis** — the evidence it rests on: a grep result with its
-query, a file:line read with the minimal verbatim content from
-the cited range that grounds the claim, a state observation
-(database query with its output, log entry, execution trace),
-a behavioral test result. A free-text claim of having looked, a
-paraphrase of what was read, or a summary in lieu of the content
-is not a basis.
+**basis** — the evidence it rests on: (a) a grep result with its
+query, OR (b) a file:line range citation paired with **one
+observable fact** about the cited range (count, identifier, type) that the citation grounds, OR (c) a state
+observation (database query with its output, log entry, execution
+trace) OR (d) a behavioral test result. Verify (`verify.md`) and
+convergence cycles re-open citations to verify both the location
+AND the observable fact. A free-text claim of having looked, a
+paraphrase of what was read, or a summary without an observable
+fact is not a basis.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
@@ -88,9 +90,9 @@ on a separate cycle's standardized pass alone.
 ### Secondary sources
 
 A sub-agent report or a prior session's notes is not itself a
-basis. A direct citation it carries — a file:line with the
-verbatim content, an execution trace excerpt — relays the artifact
-and can stand as a basis. Its interpretation, synthesis, or
+basis. A direct citation it carries — a file:line range with an observable
+fact, or an execution trace excerpt — relays the artifact and can
+stand as a basis. Its interpretation, synthesis, or
 recommendation cannot: re-ground those against the actual code or
 runtime state before anything rests on them.
 
