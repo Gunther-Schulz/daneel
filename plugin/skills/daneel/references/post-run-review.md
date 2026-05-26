@@ -42,6 +42,15 @@ The operator carries forward what matters by their own means.
 
 ## Standing questions
 
+Questions **surface observable artifacts** (counts,
+classifications, quotes, walks, named symptoms); they do **not**
+prescribe actions on those artifacts. Action emerges from
+operator+AI judgment in the session, applying the framework's
+existing disciplines (the gap-triage and three-form enforcement
+enumeration in `diligence-framework/development-process.md`). A
+Q that prescribes "ship X" / "observe Y" over-reaches the
+review's purpose — the session decides.
+
 Ask all seven. Phrase each **artifact-forcing**. Four outcome
 dimensions — misses (Q1), cost (Q3), gaps (Q4), attribution (Q2)
 — complemented by three protocol-mechanism dimensions: tracker
@@ -227,8 +236,10 @@ diligence-framework `development-process.md` practice 1):
   it still broke → a finding for the framework or the DANEEL
   spec.
 - An **adherence gap** — a faithful render of an unambiguous,
-  evidence-bearing rule, violated anyway → the irreducible
-  residual the verify, operator, and loopback backstops carry.
+  evidence-bearing rule, violated anyway → failure indicator
+  requiring practice 1's three-form structural-enforcement
+  enumeration; residual accepted only after enumeration shows
+  all three forms fail with cited per-form failure reasons.
 
 ## What this is not
 
