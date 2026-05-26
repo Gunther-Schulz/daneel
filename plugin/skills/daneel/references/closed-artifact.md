@@ -34,14 +34,15 @@ the artifact malformed:
    discipline); rationale and any "not recommended because…"
    callouts in this section. **For each open [CONDITIONAL]
    decision, the AI's committed default surfaces crisply** —
-   what the operator accepts by selecting proceed; the
+   what the operator accepts by selecting `next phase`; the
    [CONDITIONAL] then records [AUTO-ACCEPTED] (`tracker.md`).
    For [READY] specifically, the recommendation includes: the
    established root cause, the selected fix approach (simple
    inline / complex handoff to Clippy), and the impact-trace
    assessment. Operator's free-form override against the
    tracker is available at any moment.
-5. **Menu** — continue / proceed only; plain; no inline
+5. **Menu** — `(a)nother cycle` / `(n)ext phase` only; accept
+   `a` or `n` as menu selection; plain otherwise; no inline
    annotations except a single `← recommended` tag on the
    option matching section 4's recommendation. The tag is
    mandatory: every menu has exactly one tagged option.

@@ -113,8 +113,9 @@ The verdict moves through:
 5. **[AUTO-ACCEPTED]** — a [CONDITIONAL] verdict the AI's
    committed recommendation was taken as default when the
    operator did not override. In interactive mode, by the
-   operator selecting proceed at the closed-artifact presentation
-   without overriding any open [CONDITIONAL]; in auto-battle, by
+   operator selecting `next phase` at the closed-artifact
+   presentation without overriding any open [CONDITIONAL]; in
+   auto-battle, by
    mode-absence-of-operator. The recommendation stands; the
    assumption it rested on was not verified.
 6. **[INVALIDATED]** — a [VERIFIED] or [AUTO-ACCEPTED] verdict

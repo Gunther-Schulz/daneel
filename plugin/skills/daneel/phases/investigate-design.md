@@ -233,9 +233,9 @@ At [READY] the AI does not certify itself ready: it presents the
 investigation result — the tracker, the established root cause,
 the recorded fix approach, the fresh-session-implementability
 result line, and a recommendation — for the operator's
-judgment. The operator's decision to proceed is the transition
-to implement; until the operator proceeds, the phase continues
-and the loop may run further cycles.
+judgment. The operator's selection of `next phase` is the
+transition to implement; until the operator selects it, the
+phase continues and the loop may run further cycles.
 
 Until the working context judges the investigation complete, the
 phase is [NOT READY] and the loop continues — another cycle.
@@ -245,7 +245,7 @@ phase is [NOT READY] and the loop continues — another cycle.
 In **interactive** mode the operator advances the loop: after
 each cycle, present the tracker — its findings and recorded
 design decisions — with a recommendation, and the operator
-selects from the menu (run another cycle, or proceed) or
+selects from the menu (`another cycle` or `next phase`) or
 overrides free-form. In **auto-battle** mode the loop
 self-advances (`SKILL.md` Modes — auto-battle is interactive minus
 the operator). In either mode
@@ -254,7 +254,7 @@ override at any point.
 
 In interactive mode the menu **persists**. It is the last
 element of every response until the operator selects
-run-another-cycle or proceed. When the operator interjects
+`another cycle` or `next phase`. When the operator interjects
 free-form instead of selecting — a question, a comment, an
 override — answer the question or apply the override, **then**
 re-present the menu as the last element of that same response.

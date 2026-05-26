@@ -142,15 +142,16 @@ questions or choices: they are recorded in the tracker as
 committed decisions (`phases/investigate-design.md`,
 `references/tracker.md`), never surfaced as a choice for the
 operator to make. The **menu** carries only loop control — the
-operator selects one option: continue the loop, or proceed to
-the next phase. The operator's input on a design decision is
+operator selects one option: `another cycle` (run the loop
+again) or `next phase` (transition). The operator's input on a
+design decision is
 free-form override against the recorded tracker — never an
 answer to a posed choice. Posing a binary or n-ary choice ("A
 or B?") is the line: it constrains the operator's input to
 selected options and is not permitted.
 
-The menu **persists**. It is the last element of every
-response until the operator selects continue or proceed. The
+The menu **persists**. It is the last element of every response
+until the operator selects `another cycle` or `next phase`. The
 operator may interject free-form instead of selecting — a
 question, a comment, an override; answer the question or apply
 the override, **then** re-present the menu as the last element
@@ -167,7 +168,7 @@ discipline, tracker shape, dispatch self-check, verify
 isolation, [CONDITIONAL] handling, hypothesis-enumeration — is
 identical to interactive. The single difference is the
 operator slot at decision moments: in interactive, an operator
-selects continue or proceed at the closed-artifact
+selects `another cycle` or `next phase` at the closed-artifact
 presentation; in auto-battle, no operator is present, so the
 AI's committed recommendation is taken as default
 automatically.
@@ -177,7 +178,7 @@ per-cycle operator input. Cycles run until the working context
 judges the investigation complete ([READY],
 `phases/investigate-design.md`). At [READY], where interactive
 presents the closed artifact and waits for the operator's
-proceed-selection, auto-battle skips the presentation and
+next-phase selection, auto-battle skips the presentation and
 proceeds directly — the same default-take of the AI's
 recommendation, just without the operator-present-to-attest.
 
