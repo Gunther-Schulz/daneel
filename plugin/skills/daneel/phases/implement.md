@@ -89,6 +89,33 @@ and the locked contracts the unit honors. The subagent
 implements the in-scope decisions; it does not design — major
 new scope halts it (below).
 
+### Dispatch-brief template
+
+Per-dispatch briefs carry only per-unit parameters (b)/(c)/(d);
+section (a) lives here and the subagent reads it on dispatch.
+
+**(a) Load instructions** (uniform across dispatches in this
+run): the dispatched subagent reads, in order, `references/
+foundations.md`, `references/tracker.md`, this file
+(`phases/implement.md`), and applies the standardized lenses
+specified at "Self-check at dispatch boundary" below.
+
+**(b) Tracker reference**: default is the full tracker; reduction
+to the unit's in-scope decisions is permitted only with a cited
+cause (e.g., tracker size exceeds subagent context budget),
+recorded as the basis for the reduction per the basis rule
+(`foundations.md`).
+
+**(c) Unit scope**: the [VERIFIED] decisions this unit implements
+(cited by tracker D# identifiers); the unit's element + contract
+scopes; parallel-eligibility disjointness basis if dispatched
+concurrently with siblings.
+
+**(d) Return-state expectations**: fixed-shape ledger lines for
+new findings (`references/tracker.md`), the unit's commit SHA,
+any loopback signal (per "Loopback across the subagent boundary"
+below).
+
 ### Self-check at dispatch boundary
 
 Before returning state, the dispatched subagent (and the working
