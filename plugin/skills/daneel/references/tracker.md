@@ -201,6 +201,30 @@ standardized-pass findings artifact (above) is persisted
 alongside the tracker — a per-cycle run artifact — not filed
 into it.
 
+**Status** is one of (closed enum):
+
+- `in-progress` — the run is active in some phase
+- `[READY]` — investigate-design terminal (root cause located,
+  fix designed); awaiting operator transition to implement
+- `PASSED` — verify terminal, no [ISSUES FOUND]
+- `FAILED` — verify terminal, [ISSUES FOUND] not resolved within
+  the run
+- `COMPLETE` — run ended (post-PASSED, after closed-artifact
+  presented)
+
+**Phase** is one of (closed enum): `investigate-design`,
+`implement`, `verify`.
+
+Two malformed annotation shapes: within-field qualifier on a bare
+enum value (e.g. "PASSED (1st pass)" — the common-word-qualifier
+symptom, skill-craft `references/anti-patterns.md` Naked-judgment);
+and cross-field conflation (e.g. "verify [PASSED]" — embedding the
+Status value inside the Phase field, or vice versa). Run-context
+that might tempt annotation (the verify sub-pass number, the
+convergence-cycle outcome, the current cycle number) belongs in
+a separate **Cycles complete** optional field, not embedded in
+Status or Phase.
+
 The tracker is **append-only** at the **ledger** layer. A new
 entry, and every later change to an entry — a new status, a
 corrected summary — is a new fixed-shape ledger line appended to
