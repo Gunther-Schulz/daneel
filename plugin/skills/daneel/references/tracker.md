@@ -261,6 +261,18 @@ append-only property holds — no past line is rewritten, the
 sub-annotation is itself a new appended line — preserving the
 audit trail without the duplicate-line tax.
 
+**Sub-annotations are scoped to basis-only refinement of the
+parent entry's own claim** (same status, same summary,
+strengthened basis). Cross-run observations, recurrence-
+confirmations (e.g. "the pattern observed in F-N also appears in
+Run X's data"), and findings that surface a new claim — even one
+related to or confirming a prior entry — appear as peer-level
+F-entries with their own basis, not as sub-annotations under the
+related entry. The discriminator: does the new evidence
+strengthen the parent's own claim verbatim, or does it constitute
+its own observation? Verbatim-strengthening → sub-annotation;
+new observation → peer-level entry.
+
 A completed run's tracker file is kept; `.daneel/runs/`
 accumulates as the project's DANEEL history — no run overwrites
 another. `.daneel/` is local run state; DANEEL gitignores it on
