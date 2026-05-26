@@ -126,11 +126,12 @@ against.
 
 A weak artifact is not self-enforcing — the protocol cannot rest
 on the artifact alone. It is enforced by a **separate checker**: a
-context that did not produce the artifact re-derives it, or the
-operator inspects it. The artifact still earns its place — it
-makes faking require fabrication, and gives the checker something
-concrete to check — but the guarantee comes from the checker, not
-the artifact.
+context that did not produce the artifact re-derives it (verify's
+isolated subagent `phases/verify.md`, the convergence cycle per
+`phases/investigate-design.md`). The artifact still earns its
+place — it makes faking require fabrication, and gives the
+checker something concrete to check — but the guarantee comes
+from the checker, not the artifact.
 
 This rule reaches DANEEL's behavioral rules, not its mechanisms
 alone: a rule whose adherence cannot be read off an artifact is
@@ -151,9 +152,8 @@ This is the structural enforcement on what goes IN every recorded
 fix recommendation (`tracker.md`) and every recommendation in the
 closed artifact (`closed-artifact.md`): the artifact's content is
 thorough-fix-shaped, not cost-clipped. A cost-clipped
-recommendation is a malformed artifact, catchable at operator
-review (interactive) or at the Thorough-fix-default lens
-application (`lenses.md`).
+recommendation is a malformed artifact, caught at the
+Thorough-fix-default lens application in verify (`lenses.md`).
 
 For DANEEL specifically: a "fix the symptom not the root cause"
 recommendation is a thorough-fix violation — the fix scope is the

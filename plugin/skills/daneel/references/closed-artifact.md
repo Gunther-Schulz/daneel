@@ -51,4 +51,5 @@ the artifact malformed:
 citations, code locations are presented as code, not buried in
 prose.
 
-Operator review at presentation is the catcher.
+The closed artifact surfaces the design for the operator's
+menu/free-form decision moment.
