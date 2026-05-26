@@ -44,7 +44,7 @@ any of:
 1. Touches a file or contract not in the unit's listed scope
 2. Changes a locked contract's signature, types, or error path
 3. Introduces a new design decision (per `tracker.md`)
-4. Crosses a sibling unit's scope (breaks the disjointness basis)
+4. Crosses another unit's scope (breaks the disjointness basis)
 
 Otherwise it is a **local clarification** — recorded in the
 tracker; the unit proceeds. No work is lost when loopback fires:
@@ -125,7 +125,7 @@ recorded as the basis for the reduction per the basis rule
 **(c) Unit scope**: the [VERIFIED] decisions this unit implements
 (cited by tracker D# identifiers); the unit's element + contract
 scopes; parallel-eligibility disjointness basis if dispatched
-concurrently with siblings.
+concurrently with other units.
 
 **(d) Return-state expectations**: fixed-shape ledger lines for
 new findings (`references/tracker.md`), the unit's commit SHA,
