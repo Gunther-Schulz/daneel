@@ -29,6 +29,15 @@ at invocation. Then locate the run's tracker (see Run lifecycle)
 and enter the run's phase — investigate-design for a fresh run,
 the saved phase for a resumed one.
 
+**Tracker is the source of truth for run state.** When the
+harness provides task-tracking tools (TaskCreate, TaskUpdate, and
+similar), they are not used for DANEEL run-state tracking — the
+tracker file under `.daneel/runs/` is the source of truth.
+Harness task tools may be used for harness-level work outside
+the DANEEL protocol, but the tracker carries every finding,
+hypothesis, design decision, and status that the protocol
+depends on.
+
 ## The pipeline
 
 A run advances through three phases in order —
