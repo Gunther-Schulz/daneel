@@ -17,10 +17,14 @@ the artifact malformed:
    confirmation per `phases/investigate-design.md` Convergence
    cycle requirement), named blockers preventing [READY] (open
    [PENDING] decisions, weak-basis tracker entries, incomplete
-   hypothesis list), **impl plan preview at [READY]** (unit
-   count + sequential or parallel-eligible-by-disjointness, per
-   `phases/implement.md` The impl plan). Decision-relevant
-   content first; detail follows.
+   hypothesis list), **impl plan preview at [READY]** — header
+   line with unit count + run-level sequential-vs-parallel
+   summary + the disjointness basis citation; followed by one
+   line per dispatch unit naming dependencies (after which
+   units, or "first" if none) and parallelism (parallel with
+   which units, or "sequential"), per `phases/implement.md`
+   The impl plan. Decision-relevant content first; detail
+   follows.
 2. **Inventories** — findings (verification map) and
    hypothesis verdicts + fix approach (design decisions) as
    scannable one-per-line ledger entries with status tag and
