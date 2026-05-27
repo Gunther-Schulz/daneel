@@ -57,7 +57,7 @@ carry domain-specific shapes in DANEEL:
   §3.2) — every plausible root cause for the observed symptom is
   enumerated and assigned a status.
 
-## The debugging lens set
+## Lens set
 
 The framework's inspection passes apply a standardized lens
 set — the recurring blind-spots of the domain. DANEEL's is
