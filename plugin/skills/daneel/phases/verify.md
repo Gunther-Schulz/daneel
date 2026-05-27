@@ -18,11 +18,14 @@ working context — the one that ran investigate-design and
 implement. The agent that wrote the fix does not check it: an
 actor checking its own work carries its anchoring and blind
 spots into the check. verify works from artifacts alone — the
-tracker, `lenses.md`, the code, the failure case — so the
-isolated context is fully equipped. The isolation is the
-load-bearing property; the orchestrator (`SKILL.md`) establishes
-that isolation (in DANEEL, via a subagent spawn) each time
-verify runs. The property is unconditional, not a per-task
+current run's tracker (`.daneel/runs/<this-run>.md`),
+`lenses.md`, the code, the failure case — so the isolated
+context is fully equipped. Prior-run trackers are not basis
+material (`foundations.md`); the current tracker must carry
+re-grounded basis for anything verify checks against. The
+isolation is the load-bearing property; the orchestrator
+(`SKILL.md`) establishes that isolation (in DANEEL, via a
+subagent spawn) each time verify runs. The property is unconditional, not a per-task
 judgment; the mechanism for achieving it is instance-specific.
 
 verify's recorded result names the context it was conducted in
