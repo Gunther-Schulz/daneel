@@ -110,6 +110,16 @@ times what it should is broken in its own way. Artifact-forcing:
 name the procedure parts, quote the tracker lines or pass
 artifacts, don't generalize.
 
+**Cost data discipline.** Per-subagent cost surfaces only as
+harness-emitted telemetry — the `<usage>` block in the
+task-notification message (token count, tool-use count, duration).
+Arithmetic on telemetry (per-subagent table, sum across subagents)
+is permitted. Orchestrator-side token cost is not surfaced (not
+harness-emitted). Per-activity breakdowns within a subagent (e.g.,
+"~30k for reading parent tracker") are not surfaced (estimate, not
+telemetry). Artifact-forcing: data that can be wrong and checked,
+not a guess.
+
 For DANEEL specifically, watch for: per-cycle standardized
 inspection passes that produced cited-clean for lenses
 genuinely out of scope (over-attestation); hypothesis

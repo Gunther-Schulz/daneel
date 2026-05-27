@@ -1,6 +1,6 @@
 {
   "name": "daneel",
-  "version": "0.2.48",
+  "version": "0.2.49",
   "description": "Evidence-based debugging for Claude Code: systematic root-cause investigation with verification map, hypothesis-elimination, and user-controlled scope.",
   "author": {
     "name": "Gunther Schulz"
