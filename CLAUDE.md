@@ -17,11 +17,16 @@ separate context — the procedure is `development-process.md` in the
 source breaks re-derivability: the spec and the instance drift, and
 the change cannot be reproduced for another instance.
 
-DANEEL-specific content (debugging-discipline elaborations from the
-prior standalone `DANEEL.md`, the DANEEL lens set) renders into the
-instance's references. The framework spec governs the structural
-discipline; the DANEEL-specific lens names and disciplines are the
-instance's domain binding.
+DANEEL-specific content — the bindings, the lens set, and the
+debugging disciplines — lives in this repo's `spec/` directory
+(`spec/bindings.md`, `spec/lens-set.md`,
+`spec/debugging-disciplines.md`), and renders into the instance's
+plugin files. The framework spec governs the structural discipline;
+DANEEL's `spec/` carries the domain binding. Per contract 2 in
+anneal-framework `development-process.md` "The three levels", every
+load-bearing rule in the plugin originates in one of two specs —
+framework spec OR DANEEL's `spec/`. A plugin edit without a cited
+spec origin is drift.
 
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, `marketplace.json`, `legacy/` — is
