@@ -247,27 +247,37 @@ implement phase rather than implementing inline.
 
 ### Handoff artifact
 
-The handoff is a structured return passed to Clippy as its
-investigate-design starting input:
+Clippy takes a development task the way an operator states one: its
+investigate-design captures the **verbatim request** alongside a
+**requirements record** enumerating the goal as R1..Rn, held
+header-adjacent in Clippy's own tracker (Clippy
+`phases/investigate-design.md`, "Requirements record";
+`references/tracker.md`). The handoff is written in THAT shape —
+DANEEL does not define a private field set for Clippy to honor.
 
-- **root_cause** — the [VERIFIED] root cause from DANEEL's
-  tracker (the surviving hypothesis with its basis)
-- **fix_approach** — the [VERIFIED] fix recommendation from
-  DANEEL's tracker (with its basis)
-- **scope** — the file and contract scope identified in DANEEL's
-  impact trace (`references/debugging-disciplines.md` D6.3)
-- **pattern_instances** — if the root cause is architectural,
-  the pattern-repetition audit results (`debugging-disciplines.md`
-  D6.4): the enumeration of all instances and which are SAME BUG
-  vs DIFFERENT CONTEXT
-- **failure_case** — the concrete example from
-  investigate-design that demonstrates the wrong behavior, used
-  for verify to confirm the fix
+The handoff is a task statement in two parts:
 
-Clippy receives this handoff as its task input. Clippy's
-investigate-design starts with these as design premises (basis:
-DANEEL's tracker artifacts); Clippy designs the implementation
-plan and proceeds through its own implement and verify phases.
+- **The request** — states the fix to make, carrying DANEEL's
+  [VERIFIED] root cause with its basis, the concrete failure case
+  demonstrating the wrong behavior, and the file and contract scope
+  from the impact trace (`references/debugging-disciplines.md`
+  D6.3). Where the root cause is architectural, the
+  pattern-repetition audit (D6.4) travels with it: the enumeration
+  of instances and which are SAME BUG vs DIFFERENT CONTEXT.
+- **The requirements (R1..Rn)** — the behaviours the fix must
+  exhibit, stated as goals rather than as an implementation. The
+  failure case no longer reproducing is always among them. DANEEL's
+  fix recommendation, where it has one, is named as a **proposed
+  solution**, separate from the requirements — the separation
+  Clippy's requirements record already makes.
+
+Clippy receives this as its task input and runs its own
+investigate-design over it. **DANEEL's findings travel as evidence,
+not as locked design.** Clippy treats a proposed solution as "a
+strong input, not a locked design ... confirm, sharpen, or replace
+it on evidence" (Clippy `phases/investigate-design.md`, Design), so
+a handoff demanding its approach be adopted unexamined contradicts
+the phase it hands to. The basis travels; the authority does not.
 
 ### Cross-instance loopback
 
