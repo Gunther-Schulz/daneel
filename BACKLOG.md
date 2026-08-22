@@ -1,10 +1,18 @@
-# Roadmap
+# Backlog
 
-Open items for the DANEEL plugin. Closed items move to commit history.
+Work items for the DANEEL plugin, graded by decision-completeness —
+not by intent to build. Closed items move to commit history (this
+repo's declared closure home): entries leave by commit ref or by a
+deliberate one-line drop, never by a DONE grade left sitting here.
+
+Grade vocabulary, closed set: **READY** — design decided, verifier
+named, done-criterion stated, write-set named; a fresh context could
+execute it. **PARKED** — carries its named missing evidence,
+decision, or trigger.
 
 ## Open
 
-- **Auto-battle mode documentation.** DANEEL inherits the framework's
+- **PARKED — Auto-battle mode documentation.** DANEEL inherits the framework's
   interactive / auto-battle mode pair, but the README only describes
   interactive use. Decide whether auto-battle is in DANEEL's scope
   (debugging is higher-risk than building — auto-accepting hypothesis-
@@ -12,7 +20,10 @@ Open items for the DANEEL plugin. Closed items move to commit history.
   doc gap to fill. Cross-reference with Clippy's README, which does
   document both modes.
 
-- **Effectiveness unmeasured against `diagnosing-bugs`.** Whether
+- **PARKED — Effectiveness unmeasured against `diagnosing-bugs`.**
+  Missing: the operator decision on the interactivity confound, named
+  at the end of this entry. The pilot below is READY and needs it not
+  at all. Whether
   DANEEL outperforms the machine-local `~/.claude/skills/`
   `diagnosing-bugs` skill — or a bare model with no skill at all — on
   real diagnosis is ungraded in both directions. Basis: operator
@@ -51,20 +62,30 @@ Open items for the DANEEL plugin. Closed items move to commit history.
   not as discipline — so either the operator plays their part
   identically in every arm, or the design is invalid before it
   starts. Settle this first; everything else is decided.
-  Cheap pilot, runnable WITHOUT settling the above and recommended
-  first: grade the two `diagnosing-bugs` runs already on disk against
-  what turned out to be true — wan2gp perf diagnosis (session
-  `48c328f5`, 2026-08-22) and CachyOS mouse issue (`86cb95f3`,
-  2026-08-21). Costs no new runs, separates "the skill was ignored"
-  from "the skill is insufficient" (opposite repairs), and sharpens
-  the criteria before any arm is spent. Criteria that first meet
-  reality during the real run are the ones that turn out unmeasurable.
   Tooling: `skill-craft:eval-skill` already implements Tier 1
   triggering and Tier 2 behaviour-delta — use it, do not hand-roll.
   Write-set: this repo (design, results, verdict). No plugin or spec
-  change until the measurement lands.
+  change until the measurement lands. Run the pilot below first.
 
-- **Trigger collision with `diagnosing-bugs`.** DANEEL's SKILL.md
+- **READY — Pilot: grade the two `diagnosing-bugs` runs on disk.**
+  Runnable without settling the confound above, and recommended
+  before any arm is spent. Grade what actually happened in the wan2gp
+  perf diagnosis (session `48c328f5`, 2026-08-22) and the CachyOS
+  mouse issue (`86cb95f3`, 2026-08-21) against what turned out to be
+  true. Verifier / done-criterion: for each run, a yes-or-no on
+  whether an executed red repro existed before the first hypothesis —
+  the skill's own Phase 1 gate — plus correct/partial/wrong on the
+  cause. That single question separates "the skill was ignored" from
+  "the skill is insufficient", which take opposite repairs. Costs no
+  new runs, and sharpens the criteria before the full matrix: criteria
+  that first meet reality during the real run are the ones that turn
+  out unmeasurable. Write-set: this repo (results + the sharpened
+  criteria, folded back into the entry above).
+
+- **READY — Trigger collision with `diagnosing-bugs`.** Verifier:
+  `skill-craft:eval-skill` Tier 1 over both descriptions. Done when a
+  bare "this is broken" routes deterministically to the intended
+  skill. DANEEL's SKILL.md
   description claims `"debug X"`, `"investigate why X is wrong"`,
   `"find the root cause of Y"`; the machine-local `diagnosing-bugs`
   claims `"debug this"` plus broken/throwing/failing/slow. On a bare
