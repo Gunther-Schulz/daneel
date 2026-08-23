@@ -761,14 +761,45 @@ renamed (`command grep -rn`, zero residual), this journal's
 entries 7, 9 and 12 included, so a later editor searching for the
 rule finds one name.
 
-Compliance leaves an ARTIFACT rather than a feeling: three cited
-lines, one per correctness question — what the number is ABOUT
-(entity, unit, namespace); whether the output is THIS run's
-(freshness of file, script and process; whether an output file was
-appended to); and whether a fresh query, filter, sort or tally has
-been shown to DISCRIMINATE on a known-positive/known-negative pair
-drawn from the REAL data. That last is the one nothing prompts: a
-self-built view presents as looking rather than as measuring.
+**Form settled by the operator**, and the two decisions in it are
+what keep the lens alive rather than overridden.
+
+FIRES EVERY CYCLE, unconditionally, and the grounding IS the
+justification: all eight incidents produced numbers that looked
+FINE. A trigger keyed to suspicious measurements would have fired
+on NONE of them. That is the distinction from the sufficiency
+half stated as a testable claim rather than as an intuition — an
+insufficient instrument announces itself by failing to separate,
+a defective one does not announce itself at all.
+
+ONE LINE, not an audit. Compliance is a single cited line per
+cycle covering only the instruments THAT CYCLE LEANED ON, and it
+answers two questions: what the number is ABOUT (entity, unit,
+namespace, and the vocabulary the instrument emits), and whether
+the output is THIS RUN'S (file, script and process freshness;
+whether an output file was appended to rather than replaced). A
+full per-instrument audit was considered and rejected as
+overkill — a guard costing more than the defect trains the
+override reflex that kills it, which is this corpus's own rule
+applied to its own new guard.
+
+The known-positive/known-negative PAIR stays required, but only
+for a query, filter, sort or tally built FRESH that cycle: a
+self-built view presents as merely looking rather than as
+measuring, so nothing else prompts the proof. An instrument
+already exercised in an earlier cycle of the same run does not
+re-earn its pair. That carve-out is what stops the pair
+requirement from becoming the audit the one-line rule just
+rejected.
+
+The artifact is what binds: a cycle whose standardized-pass
+artifact lacks the line is visibly non-compliant.
+
+The vocabulary clause inside question one has its own provenance,
+carried over from the `[INVALIDATED]` two-senses finding: an
+instrument's OUTPUT VOCABULARY is part of the instrument, and a
+status word carrying two senses is invisible at every reading
+site because each reader meets only one of them.
 
 Anchored at `phases/investigate-design.md`, the standardized
 inspection pass, which already runs every cycle. One sentence
@@ -779,6 +810,10 @@ infer it from a lens file's scope line.
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review. Path 1 throughout: eight
 measured incidents, two read here and six relayed. Watch the
-false-fire rate — three cited lines every cycle is exactly the
-shape that gets filled reflexively, and a guard filled reflexively
-is a guard that has stopped reading.
+false-fire rate — one line every cycle is deliberately the
+cheapest form that still leaves an artifact, and even one line is
+fillable reflexively; a guard filled reflexively is a guard that
+has stopped reading. If the firing log fills with lines that
+recite the questions rather than answer them about a named
+instrument, the form is wrong and the repair is a narrower scope,
+never a softer predicate.

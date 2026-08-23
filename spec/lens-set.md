@@ -88,31 +88,41 @@ records been exhausted; and can it then discriminate the live
 hypotheses? The three run in that order, and only the last has a
 conditional trigger.
 
-Correctness leads because a defective instrument is invisible
-from inside the cycle that uses it: its output arrives already
-shaped like an answer. An INSUFFICIENT instrument fails to
-separate the hypotheses and says so; a DEFECTIVE one separates
-them wrongly and says nothing. Three questions, each answered
-against the instrument's own output and each leaving a cited
-line:
+The correctness question fires on EVERY cycle, and the incidents
+that minted it are the reason: all eight produced numbers that
+looked FINE. A trigger keyed to suspicious measurements would
+have fired on none of them. That is the whole difference from the
+sufficiency question below — an insufficient instrument announces
+itself by failing to separate the hypotheses; a defective one
+does not announce itself at all, its output arriving already
+shaped like an answer.
+
+ONE LINE per cycle, covering the instruments THIS CYCLE LEANED
+ON and not every instrument in the run. The line answers two
+questions:
 
 - **What is the number ABOUT?** The entity measured (this
   process, or the whole machine), the unit (a total, or a rate),
-  the namespace an identifier belongs to. A system-wide counter
-  read as per-process contaminates every figure derived from it
-  and stays plausible until one of them is arithmetically
-  impossible.
-- **Is this output THIS run's?** The file, the script and the
+  the namespace an identifier belongs to, and the vocabulary the
+  instrument emits — a status word carrying two senses is the
+  case each reader meets only one of. A system-wide counter read
+  as per-process contaminates every figure derived from it and
+  stays plausible until one of them is arithmetically impossible.
+- **Is the output THIS RUN'S?** The file, the script and the
   process actually read — a generated probe re-run stale, a
   transient PID caught by a first match, an output file APPENDED
-  to so an earlier cycle's row counts as this cycle's first
-  result. Each returns exactly what a fresh correct run returns.
-- **Has a fresh query, filter, sort or tally been shown to
-  DISCRIMINATE?** A self-built view presents as looking rather
-  than as measuring, so nothing prompts the proof. The proof is a
-  PAIR drawn from the REAL data: a case known to carry the
-  property appears, one known not to is absent. A constructed row
-  proves the expression parses, never that it separates.
+  to rather than replaced, so an earlier cycle's row counts as
+  this cycle's first result. Each returns exactly what a fresh
+  correct run returns.
+
+A FRESH query, filter, sort or tally built this cycle carries in
+addition a known-positive/known-negative PAIR drawn from the REAL
+data: a case known to carry the property appears, one known not
+to is absent. A self-built view presents as looking rather than
+as measuring, so nothing else prompts the proof, and a
+constructed row proves the expression parses rather than that it
+separates. An instrument already exercised in an earlier cycle of
+this run does not re-earn its pair.
 
 Read before building: a discriminating observable is often
 already collected and unread, because an instrument reports
@@ -149,13 +159,15 @@ when it produces an observable on which the live hypotheses
 DIFFER, each one's predicted value named BEFORE the run — not
 when more logging exists.
 
-*Scope:* every cycle. The correctness questions carry no
-conditional trigger — a cycle whose measurements look decisive
-is exactly the case they exist for, confident and separable and
-false being what a defective instrument produces. The exhaustion
-and discrimination halves are answered in one cited line where
-the live hypotheses are already separable by the evidence in
-hand.
+*Scope:* every cycle. The correctness question carries no trigger
+condition — the cycle whose measurements look fine is the case it
+exists for. Its artifact is the ONE line above, and a cycle whose
+standardized-pass artifact lacks that line is visibly
+non-compliant; a per-instrument audit is not what is being asked
+for and would train the override reflex that kills the lens. The
+exhaustion and discrimination halves are answered in one further
+cited line where the live hypotheses are already separable by the
+evidence in hand.
 
 ## Arrangement-parity
 
