@@ -71,7 +71,8 @@ The rule rejects **silent substitution**: missing or malformed
 evidence defaulted to a plausible proxy that propagates as if it
 were the basis. Surface the gap, do not substitute.
 
-The rule has two edges — basis-naming and true-unit basis.
+The rule has three edges — basis-naming, true-unit basis, and
+entailment.
 
 ### Basis-naming
 
@@ -110,6 +111,32 @@ A basis must cover the claim's true unit, not a coarser proxy.
   a state value at a point in execution) has the whole construct
   as its unit. Its basis is a read to the construct's visible
   close, not a window that catches part of it.
+
+### Entailment
+
+A basis grounds a claim only where it ENTAILS it. The two edges
+above ask whether a basis EXISTS and whether it covers the claim's
+true unit. Both are satisfied by evidence that is real, correctly
+measured, at the right unit — and does not support the verdict
+written beside it. The defect sits between the basis and the
+claim, which is where neither edge looks.
+
+So a load-bearing claim states what its basis ESTABLISHES and not
+only which artifact the basis is, and it stands only where what is
+established covers what the claim asserts. A claim wider than its
+basis is malformed whatever its status, and its status is what
+makes it look sound.
+
+The recurring shape, and the expensive one: evidence that an
+UNKNOWN variable EXISTS, read as evidence that the KNOWN ones are
+INERT. Identical arrangements producing different results prove an
+additional variable; they demote nothing that was configured.
+"Not necessary" collapsed into "not causal" is the same move on
+the elimination track, and an elimination made on it strikes a
+candidate that was never eliminated. The `re-entry:` condition
+(`tracker.md`) does not catch that one: a condition not yet true
+reads as a live check while the verdict it guards is already
+wrong.
 
 ### Complete cause-set as completeness claim
 

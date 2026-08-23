@@ -438,8 +438,8 @@ eliminated hypothesis carries a `re-entry:` sub-line naming the
 observation that would return it to [PENDING], written AT the
 strike, and self-refuting where that observation already holds.
 
-For the FIRST: the design-decision basis rules gain the
-entailment clause — see "Coverage limit, and its closure" below,
+For the FIRST: the basis rule in `foundations.md` gains a third
+edge, entailment — see "Coverage limit, and its closure" below,
 which is where that half is recorded, having been left open when
 this entry was first written.
 
@@ -467,25 +467,38 @@ condition is already satisfied at the strike — as it was here,
 condition is not yet true still stands, so the re-entry rule was
 never the answer to it.
 
-The first failure is now answered in its own right, in
-`tracker.md`'s design-decision basis rules: **a basis grounds a
-verdict only where it ENTAILS it.** The basis field asks whether
-evidence EXISTS, and the defect sits between the evidence and the
-verdict where no field looks — so the basis states what it
-ESTABLISHES and not only which artifact it is, and the verdict
-stands only where what is established covers what the summary
-claims. The named shape is this incident's own: evidence that an
-UNKNOWN variable EXISTS, read as evidence that the KNOWN ones are
-INERT.
+The first failure is now answered in its own right, as a THIRD
+EDGE of the basis rule in `foundations.md`: **a basis grounds a
+claim only where it ENTAILS it.** The named shape is this
+incident's own — evidence that an UNKNOWN variable EXISTS, read as
+evidence that the KNOWN ones are INERT.
 
-Placed in `tracker.md` rather than in `foundations.md`'s basis
-rule because the gap is a relation between two FIELDS of the
-ledger line, and the ledger line is `tracker.md`'s. The basis rule
-governs what counts as evidence; nothing there is wrong, and
-widening it would have put the fix one level away from the shape
-it repairs. The compliance artifact is one clause inside a field
-that is already mandatory — no new field, and its omission is
-visible in the line.
+**Placement, corrected once.** It first landed in `tracker.md`, on
+the argument that the gap is a relation between two FIELDS of the
+ledger line and the ledger line is `tracker.md`'s. A reviewer
+reading both homes put it in `foundations.md` instead, and the
+deciding evidence is `foundations.md`'s own enumerating sentence:
+"The rule has two edges — basis-naming and true-unit basis." Both
+edges ask whether a basis EXISTS or whether it covers the claim's
+UNIT; neither asks whether it SUPPORTS the claim. That sentence is
+the hollow one, and it is the same amendment shape entry 10
+recorded — widening at the hollow sentence is amendment in place,
+while landing the rule elsewhere leaves it hollow. It now reads
+"three edges".
+
+The tracker keeps only what it owns: the basis FIELD carries what
+the evidence establishes, so the entailment edge is readable off
+the ledger line rather than reconstructed from it. Rule in
+`foundations.md`, field shape in `tracker.md` — two different
+facts, not one fact in two homes.
+
+The correction also has a reach beyond placement. In
+`tracker.md` the rule bound design-decision verdicts only; in
+`foundations.md` it binds every load-bearing claim the basis rule
+reaches — investigation premises, embedded claims, completeness
+counts. The defect is not specific to the design-decision track,
+and the narrower home would have left every other claim
+unguarded.
 
 Graded against the re-entry rule above, since they now sit
 adjacent: neither subsumes. Entailment asks whether the verdict
