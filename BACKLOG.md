@@ -12,6 +12,41 @@ decision, or trigger.
 
 ## Open
 
+- **PARKED — The loop has a termination condition but no CONVERGENCE
+  signal.** [READY] says stop when exactly one hypothesis is
+  [VERIFIED] and the rest [INVALIDATED]. Nothing anywhere asks
+  whether the run is getting CLOSER to that. Incident (2026-08-23
+  H3-encode run, `.daneel/runs/2026-08-23-h3-encode-after-generation.md`
+  in the `wan2gp` repo): sixteen hypotheses died across nine hours and
+  each death spawned a successor, so the live count churned at roughly
+  constant size rather than shrinking toward one. Every individual
+  cycle was disciplined and produced real findings on real bases; the
+  SERIES went nowhere, and nothing in the loop could see it, because
+  each cycle grades only itself. The signal that eventually fired was
+  the OPERATOR saying they could not continue — a human noticing a
+  flat trend across rounds, which is precisely the part auto-battle
+  removes.
+
+  What a check would read is already in the tracker and computable,
+  not judgement: hypotheses opened versus closed per cycle, and
+  whether closures concentrate in the newest cycle's own material. A
+  run killing one and opening one per cycle is not converging however
+  good its evidence.
+
+  MISSING, and why this is parked rather than ready — two decisions,
+  neither of which a fresh context can make from the record:
+  (1) how it must not double-fire with the `Instrument-sufficiency`
+  lens: a churning hypothesis count is sometimes the SYMPTOM of an
+  instrument that cannot separate the candidates, in which case the
+  cure is the instrument and a convergence alarm would fire on top of
+  a lens already firing. Whichever is built has to yield to the other.
+  (2) the false-fire question: a convergence alarm on a genuinely hard
+  bug fires on legitimate slow progress, and a guard that fires on
+  correct work trains the override reflex that kills it. That needs
+  thinking through, not a quick landing — which is the whole reason
+  this is a booking.
+  Write-set and verifier: undecided, and dependent on (1).
+
 - **PARKED — Auto-battle mode documentation.** DANEEL inherits the framework's
   interactive / auto-battle mode pair, but the README only describes
   interactive use. Decide whether auto-battle is in DANEEL's scope

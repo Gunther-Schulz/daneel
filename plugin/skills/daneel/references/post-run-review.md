@@ -3,9 +3,8 @@
 An optional final step: after verify reports [PASSED] (or after
 handoff to Clippy on the complex-fix path), surface what the
 protocol missed or got wrong, to inform the next iteration. It
-is the framework's empirical-validation procedure (specified in
-the framework spec `modules.md` §4); DANEEL operates it as
-below.
+is DANEEL's empirical-validation procedure, inherited and now
+specified here; DANEEL operates it as below.
 
 ## When and how
 
@@ -55,16 +54,15 @@ The operator carries forward what matters by their own means.
 Questions **surface observable artifacts** (counts,
 classifications, quotes, walks, named symptoms); they do **not**
 prescribe actions on those artifacts. Action emerges from
-operator+AI judgment in the session, applying the framework's
-existing disciplines (the gap-triage and three-form enforcement
-enumeration in `anneal-framework/development-process.md`). A
-Q that prescribes "ship X" / "observe Y" over-reaches the
-review's purpose — the session decides.
+operator+AI judgment in the session, applying the gap triage in
+"What outcomes mean" below. A Q that prescribes "ship X" /
+"observe Y" over-reaches the review's purpose — the session
+decides.
 
-Ask all seven. Phrase each **artifact-forcing**. Four outcome
+Ask all six. Phrase each **artifact-forcing**. Four outcome
 dimensions — misses (Q1), cost (Q3), gaps (Q4), attribution (Q2)
-— complemented by three protocol-mechanism dimensions: tracker
-(Q5), verify (Q6), validation-watch (Q7).
+— complemented by two protocol-mechanism dimensions: tracker
+(Q5) and verify (Q6).
 
 ### Q1. Investigation defects — misses (the keystone)
 
@@ -184,37 +182,6 @@ catcher itself is failing. Mechanical checks; adherence vs
 render vs spec triage applies. (Skip Q6 on the complex-fix
 path — Clippy's verify governs there.)
 
-### Q7. Validation-watch cross-check
-
-For each V-N in `anneal-framework/dev-notes/validation-watch.md`,
-read the entry's Status line and respond per state:
-
-- **WATCHING**: walk the production signal against this run's
-  tracker. Classify as **confirms** (cite the evidence),
-  **refutes** (cite the evidence), or **no relevant evidence in
-  this run**.
-- **FIX-SHIPPED**: walk for **load-bearing instances** of the
-  mitigation. Classify as **mitigation load-bearing** (cite the
-  finding the mitigation caught + counter-factual: would this
-  have escaped the pre-mitigation protocol?), **mitigation not
-  exercised this run** (failure shape didn't surface), or
-  **mitigation evaded** (a finding escaped that the mitigation
-  should have caught — INVALIDATED trigger).
-- **RESOLVED**: skip — already validated; only re-walk if a
-  later recurrence surfaces in Q1-Q4 findings.
-- **INVALIDATED**: skip — already known to need new analysis.
-
-Q7 actively closes the watch loop. The triage routing below
-captures signals passively — it surfaces only Q1-Q4 findings
-that happen to bear on a V-N. Q7 forces the per-entry walk so
-signals accumulate systematically rather than waiting for
-fortuitous correlations. "No relevant evidence" across many
-WATCHING entries is itself useful signal — a watch entry nobody
-exercises warrants its own scrutiny. A **mitigation load-bearing**
-finding on a FIX-SHIPPED entry is the positive evidence needed
-to promote it to RESOLVED. The operator decides which V-Ns to
-transition from the walk's findings.
-
 ### Q2. Value attribution
 
 Tag every finding F1..Fn by what surfaced it — a standardized
@@ -248,20 +215,25 @@ artifact yields data that can be wrong and checked. Use:
 
 ## What outcomes mean
 
-The review surfaces; the operator decides what to do. The
-framework's triage applies (`foundations.md`,
-anneal-framework `development-process.md` practice 1):
+The review surfaces; the operator decides what to do. The triage
+(`foundations.md`):
 
 - A **render gap** — the plugin file does not faithfully carry
-  the spec → re-render.
+  DANEEL's `spec/` → re-render.
 - A **spec gap** — the render is faithful and was followed, and
-  it still broke → a finding for the framework or the DANEEL
-  spec.
+  it still broke → a finding for the DANEEL spec.
 - An **adherence gap** — a faithful render of an unambiguous,
-  evidence-bearing rule, violated anyway → failure indicator
-  requiring practice 1's three-form structural-enforcement
-  enumeration; residual accepted only after enumeration shows
-  all three forms fail with cited per-form failure reasons.
+  evidence-bearing rule, violated anyway → a failure indicator:
+  enumerate the structural-enforcement forms available for that
+  rule and show why each fails before accepting the residual,
+  each with its own cited reason.
+
+  The enumeration once cited a fixed three-form list that lived
+  in the framework repo. That text is **UNRECOVERABLE** and the
+  three forms are not named anywhere here. Use the enforcement
+  ladder in the `skill-craft` skill as the working list — it is
+  the nearest available equivalent, NOT a recovered copy of the
+  original — and record which forms were considered.
 
 ## What this is not
 

@@ -180,9 +180,8 @@ executable query with output for a search. Or FAILED with the
 specific gap identified. PASSED without per-step external
 citation is a malformed artifact: the test answers from the
 recall pool that wrote the design rather than from external
-evidence, the failure shape that allows false-[READY]s (V-5 in
-`anneal-framework/dev-notes/validation-watch.md`). Without the
-result line itself, the closed-artifact form
+evidence, the failure shape that allows false-[READY]s. Without
+the result line itself, the closed-artifact form
 (`references/closed-artifact.md`) is also malformed and the
 [READY] declaration unenforced. The result line is recorded in
 the tracker for post-run review in both modes.

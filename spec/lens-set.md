@@ -1,14 +1,12 @@
 # DANEEL Specification — Lens set
 
-DANEEL's standardized lens set — the debugging-specific content
-for the Anneal framework's standardized lens set. The framework
-leaves the *set* to the domain instance (`anneal-framework`
-`modules.md` §2.2); modes and artifact formats are
-framework-level and used as specified there.
+DANEEL's standardized lens set — the debugging-specific
+inspection criteria the standardized pass applies. The set is
+DANEEL's own; modes and artifact formats are specified in
+`plugin/skills/daneel/references/`.
 
-Each lens fills the lens-entry shape — Name, Question, Scope —
-from the framework's `modules.md` §2.1. Built on the DANEEL
-bindings (`bindings.md`).
+Each lens fills the lens-entry shape — Name, Question, Scope.
+Built on the DANEEL bindings (`bindings.md`).
 
 ---
 
@@ -78,10 +76,28 @@ stop-and-add-to-hypothesis-list; cannot continue investigation
 based on unverified theory. Marking a hypothesis [VERIFIED]
 requires evidence the hypothesis cannot be produced without
 doing the verification work (per the basis rule,
-`anneal-framework/spec/core.md` §3.2).
+`plugin/skills/daneel/references/foundations.md`).
 
 *Scope:* any cycle that locks a hypothesis verdict ([VERIFIED]
 or [INVALIDATED]).
+
+## Instrument-sufficiency
+
+*Question:* can the instrumentation in place discriminate the
+live hypotheses? Where two of them predict the same observable
+under the current tracing, extending the instrument IS this
+cycle's work — a counter, a finer log, a probe at the divergence
+point — not a further experiment against an instrument that has
+already returned everything it can. An instrument is built once
+and improved every cycle: the questions sharpen faster than the
+tracing does, and a static one silently caps the investigation
+at the resolution it was born with. The extension is complete
+when it produces an observable on which the live hypotheses
+DIFFER, each one's predicted value named BEFORE the run — not
+when more logging exists.
+
+*Scope:* any cycle whose live hypotheses are not separable by
+the evidence the current instruments produce.
 
 ## Arrangement-parity
 
@@ -155,7 +171,8 @@ audit enumerates all uses of the same pattern, classifies each
 wrong instances.
 
 The enumeration is itself a completeness claim
-(`anneal-framework/spec/core.md` §3.2) — the basis cites every
+(`plugin/skills/daneel/references/foundations.md`) — the basis
+cites every
 **plausible reference shape** the audit grep covered. A pattern
 can hide behind **bare-form** (just the identifier or call
 shape), **path-form** (qualified module path), **parent-module

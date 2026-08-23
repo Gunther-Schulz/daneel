@@ -1,14 +1,14 @@
 # DANEEL Specification — Bindings
 
-DANEEL is the Anneal framework instantiated for debugging. The
-framework's method — the model, the mechanisms, the grounding
-discipline, phase specs, and the status-state machine — is
-specified in the `anneal-framework` repo (`spec/core.md`). That
-spec is domain-general; this document binds it to the debugging
-domain.
+DANEEL derives historically from the Anneal framework and is now
+independent of it. The inherited method — the model, the
+mechanisms, the grounding discipline, phase specs, and the
+status-state machine — is domain-general and now lives in this
+repo (`plugin/skills/daneel/`); this document binds it to the
+debugging domain.
 
-DANEEL adds nothing to the framework's method. It supplies the
-things the framework leaves to the instance: the debugging
+DANEEL adds nothing to that method. It supplies the
+domain-specific parts: the debugging
 **bindings** below, the debugging **standardized lens set**
 (`lens-set.md`), the debugging-specific **investigate-design
 disciplines** (`debugging-disciplines.md`), and the
@@ -18,8 +18,7 @@ disciplines** (`debugging-disciplines.md`), and the
 
 ## Bindings
 
-Each domain-general term in the framework spec takes its
-debugging value:
+Each domain-general term takes its debugging value:
 
 | Framework term | DANEEL binding |
 |---|---|
@@ -40,8 +39,7 @@ debugging value:
 
 ## Debugging-specific track content
 
-The framework's two tracks (`anneal-framework/spec/core.md` §5)
-carry domain-specific shapes in DANEEL:
+The two tracks carry domain-specific shapes in DANEEL:
 
 - **F-track (findings)** is the **verification map** — components
   in the failure path, each carrying [PENDING] / [PARTIALLY
@@ -53,9 +51,10 @@ carry domain-specific shapes in DANEEL:
   fix approach** — candidate root causes ([OUTLINED] →
   [PENDING] → [CONDITIONAL] → [VERIFIED] / [INVALIDATED]) and
   the committed fix recommendation. Hypothesis-list completeness
-  is itself a completeness claim (`anneal-framework/spec/core.md`
-  §3.2) — every plausible root cause for the observed symptom is
-  enumerated and assigned a status.
+  is itself a completeness claim
+  (`plugin/skills/daneel/references/foundations.md`, "Complete
+  cause-set as completeness claim") — every plausible root cause
+  for the observed symptom is enumerated and assigned a status.
 
 ## Lens set
 
@@ -73,14 +72,10 @@ tracing, root cause analysis), specified in
 
 ## Run-artifact persistence
 
-The framework requires the tracker to persist across
-interruptions so a run resumes rather than restarts (framework
-`core.md` §6), and specifies it as an **append-only** ledger
-(framework `modules.md` §3.1). It further requires each
-cycle's **standardized-pass findings artifact** (framework
-`modules.md` §3.2) to persist. For these the instance supplies
-the persistence mechanism; DANEEL supplies the file mechanism
-below.
+The tracker persists across interruptions so a run resumes rather
+than restarts, and is an **append-only** ledger. Each cycle's
+**standardized-pass findings artifact** persists likewise. DANEEL
+supplies the file mechanism below.
 
 Each run's tracker is its own append-only markdown file under
 `.daneel/runs/`, named for the run — holding a header (the

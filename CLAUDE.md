@@ -2,47 +2,32 @@
 
 Rules for maintaining the DANEEL plugin itself.
 
-## The skill content is rendered, not authored
+## DANEEL is independent; its skill content is authored here
 
-DANEEL is an *instance* of the Anneal framework — parallel to
-Clippy. The skill files — `plugin/skills/daneel/SKILL.md`, `phases/`,
-and `references/` except `references/foundations.md` (**maintained
-locally**, see below) — are **rendered** from the framework spec (the
-`anneal-framework` repo, `spec/`). They are not authored here, and
-are never where a behavior change originates.
+**Operator decision 2026-08-23.** DANEEL derives historically from
+the Anneal framework, and is now independent of it. The
+`anneal-framework` repo is gone — measured, not assumed: it is
+absent from the filesystem, so every citation into it was dangling,
+not merely stale.
 
-A change to how DANEEL behaves goes to the framework spec first:
-committed there, then re-rendered into these files and verified in a
-separate context — the procedure is `development-process.md` in the
-`anneal-framework` repo. Hand-editing a skill file as if it were
-source breaks re-derivability: the spec and the instance drift, and
-the change cannot be reproduced for another instance.
+So there is no render contract and no upstream to route through.
+All skill content — `plugin/skills/daneel/SKILL.md`, `phases/`,
+`references/` — is **authored and maintained in this repo**. A
+change to how DANEEL behaves is made here, invoking `skill-craft`
+first per "Rule-corpus edits" below, and cites its own incident as
+origin.
 
-DANEEL-specific content — the bindings, the lens set, and the
-debugging disciplines — lives in this repo's `spec/` directory
-(`spec/bindings.md`, `spec/lens-set.md`,
-`spec/debugging-disciplines.md`), and renders into the instance's
-plugin files. The framework spec governs the structural discipline;
-DANEEL's `spec/` carries the domain binding. Per contract 2 in
-anneal-framework `development-process.md` "The three levels", every
-load-bearing rule in the plugin originates in one of two specs —
-framework spec OR DANEEL's `spec/`. A plugin edit without a cited
-spec origin is drift.
+DANEEL's `spec/` (`spec/bindings.md`, `spec/lens-set.md`,
+`spec/debugging-disciplines.md`) carries the domain binding and
+renders into the plugin files; that relationship is internal to
+this repo and unchanged. Every load-bearing rule in the plugin
+originates either in this repo's `spec/` or in the plugin file
+itself, with its incident cited. A rule with no traceable origin is
+drift.
 
-**`references/foundations.md` is maintained locally, not rendered.**
-Operator decision 2026-08-23: the Anneal framework is being
-deprecated in its current form, and DANEEL is updated in place under
-`skill-craft`. Edits to that file land here directly, invoking
-`skill-craft` first per "Rule-corpus edits" below and citing their
-own incident as origin. Do not route a change to it through the
-framework spec, and do not re-render it from there.
-
-The carve-out **lapses** if an Anneal successor lands and
-`foundations.md` is rendered from it again. At that point the
-clauses maintained locally here are carried INTO the successor
-spec, not dropped — the carve-out suspends the render contract for
-this file, it does not exempt the file's content from having a
-spec origin.
+Anneal may be named as historical origin. It must never be named as
+a live source: a pointer into a repo that does not exist reads as a
+route a later session will try to take.
 
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, `marketplace.json`, `legacy/` — is
@@ -130,9 +115,9 @@ Mint a rule, land its entry in the same commit.
 
 ## Rule-corpus edits
 
-When editing skill-craft, anneal-framework spec, or instance
-skills (clippy / daneel / etc.): invoke the `skill-craft` skill
-via the Skill tool BEFORE the edit.
+When editing skill-craft or instance skills (clippy / daneel /
+etc.): invoke the `skill-craft` skill via the Skill tool BEFORE
+the edit.
 
 Apply Edit-as-Pareto-improvement: name what the edit reduces or
 consolidates. If nothing — the addition is suspect per the

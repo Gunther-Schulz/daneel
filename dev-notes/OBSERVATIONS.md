@@ -160,3 +160,42 @@ cycle. Drains at the fire-rate review, which reads the log below.
 classes a capability patch with no logged firing since the last
 consolidation is a cut candidate; this lens is born as exactly that
 and stays one until dated lines appear here naming what it caught.
+
+## 7. Instrument-sufficiency
+
+**Incident + basis.** The single artifact that made every finding
+in the run possible was a purpose-built harness — launches the app
+under any configuration, drives the failing operation, records nine
+quantities per run, cleans up, runs unattended. DANEEL graded the
+findings that harness produced and contributed nothing to building
+it. The run then stalled at a wall that is purely instrumental: two
+process startups whose launcher logs are byte-identical — 34 lines,
+same models, same pinning, same VRAM plan — with first encodes of
+19.6 s and 56.0 s, the enhancer not loaded at that point in either.
+A run-order hypothesis was raised and killed by measurement. The
+discriminating variable is real and recorded by no instrument in
+place, and the response reached for a ninth A/B rather than for
+wider tracing. Basis: same run tracker as entry 1.
+
+**Class.** No instrument-building step. Every mechanism in the
+corpus assumed the observations already existed and graded how they
+were weighed; nothing said that when the evidence needed to
+separate the live hypotheses does not exist, building the thing
+that produces it is the cycle's work.
+
+**Rule text.** The `Instrument-sufficiency` lens (`lenses.md`,
+`spec/lens-set.md`) — landed, with its completion criterion folded
+in: the extension is complete when it produces an observable on
+which the live hypotheses DIFFER, each predicted value named
+BEFORE the run. That bound replaces "add some logging", which is
+the vague criterion that invites premature done.
+
+The recurrence is the load-bearing half: the instrument is built
+once and improved every cycle, because the questions sharpen
+faster than the tracing does. A one-time build obligation would
+have missed the stall this entry records — the harness already
+existed and was excellent; it was simply not extended as the
+questions moved past what it could see.
+
+**Consumer + drain seam.** The standardized inspection pass, every
+cycle. Drains at the fire-rate review.

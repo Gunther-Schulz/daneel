@@ -1,13 +1,14 @@
 # DANEEL Specification — Debugging disciplines
 
-DANEEL-specific elaboration of the Anneal framework's
-investigate-design phase — the debugging-specific disciplines
-the lens set (`lens-set.md`) enforces.
+DANEEL-specific elaboration of the investigate-design phase — the
+debugging-specific disciplines the lens set (`lens-set.md`)
+enforces.
 
-The framework's investigate-design phase
-(`anneal-framework/spec/core.md` §4.1) is domain-general; this
-document specifies the D-sections that DANEEL's investigation
-runs through. Built on the DANEEL bindings (`bindings.md`).
+The investigate-design phase
+(`plugin/skills/daneel/phases/investigate-design.md`) is
+domain-general; this document specifies the D-sections that
+DANEEL's investigation runs through. Built on the DANEEL bindings
+(`bindings.md`).
 
 ---
 

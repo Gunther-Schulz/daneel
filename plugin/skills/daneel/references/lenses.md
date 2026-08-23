@@ -80,6 +80,24 @@ the verification work (per the basis rule, `foundations.md`).
 *Scope:* any cycle that locks a hypothesis verdict ([VERIFIED] or
 [INVALIDATED]).
 
+## Instrument-sufficiency
+
+*Question:* can the instrumentation in place discriminate the live
+hypotheses? Where two of them predict the same observable under
+the current tracing, extending the instrument IS this cycle's
+work — a counter, a finer log, a probe at the divergence point —
+not a further experiment against an instrument that has already
+returned everything it can. An instrument is built once and
+improved every cycle: the questions sharpen faster than the
+tracing does, and a static one silently caps the investigation at
+the resolution it was born with. The extension is complete when it
+produces an observable on which the live hypotheses DIFFER, each
+one's predicted value named BEFORE the run — not when more logging
+exists.
+
+*Scope:* any cycle whose live hypotheses are not separable by the
+evidence the current instruments produce.
+
 ## Arrangement-parity
 
 *Question:* does each measured finding record the configuration it

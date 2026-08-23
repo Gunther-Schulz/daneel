@@ -142,8 +142,8 @@ independent.
 
 ## Re-run scope
 
-DANEEL re-runs default to **fresh verify pass**. The framework's
-delta-verify mechanism (`core.md` §4.3) requires a
+DANEEL re-runs default to **fresh verify pass**. The inherited
+delta-verify mechanism requires a
 behavior-preserving closing fix; DANEEL fixes are
 behavior-changing by design (that is the point). Delta-verify
 rarely applies; do not invoke without explicit operator
