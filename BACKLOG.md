@@ -145,3 +145,66 @@ decision, or trigger.
   Write-set: `spec/bindings.md` → re-render, never a hand-edit of
   `SKILL.md` (CLAUDE.md, "The skill content is rendered, not
   authored").
+
+- **READY — Replay the 2026-08-23 batch once a run has used it.** Same
+  method as `4a25cd9`, which paid for itself: asking each mechanism WHERE in
+  a recorded run it fired found two over-fitted triggers that reading could
+  not. Design decided: after the first run that uses 0.2.61, walk the
+  batch's mechanisms against that run's tracker, one row each — fired (cite
+  the row and the moment), did not fire, or could not fire. Done-criterion:
+  a per-mechanism table with no unexplained row. Verifier: the table itself,
+  red-first by construction. Write-set: this repo — `dev-notes/OBSERVATIONS.md`
+  plus any mechanism the replay finds defective.
+  Named missing evidence for the grade: none — it needs a run, not a
+  decision, and the next DANEEL run supplies it.
+
+- **PARKED — The [READY] operator-observation gate has never fired and this
+  run cannot grade it.** The gate ("no operator-observation finding
+  OUTSTANDING at [READY]") is correctly anchored, but the grounding run
+  never reached [READY] — the operator ended it at `Status: in-progress`
+  after eleven cycles — so silence there is evidence of nothing. Do NOT
+  re-anchor it to a moment this run happened to produce: that derives the
+  rule from the artifact meant to grade it. Named missing evidence: a
+  DRY-RUN pair against the tracker in hand — the predicate evaluated on the
+  recorded state, which carries an OUTSTANDING discharge (F32) and must go
+  RED, and on the same state with that discharge satisfied, which must go
+  GREEN. A single red proves nothing; a gate that reds on both discriminates
+  nothing.
+
+
+## Done
+
+Closed items leave by commit ref. This section is the REF RECORD, not a
+second live list — the bodies stay in the commits, one fact one home. It
+exists because the machine's pre-push guard reads a file carrier
+(`LEDGER.md`, `claude/JOURNAL.md`, `BACKLOG.md`) and cannot see commit
+history, so "commit history is the closure home" and "an agent's commits
+must be booked" collide unless the refs are written down. Booking them here
+satisfies both; the override flag would have satisfied neither.
+
+- 2026-08-23 — **The 2026-08-23 corpus batch, 0.2.52 → 0.2.61.** Fourteen
+  commits, all agent-authored, all booked here: `2ea235b` reproduction-first
+  / measurement-floor / arrangement-parity lenses + the basis rule's
+  derived-claim kind · `b721f4f` replicate-count clause, journal opened ·
+  `0e2eca9` testimony-discharge: the [READY] gate and the hypothesis-grade
+  lens · `07c493d` independence from Anneal, instrument-sufficiency lens ·
+  `b2a65ce` kind (e) binds, `discharge:` field, read-before-build
+  precondition · `0ece92c` distribution-shape lens · `b6ea614`
+  instrument vantage clause · `3377e6f` a complete cause set spans layers ·
+  `7e92fee` an elimination names its re-entry condition, `[INVALIDATED]`
+  gets its second sense defined · `970b8e7` bump to 0.2.61 · `4a25cd9` the
+  REPLAY: 15 of 17 mechanisms fired, two defects found and fixed ·
+  `0551d1c` the diagnosing-bugs pilot dropped on a refuted premise, its two
+  dependent entries re-derived · `4ccaa84` the instrument may be DEFECTIVE,
+  asked every cycle · `50cfbc1` a basis grounds a verdict only where it
+  ENTAILS it.
+
+  GROUNDING: one investigation, `/home/g/wan2gp`, tracker
+  `.daneel/runs/2026-08-23-h3-encode-after-generation.md` — read in full by
+  the replay lane, cited without reading by an earlier one, which is itself
+  why the replay was owed.
+
+  NOT PROVEN, and it is the honest state of the whole batch: no DANEEL run
+  has exercised any of it. Everything is Path 1 on incidents and unproven in
+  operation — which is exactly the standing the replay just demonstrated
+  matters, one level up. The successor item is below.
