@@ -184,10 +184,23 @@ path — Clippy's verify governs there.)
 
 ### Q2. Value attribution
 
-Tag every finding F1..Fn by what surfaced it — a standardized
-lens / ad-hoc investigation / the basis rule forcing a search /
-a cycle re-examination / verify / the regression check. Give
-the counts.
+READ the `by:` token every finding already carries
+(`tracker.md`) — `SESSION | OPERATOR | PEER | MECHANISM(<name>)`
+— and give the counts. It is a `grep -c`, not a
+reconstruction: the tokens were written WITH their entries, at
+the time, which is the whole reason the field exists.
+
+Do not re-derive this from the run's prose. Measured on the run
+that minted the token, reconstruction after the fact under-counts
+badly — a grep for findings crediting the operator returned 4
+against a true count of eight to ten, the rest recoverable only
+from conversation nobody keeps.
+
+The ratio that matters is **MECHANISM against OPERATOR**. A run
+where the operator is the catcher eight times in ten is a run
+whose mechanisms are not working, whatever the findings look
+like, and that is the fire-rate evidence the durability rule
+wants and otherwise has no source for.
 
 Descriptive data on which mechanisms produced findings this
 run. This is **not** a verdict on whether a lens "earns its

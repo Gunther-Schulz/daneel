@@ -8,11 +8,13 @@ the tracker, implement works from it, verify records its results
 into it. It carries the run's state across phases: a run
 interrupted mid-flight resumes from the tracker.
 
-## The two tracks
+## The three tracks
 
 A status tag records the state of a **finding** (verification-map
-entry: component) or a **design decision** (hypothesis-list entry:
-candidate root cause or fix approach) — the tracker's two tracks.
+entry: component), a **design decision** (hypothesis-list entry:
+candidate root cause or fix approach), or an **account** (the
+run's explanation of what it has verified) — the tracker's three
+tracks.
 Three tags appear in both, track-scoped, one consistent sense
 each: **[PENDING]** (recorded, not yet at a terminal),
 **[VERIFIED]** (a verified terminal), **[INVALIDATED]** (a
@@ -24,7 +26,7 @@ evidence-or-basis field, and **nothing else**. The
 evidence-or-basis field holds a basis-rule artifact
 (`foundations.md`) — a file:line read, a grep command (for a
 completeness claim), an execution-trace excerpt, a behavioral
-test result — **not prose describing one**. A free-text account
+test result — **not prose describing one**. A free-text claim
 of having looked is not a basis; a bare count with no command
 behind it is not a basis; each is a malformed field. The summary
 is one sentence by default; multi-sentence is permitted where
@@ -48,6 +50,28 @@ basis (`foundations.md`); loose narrative does not belong here.
 The field is optional — fabricating alternatives degrades the
 ledger. Use it where alternative hypotheses were genuinely
 weighed and naming them informs a later reader.
+
+Every finding carries a required **`by:`** token naming what
+produced it — `by: SESSION | OPERATOR | PEER | MECHANISM(<name>)`
+— written WITH the entry, on the same birth rule as `discharge:`
+below. One token, no prose.
+
+It exists because the tracker is the artifact someone grades the
+PROCEDURE from, and without this it cannot answer the first
+question anyone asks of a procedure: is it catching anything.
+Reconstructed after the fact the answer is unreliable — measured
+on the run that minted this, a grep for findings crediting the
+operator returns 4 where the true count is eight to ten, and the
+difference had to be recovered from conversation nobody keeps.
+With the token, "what is this run's mechanisms-to-operator ratio"
+is a `grep -c` at any moment, and a run where the operator is the
+catcher eight times in ten says so IN ITS OWN FILE, at the time,
+rather than nine hours later when someone thinks to ask.
+
+`MECHANISM(<name>)` names the lens, gate or check that caught it,
+which is what makes the fire-rate evidence a by-product of
+running rather than a separate audit — the post-run review reads
+the ratio (`post-run-review.md`, Q2).
 
 A finding whose basis is an **operator observation** carries, in
 the same sub-line form, a required **discharge** field:
@@ -225,6 +249,44 @@ another verdict's basis depends on reopens that other verdict by
 the rule above — [INVALIDATED] if it reached [VERIFIED] or
 [AUTO-ACCEPTED], otherwise revised — incremental against the
 run's existing decisions.
+
+### Accounts (what explains the verified findings)
+
+An **account** (`A1`, `A2`, …) is the run's committed explanation
+of what it has verified: the mechanism that makes several
+findings one thing rather than several. It is the third track
+because elimination alone never produces one — a run can execute
+perfectly to a single surviving hypothesis and still not know why
+anything happens, which is a precise description of a symptom and
+not a cause.
+
+This is not the pejorative sense `Evidence-over-theories`
+(`lenses.md`) guards against, and that lens is unchanged. It
+forbids concluding on an UNVERIFIED guess. An account is the
+opposite end: it may cite only [VERIFIED] findings, and it exists
+because guarding the unverified case had left the verified one no
+home at all.
+
+An account is **well-formed only with three parts**, and a
+missing one makes it malformed rather than weak:
+
+- **(a) what it explains** — every [VERIFIED] finding it accounts
+  for, cited by number. Not a selection: the ones it fits.
+- **(b) what it does NOT explain** — at least one surviving
+  finding it fails to cover, or an explicit `none outstanding`.
+  An explanation that has never been asked what it leaves out has
+  not been tested for reach, only for fit.
+- **(c) a NEW prediction** — a value or outcome NO run has yet
+  produced, with the test that would settle it. This part is
+  load-bearing and it is the one that fails silently: an account
+  fitted to the cells already observed is a SUMMARY, however well
+  it fits. Measured on the run that minted this: an account fit
+  all four observed rows and its one novel prediction was never
+  exercised, so what got confirmed was a cell seen twice already.
+
+Status tags are the design-decision track's, with the same
+senses. An account [INVALIDATED] by a finding it cannot absorb
+reopens like any other verdict.
 
 ## The standardized-pass artifact
 

@@ -1044,3 +1044,109 @@ never a softer predicate.
   author was hunting parity defects at the time, which is a
   primed reader. The lens's value is on the cycle where nobody is
   looking, and that case has not occurred yet.
+
+## 14. Elimination never produces an explanation
+
+**Incident + basis.** Operator decision, after they asked whether
+DANEEL talks about THEORIES as well as hypotheses. It does not,
+and the check is exhaustive rather than impressionistic: every
+occurrence of "theor" across `spec/` and `plugin/` — 11 hits — is
+PEJORATIVE, a guess ("might be", "could be", "possibly") to be
+demoted into the hypothesis list as [OUTLINED]. The whole state
+vocabulary applies to a SINGLE claim. There was no entity for an
+account unifying several verified findings.
+
+Measured consequence, same run: by cycle 12 the tracker held five
+independently [VERIFIED] findings — enhancer 2/2 slow, pre-load
+eviction 3/3 slow, INT8 2/2 slow and never once fast, sweep
+position moving the class, same bytes at 4 KB against 175 KB
+granularity. Every one is a form of "something consumes RAM".
+Nothing in the loop ever asked what single account explains all
+five, so the set was never assembled — and the answer was in the
+assembly. Cycle 18 stood on a very precise description of a
+symptom with no mechanism.
+
+**Class.** A protocol built to ELIMINATE, with no slot for what
+elimination is for. A run can execute perfectly to one surviving
+hypothesis and still not know why anything happens, and nothing
+in the loop notices, because every individual cycle is correct.
+`Evidence-over-theories` guards the unverified case and is right
+to — the defect is that guarding it left the VERIFIED case no
+home at all.
+
+**Rule text.** A third tracker track: the **account** (`A#`),
+well-formed only with three parts — (a) every [VERIFIED] finding
+it explains, cited by number; (b) at least one surviving finding
+it does NOT explain, or an explicit `none outstanding`; (c) a NEW
+prediction, a value no run has yet produced, with the test that
+settles it. Trigger in `phases/investigate-design.md`: the SECOND
+consecutive cycle adding verified findings while no account cites
+them, countable off the tracker. `Evidence-over-theories`
+unchanged.
+
+Part (c) carries the weight, and it is where the same run failed
+AGAIN after finding its mechanism: an account fit all four
+observed rows while its one novel prediction went unexercised, so
+what got confirmed was a cell already seen twice. **An account
+fitted only to observed cells is a summary, however well it
+fits.**
+
+**Naming — a collision fixed rather than accepted.** The operator
+ruled out "theory" because the corpus binds it pejoratively, one
+token in two senses being the `[INVALIDATED]` defect fixed this
+morning. That same reasoning disqualifies "mechanism", which this
+corpus and skill-craft both use for guards and checks ("DANEEL's
+one reusable mechanism is inspection", `foundations.md`).
+"Account" was clean except at `tracker.md:27`, which read "a
+free-text ACCOUNT of having looked is not a basis" — the
+pejorative sense, in the very file the new entity lives in.
+Rather than reach for a third word, that sentence now reads "a
+free-text claim", removing the collision at its one site.
+Checked, not assumed: `command grep -rn account spec/ plugin/` —
+every other hit is the VERB "accounted for", a different part of
+speech.
+
+**Consumer + drain seam.** The cycle, via the compose trigger.
+Drains at the fire-rate review.
+
+## 15. The tracker cannot say who caught what
+
+**Incident + basis.** Operator decision, from their asking whether
+the cycles had been run properly or something else was wrong. The
+tracker CANNOT ANSWER: it records what was found and never what
+produced it. Measured — a grep for findings crediting the
+operator as catcher returns 4, against a true count of eight to
+ten (the wrong OOM claim, the enhancer strike, prioritising
+external causes, instruments-as-suspect, the cycles lapse,
+MemFree vs MemAvailable, rclone, the stated-limit caution, the
+theory gap, this question). The rest existed only in
+conversation and had to be reconstructed by hand.
+
+**Class.** A defect in the instrument used to grade the
+instrument. The artifact that exists so someone can grade the
+procedure cannot show whether the procedure caught anything — and
+the reconstruction standing in for it is exactly the recall-grade
+evidence this corpus rejects everywhere else.
+
+Graded against the run's own shape, checked directly rather than
+taken on report: there is NO Cycle 1 header at all, cycles 5-8
+are one merged block backfilled after the operator noticed they
+had stopped, and 9-10 are merged. One-cycle-one-entry holds only
+from cycle 11 (`command grep -nE "^## "` over the tracker). So
+the procedure was partly not run, and the record could not say so
+either.
+
+**Rule text.** Every finding carries a `by:` token —
+`SESSION | OPERATOR | PEER | MECHANISM(<name>)` — written WITH
+the entry, on the same birth rule as `discharge:`.
+`post-run-review.md` Q2 now READS that token rather than
+re-deriving attribution, with the under-count above recorded
+there as the reason.
+
+The ratio that matters is MECHANISM against OPERATOR, and this is
+the fire-rate source entry 12's header note called for and could
+not supply: a run whose mechanisms caught little now says so in
+its own file, at the time.
+
+**Consumer + drain seam.** Every finding, at the moment it is
+written. Drains at the post-run review and the fire-rate review.

@@ -39,6 +39,23 @@ artifact missing that line is malformed. `Instrument-fitness`
 (`lenses.md`) is scoped that way, because the defect it catches
 is one the cycle using the instrument cannot see.
 
+**Composing what has been verified.** On the SECOND consecutive
+cycle that adds [VERIFIED] findings while no account (`A#`,
+`tracker.md`) cites them, the cycle produces an account — or one
+line stating why the survivors do not yet compose. Both halves
+are countable off the tracker: verified findings added per cycle,
+account citations per cycle.
+
+Keyed to that repetition rather than to a judgment that enough
+has accumulated, because accumulation is what nobody notices:
+each cycle adds its finding, every finding is real, and no single
+cycle is the one where the set becomes assemblable. Measured on
+the run this comes from — five independently [VERIFIED] findings
+stood by cycle 12, every one of them a form of "something
+consumes RAM", and nothing ever asked what single account covered
+all five. The answer was in the assembly, and the assembly was
+never attempted.
+
 **Cycle numbering** is continuous across the run. A loopback from
 a downstream phase (implement major-new-scope, verify [ISSUES
 FOUND]) returns to investigate-design at the next cycle number,
