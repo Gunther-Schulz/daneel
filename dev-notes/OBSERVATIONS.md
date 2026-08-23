@@ -939,3 +939,32 @@ has stopped reading. If the firing log fills with lines that
 recite the questions rather than answer them about a named
 instrument, the form is wrong and the repair is a narrower scope,
 never a softer predicate.
+
+**Firing log.**
+
+- 2026-08-23 — the FIRST LIVE firing of anything in the
+  2026-08-23 batch. Not a replay, and on the lens's own author
+  within the hour of writing it. Checking spec-against-render
+  parity after an edit to this very lens, `command grep -c` on
+  one phrase returned spec=1, render=0. The phrase was present in
+  both: it spanned a LINE BREAK in the render, and a line-based
+  search cannot match across a wrap. A false zero, one step from
+  being reported as a parity defect. Caught by question one —
+  what the number is ABOUT — because a per-LINE match count is
+  not a measure of a phrase's presence in a hard-wrapped body.
+  Discharge: normalise whitespace and compare parsed bodies —
+  identical, 1278 chars each. Correct fire.
+- Why it earns a line rather than a shrug: the instrument was
+  self-built and fresh that minute, which is exactly the case the
+  PAIR requirement covers. A `grep -c` presents as looking rather
+  than as measuring, so nothing prompts a proof of it, and the
+  known-positive that would have exposed it at once was available
+  and unused — the same pattern against a phrase known to sit on
+  one line. Cheap, and skipped, by the author of the rule
+  demanding it.
+- What it does NOT establish, so the rate is not read as better
+  than it is: n=1; the fire was on the correctness question, so
+  the freshness question and the pair remain unexercised; and the
+  author was hunting parity defects at the time, which is a
+  primed reader. The lens's value is on the cycle where nobody is
+  looking, and that case has not occurred yet.
