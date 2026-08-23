@@ -158,18 +158,21 @@ decision, or trigger.
   Named missing evidence for the grade: none — it needs a run, not a
   decision, and the next DANEEL run supplies it.
 
-- **PARKED — The [READY] operator-observation gate has never fired and this
-  run cannot grade it.** The gate ("no operator-observation finding
-  OUTSTANDING at [READY]") is correctly anchored, but the grounding run
-  never reached [READY] — the operator ended it at `Status: in-progress`
-  after eleven cycles — so silence there is evidence of nothing. Do NOT
-  re-anchor it to a moment this run happened to produce: that derives the
-  rule from the artifact meant to grade it. Named missing evidence: a
-  DRY-RUN pair against the tracker in hand — the predicate evaluated on the
-  recorded state, which carries an OUTSTANDING discharge (F32) and must go
-  RED, and on the same state with that discharge satisfied, which must go
-  GREEN. A single red proves nothing; a gate that reds on both discriminates
-  nothing.
+- **PARKED — Mechanize the discharge-presence half of the [READY] gate.**
+  The gate now requires every operator-observation finding to CARRY a
+  `discharge:` sub-line and none to be OUTSTANDING (`foundations.md`,
+  landed `d9e4dbd`). The PRESENCE half is a computable predicate over a
+  fixed token and is a real candidate for a mechanical check at [READY] —
+  which matters because the dry-run that found this defect also showed the
+  field has never been written in a real run.
+  MISSING, and why this is parked: nothing marks a finding as an
+  operator-observation, so a checker cannot tell which findings owe the
+  field. Mechanizing presence alone would demand a discharge on every
+  finding in the tracker — a guard firing on legitimate work, which trains
+  the override reflex that kills it. The decision needed is whether
+  operator-observation findings get a machine-readable marker of their own,
+  which is a tracker-vocabulary change and touches the closed grade set.
+  Write-set and verifier: dependent on that decision.
 
 
 ## Done
@@ -208,3 +211,31 @@ satisfies both; the override flag would have satisfied neither.
   has exercised any of it. Everything is Path 1 on incidents and unproven in
   operation — which is exactly the standing the replay just demonstrated
   matters, one level up. The successor item is below.
+
+- 2026-08-23 — **The operator-settled form and the gate dry-run, 0.2.62.**
+  `e543f45` bump, after 0.2.61 was pushed mid-lane and the payload guard
+  correctly refused a second batch on a released version · `c28abd7`
+  Instrument-fitness reduced to ONE line per cycle covering only the
+  instruments that cycle leaned on, the per-instrument audit rejected as
+  overkill, the pair requirement carved out to freshly-built views, and the
+  unconditional scope's grounding moved into the lens text (all eight
+  incidents produced numbers that looked FINE, so a suspicion-keyed trigger
+  would have fired on none) · `6901cb5` the entailment rule moved from
+  `tracker.md` to the basis rule's THIRD EDGE in `foundations.md`, on the
+  deciding evidence of that file's own "the rule has two edges" sentence —
+  which widens its reach from design-decision verdicts to every
+  load-bearing claim · `d9e4dbd` the [READY] discharge gate DRY-RUN, whose
+  pair diverged and exposed the gate: a predicate reading only for the
+  OUTSTANDING value passes on a tracker recording no discharge at all.
+
+  CLOSES the gate entry booked above. Its named missing evidence — the
+  dry-run pair — was produced. Correction carried back: the outstanding
+  finding is **F2** (the INT8-to-AWQ flip, never reproduced in fourteen
+  cycles), not F32, whose row records a transition ending at
+  CONTRADICTED-IN-PART. The successor decision is the parked entry above.
+
+  FIRST OPERATIONAL EVIDENCE, and it is not a replay: cycles 12-14 of the
+  same run now open with an "Instrument check:" line in exactly the
+  one-line form, and carry three conforming `re-entry:` sub-lines with the
+  self-refutation clause exercised ("NOT satisfied at the time of
+  striking"). The batch above is no longer wholly unexercised.
