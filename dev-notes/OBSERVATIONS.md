@@ -698,13 +698,30 @@ the comparison's.** The lens asks for "one arrangement repeated
 unchanged, at least three times, its spread recorded as a
 finding". F14 satisfies that in full: four cold encodes, one
 arrangement, spread recorded, 1.0x. And it graded the wrong thing
-— F15 compares arms taken in SEPARATE processes, where the real
-spread is the 3x of F25 and F29. A within-process floor read as
-the floor for a between-process comparison is a premise the check
-does not pin, and it fails in the quiet direction: the lens reads
-CLEAN while exercising less than it claims. Fix landed in the
-lens: the floor is repeated at the same grain as the comparison it
-grades.
+— F15 compares arms taken in SEPARATE processes. A within-process
+floor read as the floor for a between-process comparison is a
+premise the check does not pin, and it fails in the quiet
+direction: the lens reads CLEAN while exercising less than it
+claims. Fix landed in the lens: the floor is repeated at the same
+grain as the comparison it grades.
+
+**Basis re-cited, and the reason is this entry's own subject.**
+The clause first cited the 3x of F25 against F29. Cycles 12-13
+then established F45 and F46 — every multi-row sweep alternates
+by POSITION, 12 of 12, and every row-1-vs-row-2 comparison in the
+run is confounded by it. F25/F29 are such comparisons, so the
+clause was resting on a figure the run had since invalidated: a
+true basis for a rule that stayed true while its evidence was
+overturned underneath it, which is the stale-premise shape this
+corpus names.
+
+The replacement is F47, and it is stronger than what it replaces
+rather than merely intact: FOUR BYTE-IDENTICAL rows in one sweep,
+pre-registered before the run, at 19.9 / 59.0 / 21.5 / 59.x s.
+Configuration is held constant by construction there, so the 3x
+is a between-process spread with nothing configured differing —
+exactly the quantity a between-process floor has to clear, and
+exactly what a within-process floor of 1.0x cannot supply.
 
 **DEFECT B — the single-layer scope trigger misses its own
 incident.** `lenses.md` Hypothesis-enumeration now fires where the

@@ -233,8 +233,13 @@ by repeating inside one process grades comparisons inside that
 process; arms taken in separate processes need a floor of
 separate processes. The wrong-grain floor is the quiet failure —
 it meets the repeat count, records a spread, and reads clean
-while grading nothing the comparison rests on (measured: 1.0x
-within a process against 3x between them, same arrangement).
+while grading nothing the comparison rests on. Measured, with
+configuration held constant by construction: four BYTE-IDENTICAL
+rows in one sweep ran 19.9 / 59.0 / 21.5 / 59.x s — a 3x
+between-process spread with nothing configured differing —
+against a 1.0x spread for four repeats inside one process. The
+floor that graded the comparison was the second number; the
+comparison lived in the first.
 
 *Scope:* any cycle whose verdict rests on comparing measurements
 taken in separate runs.
