@@ -190,7 +190,15 @@ true, [VERIFIED], and never acted on, and a coherent run will not
 disturb it: scope re-opens when the failure surface GROWS, and a
 frame that was wrong from the start never grows.
 
-**[READY] requires no operator-observation finding OUTSTANDING.**
+**[READY] requires every operator-observation finding to CARRY a
+discharge state, and none of them to be OUTSTANDING.** Both halves
+are load-bearing. The first was learned by dry-running the gate
+against a real tracker: a predicate reading only for the
+OUTSTANDING value is satisfied by a tracker recording no discharge
+at ALL, so an un-discharged observation and a discharged one look
+identical to it — absence of the field reading as absence of the
+problem. A missing discharge is a RED.
+
 A run does not close while something the operator reported has
 never been acted on. This is the assumption rule at a second seam —
 an assumption holds the run short of [READY] for want of evidence,

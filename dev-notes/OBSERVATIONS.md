@@ -622,8 +622,8 @@ verdict, moment, tracker row.
     discharge field. The run reached the vocabulary by hand at
     F32, cycles 5-8, four cycles after it was needed.
 15. **[READY] gate: no operator-observation finding OUTSTANDING**
-    (foundations, ENFORCEMENT) — DID NOT FIRE, and COULD NOT.
-    See GAP C below.
+    (foundations, ENFORCEMENT) — DRY-RUN pair executed; the pair
+    DIVERGED and found a defect. See GAP C below, now closed.
 16. **[INVALIDATED]'s two senses** (tracker) — FIRED, whole run.
     D8 moved [VERIFIED] (cycle 3) → [INVALIDATED] (cycle 4): the
     OVERTURNED sense. D3, D4, D5, D6 and a dozen others were
@@ -670,18 +670,60 @@ landed: the trigger fires on any of the named layers left
 unpopulated, which is the invariant, rather than on a count of
 layers occupied, which is the idiom of the one case in hand.
 
-**GAP C — the [READY] operator-observation gate has no firing
-moment in this run, and is surfaced rather than fixed.** Its
-anchor is [READY]. The tracker's header still reads
-`Status: in-progress` after eleven cycles; the run never reached
-[READY] and was ended by the operator. So the replay cannot grade
-it either way: silence here is not evidence the gate is inert, and
-it is not evidence it works. The mechanism remains unproven, and
-this incident cannot prove it — a second incident that actually
-closes is what it needs. Recorded rather than repaired, because
-the repair options (moving the anchor to a moment this run
-produced, or accepting an unproven gate) are a design decision on
-enforcement placement, not a defect with a determined fix.
+**GAP C — CLOSED by a dry-run pair, which found a defect.** The
+gate's anchor is [READY], and the run has never reached it
+(`Status: in-progress`, still, at cycle 14). Neither of the two
+exits first proposed was taken: re-anchoring the gate to a moment
+this run happened to produce would derive the rule from the
+artifact meant to grade it — the parentage defect — and accepting
+it unproven is what today's whole replay argues against. The third
+way is the corpus's own: a criterion's red is a DRY-RUN against
+cases in hand, so the predicate was evaluated against the tracker
+as it stands.
+
+INPUT A, the tracker as recorded. Operator-observation findings:
+F1, F2, F3, F4, F5, F32. Recorded `discharge:` sub-lines: ZERO —
+and the instrument is shown both ways, since the same sub-line
+grep returns hits for `re-entry:`, so the form is in use and the
+absence is real rather than a pattern that could never match. Two
+readings of the predicate then diverge:
+- read LITERALLY over recorded discharge states, nothing is marked
+  OUTSTANDING, so the gate passes — **GREEN**;
+- read by enumerating operator-observation findings and asking
+  each for its discharge, F2 has never been reproduced,
+  contradicted or deferred in fourteen cycles. Its subject appears
+  exactly once in the whole file: the INT8-to-AWQ flip, which no
+  arm ever ran, every measured arm being AWQ. **RED**.
+
+**The divergence IS the finding.** A predicate reading only for
+the OUTSTANDING value is satisfied by a tracker that records no
+discharge at all — absence of the field reads as absence of the
+problem, and an un-discharged observation is indistinguishable
+from a discharged one. This is the same shape as defects A and B:
+a check whose premise is unpinned, passing in the quiet direction.
+
+INPUT B, the same tracker with F2 discharged —
+`discharge: DEFERRED (the INT8 encoder is not the configuration
+under investigation; the operator switched away from it
+pre-session and every measured arm runs AWQ)` — plus discharge
+lines on F1, F3, F4, F5, F32. Both readings **GREEN**. So the pair
+discriminates, and a gate whose two readings disagree on the real
+input was not a gate.
+
+FIX landed in `foundations.md`: [READY] requires every
+operator-observation finding to CARRY a discharge state AND none
+to be OUTSTANDING. A missing discharge is a red.
+
+Correction to the record, since it was carried into the booking:
+the outstanding finding is **F2, not F32**. F32's row reads
+"discharge OUTSTANDING → now CONTRADICTED-IN-PART" — an arrow
+recording a transition, whose final state is CONTRADICTED-IN-PART.
+Reading the pre-arrow value as the current one is the label-over-
+body drift this corpus names, met in its own tracker.
+
+Still not proven: the gate has never fired in a live run, and a
+dry-run grades the predicate, not the moment. That half waits on a
+run that reaches [READY].
 
 **Class.** Machinery minted from one incident and never run
 against it. The two things the replay found are both of the
