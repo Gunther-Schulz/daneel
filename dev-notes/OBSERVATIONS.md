@@ -399,6 +399,63 @@ exhausts it completely and leaves the vantage unchanged — which is
 this incident — while a vantage change with unread fields still
 owes the cheap query first.
 
+**It did not fire, across eighteen cycles, and the reason is not
+the one first reported.** Same run. The answer turned out to be a
+twenty-minute READ of the loader's source: `safetensors2.py`
+`init_tensors` branches on `lazyTensors`, `lazy_loading` defaults
+True, `_SafeTensorLoader.__enter__` never passes it, so the
+non-mmap path is unreachable — executed probe, with_mmap 1 call,
+without_mmap 0. The 4 KB / 175 KB split the run spent nine hours
+characterising is not an application branch at all. Eighteen
+cycles asked what CONDITIONS produce the effect; none asked what
+LINE decides it.
+
+The run's own finding (F73) attributes the silence to the
+vantage question sitting under a CONDITIONAL sufficiency trigger,
+"any cycle whose live hypotheses are not separable". **Checked
+against the corpus, that mechanism is superseded**: the scope
+line has read "every cycle" since `4ccaa84`, which landed before
+those cycles ran. The vantage question was IN SCOPE the whole
+time.
+
+Which makes the real defect worse, and it is the one to fix: the
+question was in scope and produced nothing for eight recorded
+cycles because it had no OUTPUT. The lens's compliance artifact
+is the one instrument line, and that line enumerates the
+correctness questions only. Measured, and visible in the
+artifact itself: cycles 12-19 each carry an "Instrument check:"
+line — eight for eight, the correctness half firing reliably in
+operation — and not one of them asks where the instrument
+observes FROM. In scope, no required output, nothing
+distinguishing fired from skipped. That is the purely-mental
+obligation skill-craft names, met by a clause that had been
+given scope and no artifact.
+
+**Rule text.** The vantage clause gains a firing moment and an
+output: on the SECOND consecutive cycle whose arms come from the
+same instrument without the live hypothesis set shrinking, the
+instrument line names the source location that decides the
+outcome, or states that none exists and why. Countable off the
+tracker — arms, hypothesis count, instrument named, per cycle.
+
+Keyed to repetition rather than to suspicion, for the same reason
+the correctness question fires every cycle: no single round looks
+wrong. Each separates something and returns a clean number, so a
+wrong frame is visible only as a SERIES, and a series is the one
+thing no individual cycle can see. The operator NAMED this
+mid-run — asked outright why the run kept reaching for external
+factors — and got a correct explanation followed by fourteen more
+external arms, which is entry 5 again and the reason this is a
+mechanism rather than a resolve.
+
+**Form growth, flagged for ratification rather than assumed.**
+The operator settled the instrument line at TWO questions; a
+later edit made it three; this adds a CONDITIONAL fourth. It
+fires on a minority of cycles by construction, so the one-line
+ceiling holds in the common case — but the ceiling exists because
+the operator rejected an audit, and three growths in one day is
+the shape that becomes one. Theirs to confirm or trim.
+
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.
 

@@ -188,6 +188,25 @@ Environmental candidates stay legitimate and worth killing; what
 the vantage decides is whether any other KIND ever enters the
 set.
 
+The vantage question has a FIRING MOMENT and an OUTPUT of its
+own, because being in scope was not enough: on the SECOND
+consecutive cycle whose arms come from the same instrument
+without the live hypothesis set shrinking, the cycle's instrument
+line names the SOURCE LOCATION that decides the outcome — file
+and line — or states that no such location exists and why. Both
+halves of the condition are countable off the tracker: arms per
+cycle, live hypothesis count per cycle, instrument named per
+cycle.
+
+Keyed to REPETITION, not to suspicion, for the same reason the
+correctness question is keyed to every cycle: no single round
+looks wrong. Each separates something and returns a clean number,
+so a wrong frame is visible only as a SERIES — and a series is
+the one thing no individual cycle can see. Measured: eighteen
+cycles asked what CONDITIONS produce an effect and none asked
+what LINE decides it; reading the loader answered it in twenty
+minutes once the question was finally put.
+
 Where two hypotheses then still predict the same observable
 under the current tracing, extending the instrument IS this
 cycle's work — a counter, a finer log, a probe at the divergence
