@@ -239,3 +239,43 @@ satisfies both; the override flag would have satisfied neither.
   one-line form, and carry three conforming `re-entry:` sub-lines with the
   self-refutation clause exercised ("NOT satisfied at the time of
   striking"). The batch above is no longer wholly unexercised.
+
+- 2026-08-23 — **The 0.2.63 batch: the machinery graded against its own
+  run, and three defects it found in itself.** Six commits, booked here
+  because the pre-push guard reads a file carrier and cannot see commit
+  history: `7548e8a` bump to 0.2.63 — SUBJECT IS STALE, it reads
+  "0.2.61 -> 0.2.62" and the commit actually changed 0.2.62 -> 0.2.63; the
+  act is right and the message is not, recorded here rather than rewritten
+  because history across a co-writer's commits is the more expensive fix
+  and this is where a reader looks · `760f53a` Reproduction-first discharges
+  on a written pair, Instrument-fitness gains the stated-limits question ·
+  `e586ce5` the 0.2.62 batch booked, the [READY]-gate entry closed by its
+  own dry-run and replaced · `fe5a201` the discharge state is BORN on the
+  finding, and Testimony-discharge asks EACH rather than AN · `ecef684` the
+  discharge field's ledger-line shape · `6ff353b` the written pair gets a
+  recording site.
+
+  THREE DEFECTS THE BATCH FOUND IN ITS OWN MACHINERY, each by executing it
+  rather than reading it:
+  1. Testimony-discharge's Scope was anchored to a state nothing writes.
+     `discharge:` sub-lines = 0 across 101 entries of the grounding run,
+     `re-entry:` > 0 in the same file under the same pattern — writable,
+     never written. No finding read as OUTSTANDING, the scope was empty,
+     and the lens switched itself off while looking correctly written. It
+     fired twice in fourteen cycles.
+  2. The [READY] gate's predicate read only for the OUTSTANDING VALUE, so a
+     tracker recording no discharge at all satisfied it — absence of the
+     field reading as absence of the problem. Found by the dry-run pair,
+     never by inspection: a single red would have looked like success.
+  3. Reproduction-first's written pair had NOWHERE TO BE WRITTEN — the pass
+     artifact is one line per lens. Same shape as the [READY] gate's own
+     nowhere-to-write defect recorded in `b2a65ce`, four commits earlier.
+
+  WHAT IT COST, and why the batch exists: F2 in the wan2gp run — the
+  operator's INT8-to-AWQ FLIP, one variable changed and the effect seen to
+  come and go — sat at entry two, undischarged, through all fourteen
+  cycles. `INT8` appears exactly once in 101 entries; no arm ever ran it.
+
+  STILL UNPROVEN: no DANEEL run has exercised the EACH question, the birth
+  rule, the recording site, or the stated-limits question. The successor
+  replay above covers them.
