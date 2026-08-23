@@ -235,6 +235,57 @@ decision, or trigger.
   same defect. Its own Reflexivity rule says surface and let the operator
   decide, so it is named here and not edited there.
 
+
+- 2026-08-23 — **0.2.65: the account track, finding provenance, and the
+  vantage question's missing output.** `69d9de1` bump · `8122728` the vantage
+  firing moment plus artifact, and F73's mechanism corrected · `f1c6da7` the
+  account track and the `by:` token. Both operator decisions, raised by the
+  operator after they asked whether DANEEL talks about THEORIES as well as
+  hypotheses, and whether the cycles had been run properly.
+
+  ACCOUNTS. The corpus had no home for a VERIFIED explanation: every
+  occurrence of "theor" was pejorative, a guess to be demoted to [OUTLINED],
+  and the whole state vocabulary applied to a single claim. So a run could
+  eliminate perfectly to one surviving hypothesis and still not know why
+  anything happens. Measured: by cycle 12 the grounding run held five
+  independently verified findings, every one of them "something that consumes
+  RAM", and nothing ever asked what single account explained them — the answer
+  was in the assembly and the assembly was never asked for. `Evidence-over-
+  theories` is unchanged and still right; it guards the UNVERIFIED case, and
+  guarding it had left the verified case no home.
+  Well-formedness has three parts and (c) is the one that fails silently: a
+  NEW prediction no run has yet produced. An account fitted to observed cells
+  is a summary however well it fits — measured on this very run, where an
+  account fit all four F2 rows and its one novel prediction was never
+  exercised.
+
+  PROVENANCE. Findings recorded nothing about what produced them, so the
+  artifact that exists to GRADE the procedure could not answer the operator's
+  question about it. A grep for operator-caught findings returned 2 against a
+  real count near ten, reconstructible only from conversation. `by: SESSION |
+  OPERATOR | PEER | MECHANISM(<name>)`, written with the entry, makes the
+  catch-rate a `grep -c` at the time rather than an archaeology afterwards —
+  and it is the source the durability rule's fire-rate evidence has never had.
+
+  THE CORRECTION THAT CHANGED A FIX, and it is why this desk asked the lane
+  to check rather than take its word: the dispatcher attributed the vantage
+  question's silence to a conditional trigger. Wrong — that scope has read
+  "every cycle" since `4ccaa84`, which landed BEFORE the cycles in question.
+  It was in scope throughout and produced nothing because it had no required
+  OUTPUT. Measured in the grounding run: 7 instrument lines across cycles
+  12-19, 0 asking where the instrument observes FROM — while the same 7 lines
+  show the correctness half firing 7 for 7, the first mechanism minted this
+  day demonstrably working in operation. The dispatcher's proposed fix was a
+  TRIGGER and would have failed identically; what landed is trigger AND
+  artifact — the line names the source file and line that decides the
+  outcome, which cannot be produced without having read source.
+
+  OPERATOR DECISION OUTSTANDING: the instrument line was settled at TWO
+  questions, became three, and now carries a conditional fourth. Three
+  growths in one day is how a one-line check becomes the per-instrument audit
+  the operator explicitly rejected. If anything is trimmed, the conditional
+  fourth is the first candidate — newest and least exercised.
+
 ## Done
 
 Closed items leave by commit ref. This section is the REF RECORD, not a
