@@ -194,6 +194,47 @@ decision, or trigger.
   from an investigation that never reads the rule. This is the stale-premise
   shape at the level of a corpus rather than a plan.
 
+
+- 2026-08-23 — **The firing log, and the rule that would have cut the whole
+  batch.** `6c0f432` Instrument-fitness's first firing log · `074737d` the
+  batch-level generalisation, placed in the journal HEADER at the sentence it
+  qualifies rather than as an entry, so the header's own claim does not stand
+  uncorrected.
+
+  THE FIRING, logged with its uncomfortable half: checking spec-vs-render
+  parity, a plain `grep -c` reported the phrase present in one file and
+  absent in the other. It was a FALSE ZERO — the phrase spanned a hard wrap
+  in the render. Normalising whitespace before comparing settled it. The
+  instrument was self-built and fresh that minute, which is exactly the case
+  the known-positive/known-negative PAIR requirement exists for, and the
+  control that would have exposed it instantly was available and unused — by
+  the author of the rule demanding it. Reciting a discipline is not
+  following it, met by the writer of the sentence.
+  Limits drawn honestly so the rate is not read as better than it is: n=1;
+  the fire was on the CORRECTNESS question, so the freshness question and
+  the pair stay unexercised; and the reader was primed, hunting parity
+  defects at the time. The lens's value is on the cycle where nobody is
+  looking, and that case has not happened yet.
+
+  THE RULE DEFECT, and it was live rather than theoretical: a capability
+  patch with no logged firing is a CUT CANDIDATE — but zero firings means
+  two different things the rule cannot distinguish. A patch that had
+  opportunities and caught nothing is evidence against itself; a patch
+  minted last week has zero by construction. The whole 0.2.52-0.2.64 batch
+  was minted in one day from one investigation, so the entire corpus
+  currently reads as cut-eligible INCLUDING the entries since shown to work,
+  and a reviewer applying the rule as written would cut the lot, correctly
+  by the letter. The fix is a PRIOR question rather than a softer predicate:
+  has anything EXERCISED this rule yet — how many runs have entered its
+  scope since minting. Zero runs and zero firings carry no information; a
+  rule whose scope no run has entered is not depreciating, it is UNMEASURED.
+
+  REACHES FURTHER THAN THIS REPO, surfaced not patched: skill-craft's
+  Durability-classes rule carries the same predicate ("treat a patch with no
+  firing since the last consolidation as a cut candidate") and inherits the
+  same defect. Its own Reflexivity rule says surface and let the operator
+  decide, so it is named here and not edited there.
+
 ## Done
 
 Closed items leave by commit ref. This section is the REF RECORD, not a
