@@ -153,6 +153,56 @@ is GROUNDED by the same incident and is not part of this
 hypothesis: an enforcement gate does not depreciate and carries no
 firing log.
 
+**Widened on its own firing data, and the data is the argument.**
+The replay (entry 12) put this lens at TWO fires in FOURTEEN
+cycles, and the gate dry-run (entry 12, gap C) found `discharge:`
+sub-lines at ZERO across the tracker. One cause under both
+numbers, and it is not laziness.
+
+The lens asked whether the cycle touches "AN outstanding operator
+observation" — indefinite, singular. Once a run settles into a
+frame it IS touching one, so the answer is yes every cycle and
+the lens stops producing findings. It is satisfied by a
+REPRESENTATIVE and never asks for the LIST, and it reads as
+compliance every time precisely because one observation genuinely
+is being investigated. Measured consequence: F2 — the operator's
+INT8-to-AWQ FLIP, their strongest evidence class, one variable
+changed with the effect seen to come and go — sat at entry two of
+the tracker from cycle 1, undischarged through all fourteen.
+`INT8` appears exactly once in the file: no arm ever ran it.
+
+Two changes, one mechanism seen from both ends. EACH, never AN:
+the lens answers against the outstanding LIST. And the discharge
+state is BORN ON THE ROW at OUTSTANDING rather than checked at
+the end — because a state added only when someone notices is a
+state nothing keeps, and everything keyed to it then reads an
+empty set. That is what the dry-run measured: zero sub-lines, so
+the [READY] gate had nothing to block on and this lens had
+nothing in scope, both looking correctly written while switched
+off.
+
+Why the pair matters more than either half: the only list-walking
+mechanism was the [READY] gate, and [READY] is a moment a run
+need never reach — this one did not. An obligation placed there
+alone sits at the one moment that may never arrive. Born on the
+row, the outstanding set is readable at every cycle by anyone,
+with no audit and no per-cycle enumeration, so the operator's
+one-line ceiling on the standardized pass is not reopened.
+[READY] stays the final check and stops being the only one.
+
+Cost check, since this lens's own recorded risk is over-firing:
+EACH costs a line per outstanding row, and the list is small by
+construction — six operator-observation findings on the run that
+minted it. Where a row is not touched this cycle, the existing
+"is the reason named" clause already covers it; it simply never
+got asked per row.
+
+Landed in `fe5a201` (both lens homes, and `foundations.md`'s
+birth rule) and in `tracker.md`'s discharge-field shape. This
+entry is that commit's journal record, written after it rather
+than with it — the repo's rule is that a minted rule lands its
+entry in the same commit, and this one did not.
+
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review, which reads the log below.
 

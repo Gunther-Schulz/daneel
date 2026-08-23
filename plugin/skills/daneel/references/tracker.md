@@ -56,6 +56,15 @@ OUTSTANDING` (`foundations.md`, "Operator testimony"). It is
 required for that class of finding and appears on no other, so
 the fixed shape above is unchanged everywhere else.
 
+The sub-line is written WITH the entry and defaults to
+`OUTSTANDING` (`foundations.md`, "Operator testimony", which
+carries that rule and its grounding). On the ledger line that
+means it is part of the entry from the moment it is first
+appended, never a later amendment to it — which is what makes
+the outstanding set readable off the tracker at any moment, and
+what makes a tracker presented at a cycle's end show its own
+OUTSTANDING rows in its own text.
+
 Discharge is **orthogonal to the status tag**, which is why it
 needs its own field rather than a new tag value: the tag records
 whether the observation was VERIFIED as reported, discharge
