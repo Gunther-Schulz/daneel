@@ -35,7 +35,7 @@ decision, or trigger.
 
   MISSING, and why this is parked rather than ready — two decisions,
   neither of which a fresh context can make from the record:
-  (1) how it must not double-fire with the `Instrument-sufficiency`
+  (1) how it must not double-fire with the `Instrument-fitness`
   lens: a churning hypothesis count is sometimes the SYMPTOM of an
   instrument that cannot separate the candidates, in which case the
   cure is the instrument and a convergence alarm would fire on top of

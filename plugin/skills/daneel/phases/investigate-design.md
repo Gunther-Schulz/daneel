@@ -33,6 +33,12 @@ passes, in order:
 The standardized inspection pass runs every cycle — not only the
 first, not only when something feels off.
 
+A lens whose scope is EVERY cycle is lined in every cycle's
+artifact, there being no cycle it is out of scope for; a pass
+artifact missing that line is malformed. `Instrument-fitness`
+(`lenses.md`) is scoped that way, because the defect it catches
+is one the cycle using the instrument cannot see.
+
 **Cycle numbering** is continuous across the run. A loopback from
 a downstream phase (implement major-new-scope, verify [ISSUES
 FOUND]) returns to investigate-design at the next cycle number,

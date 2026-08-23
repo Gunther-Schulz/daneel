@@ -172,7 +172,7 @@ cycle. Drains at the fire-rate review, which reads the log below.
   measuring the wrong configuration. n=1 run; the Path-2 mark
   stands.
 
-## 7. Instrument-sufficiency
+## 7. Instrument-fitness
 
 **Incident + basis.** The single artifact that made every finding
 in the run possible was a purpose-built harness — launches the app
@@ -194,7 +194,7 @@ were weighed; nothing said that when the evidence needed to
 separate the live hypotheses does not exist, building the thing
 that produces it is the cycle's work.
 
-**Rule text.** The `Instrument-sufficiency` lens (`lenses.md`,
+**Rule text.** The `Instrument-fitness` lens (`lenses.md`,
 `spec/lens-set.md`) — landed, with its completion criterion folded
 in: the extension is complete when it produces an observable on
 which the live hypotheses DIFFER, each predicted value named
@@ -273,7 +273,7 @@ shape unread, which is exactly what happened here.
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.
 
-## 9. Instrument-sufficiency — the vantage clause
+## 9. Instrument-fitness — the vantage clause
 
 **Incident + basis.** The investigation instrumented a program
 whose full source was on disk entirely FROM OUTSIDE: elapsed
@@ -300,7 +300,7 @@ discriminates between them successfully and forever, and the set
 never comes to include the internal ones. The loop closes on itself
 and every measurement in it is valid.
 
-**Rule text.** The vantage clause in `Instrument-sufficiency`
+**Rule text.** The vantage clause in `Instrument-fitness`
 (`lenses.md`, `spec/lens-set.md`) — landed, sitting after the
 read-before-build precondition and before the extend question.
 
@@ -525,7 +525,7 @@ verdict, moment, tracker row.
 4. **Testimony-discharge** (lens, Path 2) — FIRED, cycles 1 and 2.
    Firing log landed under entry 6. Two fires, neither on
    legitimate work.
-5. **Instrument-sufficiency**, core discriminate question (lens) —
+5. **Instrument-fitness**, core discriminate question (lens) —
    FIRED, cycle 4. D14 pre-registers a ninth A/B while the live
    hypotheses were separable by no instrument in place; F27 is the
    wall it was run into — two startups whose logs are
@@ -537,13 +537,13 @@ verdict, moment, tracker row.
    that as grounds to void every between-process comparison (D15,
    D16) rather than as a branch to locate. The operator supplied
    the reframing.
-7. **Instrument-sufficiency, read-before-build precondition**
+7. **Instrument-fitness, read-before-build precondition**
    (lens clause) — FIRED, cycle 1 onward, decisively at cycle 4.
    F28 states it outright: `model_load_seconds` "was recorded on
    EVERY bench row from the first run of the day and never read
    until now". Cycle 4 spent a pre-registered new measurement
    (D14) with the discriminating field already on disk.
-8. **Instrument-sufficiency, vantage clause** (lens clause) —
+8. **Instrument-fitness, vantage clause** (lens clause) —
    FIRED, cycles 5-10. F31, F33, F34 and F35 are four successive
    instruments, all external; F41 records the consequence — every
    hypothesis after D2's strike was environmental. The first
@@ -656,3 +656,97 @@ data for sixteen of the seventeen mechanisms instead of none. Gap
 C is the standing item: it drains when a DANEEL run reaches
 [READY] with an operator-observation finding outstanding, and not
 before.
+
+## 13. The instrument itself may be DEFECTIVE, not merely thin
+
+**Incident + basis.** Operator-raised, emphatic: *"instrument
+itself being buggy!!! very important addition to daneel! needs to
+be considered every cycle!!"*
+
+Eight instrument defects in one investigation, one day,
+`/home/g/wan2gp`. Each produced plausible output, and each was
+caught by something other than the cycle that used it.
+
+OBSERVED — read in the run tracker cited by entry 1, this session:
+
+1. `/proc/diskstats` is SYSTEM-WIDE and was read as per-process
+   for a whole day, so every disk figure was contaminated. Exposed
+   only by an arithmetically impossible 232 GB model load. Tracker
+   row F34.
+2. A cumulative total read as a RATE, twice — "257 MB/s",
+   "660 MB/s". Tracker row F31; the second figure is the worked
+   example already sitting in `foundations.md`'s basis rule.
+
+RELAYED — from the dispatch brief that commissioned this entry,
+not independently read here, and weighed as testimony about
+measurements rather than as measurements:
+
+3. A `sed` expression with a greedy `.*is` printed IDENTICAL
+   numbers for two different profiles — a broken parser emitting
+   believable output.
+4. A generated red-proof script was re-run STALE and its output
+   read as fresh.
+5. A contention guard matched earlyoom's own `--prefer` regex, so
+   it would have fired forever, training the `--force` reflex that
+   kills a guard.
+6. `pgrep | head -1` grabbed a transient PID and the wait returned
+   a false "finished".
+7. A sweep APPENDED to a pre-existing results file and the monitor
+   counted an earlier cycle's stale row as this cycle's first
+   result. Caught at read time, one step before it entered a
+   report.
+8. Count-based contention assertions fired on legitimate work.
+
+**Class.** Defect distinct from insufficiency, and invisible from
+the same place. An INSUFFICIENT instrument fails to separate the
+hypotheses and says so; a DEFECTIVE one separates them wrongly and
+says nothing, because its output arrives already shaped like an
+answer. `Instrument-fitness` as it stood asked only whether the
+instrument could DISCRIMINATE — never whether it was CORRECT — and
+its scope line was conditional on "any cycle whose live hypotheses
+are not separable by the evidence the current instruments
+produce". A defective instrument produces exactly the opposite
+condition: confident, separable, false numbers. The lens was
+therefore silent by construction on every one of the eight.
+
+**Rule text.** The lens widened rather than a new lens added, and
+the reason survived reading rather than being assumed. A second
+lens would have had to carry a second scope line, and the
+lens-entry shape is one Question and one Scope; more decisively,
+the conditional scope is wrong for the READ-BEFORE-BUILD
+precondition too, and a new lens would have left that standing.
+Entry 12 row 7 is the proof: `model_load_seconds` sat unread from
+cycle 1 through cycles whose hypotheses looked separable at the
+time. Unconditional scope repairs both halves, so the merge is not
+a compromise between them.
+
+Renamed `Instrument-sufficiency` → `Instrument-fitness` in the
+same edit. The old name had become narrower than its own body —
+a label that stops anyone looking, which is the corpus's own named
+drift shape one level up — and a lens reached for on sufficiency
+grounds is not reached for on correctness grounds. Ten sites
+renamed (`command grep -rn`, zero residual), this journal's
+entries 7, 9 and 12 included, so a later editor searching for the
+rule finds one name.
+
+Compliance leaves an ARTIFACT rather than a feeling: three cited
+lines, one per correctness question — what the number is ABOUT
+(entity, unit, namespace); whether the output is THIS run's
+(freshness of file, script and process; whether an output file was
+appended to); and whether a fresh query, filter, sort or tally has
+been shown to DISCRIMINATE on a known-positive/known-negative pair
+drawn from the REAL data. That last is the one nothing prompts: a
+self-built view presents as looking rather than as measuring.
+
+Anchored at `phases/investigate-design.md`, the standardized
+inspection pass, which already runs every cycle. One sentence
+added there makes an every-cycle scope visible at that seam and
+makes its omission malformed, rather than leaving the reader to
+infer it from a lens file's scope line.
+
+**Consumer + drain seam.** The standardized inspection pass, every
+cycle. Drains at the fire-rate review. Path 1 throughout: eight
+measured incidents, two read here and six relayed. Watch the
+false-fire rate — three cited lines every cycle is exactly the
+shape that gets filled reflexively, and a guard filled reflexively
+is a guard that has stopped reading.
