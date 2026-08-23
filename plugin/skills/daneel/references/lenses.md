@@ -25,7 +25,14 @@ omitted, or a cause it attributed wrongly — and it surfaces
 nowhere else.
 
 Discharge is a WRITTEN PAIR, never a matching number: the
-operator's sequence as steps, the arm's sequence beside it. A
+operator's sequence as steps, the arm's sequence beside it. The
+pair lands as a tracker FINDING carrying both sequences, and the
+cycle's pass line CITES that entry — the pass artifact is one line
+per lens, which two step lists cannot be, and a requirement with
+nowhere to be written is one nobody can comply with. Citing an
+entry is the shape the pass already uses, so the pair also
+survives into the tracker instead of living only in a per-cycle
+artifact. A
 symptom of the right size is what a wrong arrangement also
 produces, so a number in the reported range reads as arrival and
 stops the checking. Naming sequence in the question does not
