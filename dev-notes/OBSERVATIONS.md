@@ -224,3 +224,40 @@ never made it read one.
 
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.
+
+## 8. Distribution-shape
+
+**Incident + basis.** Repeated identical-spec runs produced two
+tight clusters — roughly 16-21 s and 56-61 s — with nothing between
+them, consistent WITHIN each process and switching BETWEEN
+processes. The AI read that as "unexplained bimodality" and moved
+toward discarding every between-process comparison in the run as
+void. The operator read the same rows and named it differently:
+consistent-and-bimodal is not randomness, it is a DECISION —
+something deterministic reads a condition at startup and branches,
+under conditions of the system's own making. That reframing turned
+a dead end into a search, and the search immediately found a real
+difference in inherited state (1893 MB of a file resident at one
+run's first encode against 12 MB at another's). Basis: same run
+tracker as entry 1.
+
+**Class.** Reading a distribution's WIDTH and never its SHAPE. The
+data had been in hand for hours; what was missing was the question
+of what the shape implied about the cause.
+
+**Rule text.** The `Distribution-shape` lens (`lenses.md`,
+`spec/lens-set.md`) — landed: scatter indicates interference,
+discrete modes indicate a branch, a monotone trend indicates
+accumulation.
+
+The distinction from `Measurement-floor` is why this is a separate
+lens rather than a widening of that one. Measurement-floor asks
+whether an observed difference is REAL; this asks what the
+variation's shape implies once it is. Sequential questions with
+different remedies — the first answered by repeating an
+arrangement, the second by locating a branch — and neither subsumes
+the other: a difference can clear the floor and still have its
+shape unread, which is exactly what happened here.
+
+**Consumer + drain seam.** The standardized inspection pass, every
+cycle. Drains at the fire-rate review.

@@ -134,6 +134,20 @@ separates a result from the floor itself.
 *Scope:* any cycle whose verdict rests on comparing measurements
 taken in separate runs.
 
+## Distribution-shape
+
+*Question:* what does the SHAPE of a measurement's variation say
+about its cause? Scatter indicates interference; DISCRETE MODES
+indicate a branch — something read a condition and chose a path,
+and the modes are its outcomes; a monotone trend indicates
+accumulation. A result that is consistent within each run and
+switches between them is not noise to average away, nor a
+comparison to abandon: it is a decision to locate, and the modes
+are evidence of where to look.
+
+*Scope:* any cycle whose repeated measurements vary in a way
+that is not scatter.
+
 ## Single-focus
 
 *Question:* does the iteration investigate one target, or
