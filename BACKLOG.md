@@ -175,6 +175,25 @@ decision, or trigger.
   Write-set and verifier: dependent on that decision.
 
 
+
+- 2026-08-23 — **0.2.64: Measurement-floor re-cites F47, because its basis
+  rotted while its sentence stayed true.** `4ee1840` bump · `894aa3e` the
+  swap, both lens homes plus the journal, parity verified identical after
+  unwrap (1232 chars each). The grain clause had rested on the 3x spread of
+  F25/F29; F45 and F46 then showed every row-1-against-row-2 comparison in
+  that run confounded by sweep position, so the evidence was overturned
+  underneath a rule that still read correctly — and nothing in the sentence
+  showed it. F47 replaces it: four BYTE-IDENTICAL rows in one sweep,
+  pre-registered, 19.9 / 59.0 / 21.5 / 59.x s, configuration held constant
+  by construction so the spread needs no interpretation. Journal DEFECT A
+  re-cited in place carrying why the first basis fell.
+
+  THE CLASS, worth more than the swap: a basis can rot while the rule above
+  it stays true and readable. Nothing in a correct sentence announces that
+  its evidence has been overturned elsewhere, and the overturning arrives
+  from an investigation that never reads the rule. This is the stale-premise
+  shape at the level of a corpus rather than a plan.
+
 ## Done
 
 Closed items leave by commit ref. This section is the REF RECORD, not a
