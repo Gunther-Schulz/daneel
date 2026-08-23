@@ -29,6 +29,23 @@ cause it attributed wrongly — and it surfaces nowhere else.
 *Scope:* the first cycle of any run whose symptom is an
 operator observation rather than a failing check.
 
+## Testimony-discharge
+
+*Question:* does this cycle's investigation touch an outstanding
+operator observation — and where it does not, is the reason
+named? A frame set wrongly at the start never grows, so every
+mechanism that re-opens scope on a GROWING failure surface stays
+silent on it; each cycle reads internally coherent while the run
+measures a system nobody reported a problem with.
+(*Hypothesis, validate by use.* This lens is known to catch that
+failure; how often it fires on correct work is unmeasured —
+investigating a mechanism several levels below the reported
+symptom is proper, and trips it.)
+
+*Scope:* any cycle in a run holding at least one
+operator-observation finding whose discharge state
+(`foundations.md`) is OUTSTANDING.
+
 ## Source-before-result
 
 *Question:* has the state at the source of the wrong behavior

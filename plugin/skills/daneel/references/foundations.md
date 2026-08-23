@@ -110,6 +110,24 @@ stand as a basis. Its interpretation, synthesis, or
 recommendation cannot: re-ground those against the actual code or
 runtime state before anything rests on them.
 
+### Operator testimony
+
+An operator's report of observed behavior enters the run as a
+finding like any other, and carries in addition a **discharge
+state** — REPRODUCED, CONTRADICTED, DEFERRED with its reason, or
+OUTSTANDING.
+
+Recording the observation discharges nothing. A finding can be
+true, [VERIFIED], and never acted on, and a coherent run will not
+disturb it: scope re-opens when the failure surface GROWS, and a
+frame that was wrong from the start never grows.
+
+**[READY] requires no operator-observation finding OUTSTANDING.**
+A run does not close while something the operator reported has
+never been acted on. This is the assumption rule at a second seam —
+an assumption holds the run short of [READY] for want of evidence,
+an outstanding observation for want of an ACT.
+
 ## Evidence-bearing artifacts
 
 Every load-bearing artifact the protocol requires — a mechanism's

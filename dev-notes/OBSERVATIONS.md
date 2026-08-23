@@ -115,3 +115,48 @@ which are mechanisms with firing moments rather than exhortations.
 prose or a mechanism. This entry is the standing argument for the
 mechanism, and it drains only by being cited in that decision —
 never by being turned into a rule.
+
+## 6. Testimony-discharge — HYPOTHESIS, validate by use
+
+**Incident + basis.** The run's scope stayed coherent and stable
+for nine hours while aimed at a configuration the operator does not
+use. The contradicting datum — the operator's own observation under
+a different profile — sat in the tracker as a [VERIFIED] finding
+the entire time: true, recorded, and permanently inert. Nothing
+ever asked whether it had been ACTED on. DANEEL re-opens scope when
+the failure surface GROWS, and the convergence cycle demands NEW
+surfaces; both trigger on the investigation EXPANDING, and neither
+fires on a frame that was wrong from the start and never grew.
+Basis: same run tracker as entry 1.
+
+**Class.** Hypothesis, validate by use. The incident grounds that
+the lens CATCHES this failure; it says nothing about the rate at
+which it fires on correct work, and that rate is what decides
+whether the lens survives.
+
+**Known risk, recorded at minting.** Legitimate cycles exist that
+should NOT touch operator testimony — chasing a mechanism several
+levels below the reported symptom is proper investigation. So the
+lens will fire on correct behaviour, and a justification line
+demanded every cycle is exactly the shape that gets filled
+reflexively. A guard that fires on legitimate work trains the
+override reflex that kills it. If the firing log below fills with
+entries where the named reason was routine, the lens is wrong in
+its current form — retire it or narrow its scope; do not soften the
+predicate.
+
+**Rule text.** The `Testimony-discharge` lens (`lenses.md`,
+`spec/lens-set.md`), marked in its own text as a hypothesis. Its
+enforcement half — [READY] blocks while any operator-observation
+finding is OUTSTANDING (`foundations.md`, "Operator testimony") —
+is GROUNDED by the same incident and is not part of this
+hypothesis: an enforcement gate does not depreciate and carries no
+firing log.
+
+**Consumer + drain seam.** The standardized inspection pass, every
+cycle. Drains at the fire-rate review, which reads the log below.
+
+**Firing log.** No firings recorded. Per skill-craft's durability
+classes a capability patch with no logged firing since the last
+consolidation is a cut candidate; this lens is born as exactly that
+and stays one until dated lines appear here naming what it caught.
