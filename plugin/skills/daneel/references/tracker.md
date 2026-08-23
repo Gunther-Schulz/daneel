@@ -149,10 +149,29 @@ The verdict moves through:
    auto-battle, by
    mode-absence-of-operator. The recommendation stands; the
    assumption it rested on was not verified.
-6. **[INVALIDATED]** — a [VERIFIED] or [AUTO-ACCEPTED] verdict
-   contradicted by later evidence. Holds the phase until
-   re-formed. For DANEEL, a [VERIFIED] root cause [INVALIDATED]
+6. **[INVALIDATED]** — two senses on this track, and they behave
+   differently. (a) OVERTURNED: a [VERIFIED] or [AUTO-ACCEPTED]
+   verdict contradicted by later evidence. Holds the phase until
+   re-formed; for DANEEL, a [VERIFIED] root cause [INVALIDATED]
    by new evidence reopens hypothesis investigation.
+   (b) ELIMINATED: a candidate investigated and ruled out — the
+   sense the Hypothesis-enumeration lens requires when it demands
+   all alternatives [INVALIDATED] except one [VERIFIED]. This is
+   the terminal most hypotheses reach, and it carries the
+   re-entry condition below.
+
+An **eliminated** hypothesis carries its **re-entry condition** —
+the observation that would return it to [PENDING] — in a
+`re-entry:` sub-line beside its basis, in the same form as
+`considered:` above. An elimination is a prediction about the
+future of the evidence, and one that names no condition cannot be
+wrong, so nothing ever re-reads it: later cycles enumerate from a
+set quietly missing the candidates it struck.
+
+The condition is written AT the strike, not filled in later,
+because that is what makes it a check rather than a note. Where
+the condition is ALREADY SATISFIED at the moment of striking, the
+elimination refutes itself and the verdict does not stand.
 
 An [OUTLINED] hypothesis becomes concrete as [PENDING] or
 [CONDITIONAL]. A [PENDING] hypothesis found to rest on an

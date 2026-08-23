@@ -384,3 +384,82 @@ still measure only from outside.
 **Consumer + drain seam.** The hypothesis list's basis artifact,
 at every cycle that locks a verdict. Drains at the fire-rate
 review.
+
+## 11. An elimination names its re-entry condition
+
+**Incident + basis.** The operator's question was "I thought the
+DANEEL tracker would prevent this? why does it not?" What the
+tracker held, verbatim from the run's file:
+
+    D2 [INVALIDATED] (re-affirmed on stronger evidence) the
+    enhancer as root cause — basis: F29; its 3/3 correlation was
+    with a configuration that provably did not matter
+
+Status, summary, basis pointing at a real measurement. Fully
+compliant with the fixed-shape ledger line and with the basis
+rule. Two structural failures underneath it:
+
+FIRST, the basis rule asks whether evidence EXISTS, not whether it
+ENTAILS the verdict. F29 was true — two byte-identical specs did
+produce different results. The inference was invalid: identical
+specs differing proves an ADDITIONAL variable exists; it does not
+prove the configured variables are inert. "Not necessary" was
+collapsed into "not causal". The basis field caught nothing
+because there WAS a basis; the defect sat between the basis and
+the verdict, where no field looks.
+
+SECOND, eliminations are one-way. Measured consequence: the
+strongest signal in the run's data — enhancer configured, 6 of 7
+slow, versus a coin flip without — sat outside the hypothesis list
+for the rest of the session, and was restored only when the
+operator named it. Basis: same run tracker as entry 1.
+
+**Class.** A compliant record of an invalid inference, plus a
+terminal with no route back. The tracker performed exactly as
+designed, which is what makes this an amendment rather than a
+compliance failure.
+
+**Rule text.** `tracker.md`, the design-decision `[INVALIDATED]`
+definition — landed. An eliminated hypothesis carries a
+`re-entry:` sub-line naming the observation that would return it
+to [PENDING], written AT the strike, and self-refuting where that
+observation already holds.
+
+Found while placing it, and it is the deeper root: `[INVALIDATED]`
+carried TWO senses and the tracker defined only one. The
+definition said "a [VERIFIED] or [AUTO-ACCEPTED] verdict
+contradicted by later evidence" — the OVERTURN sense, which
+already had a route back. The ELIMINATION sense — the one
+`lenses.md` demands ("all alternatives [INVALIDATED]"),
+`tracker.md`'s own hypothesis-list-completeness paragraph
+restates, and the run used — was defined nowhere. Eliminations are
+one-way because elimination was not a defined state, so nothing
+defined its re-entry. Both senses are now named; the re-entry
+condition attaches to the second.
+`investigate-design.md:52` already glossed "[INVALIDATED]
+(eliminated)", so the sense was in use and unnamed rather than
+invented here. The two senses sit two lines apart at
+`investigate-design.md:147` and `:151`, one per track, which is
+why the overload went unnoticed: each track predominantly uses one.
+
+**Coverage limit, recorded so nobody credits the rule with more
+than it does.** The re-entry condition fully answers the second
+failure. It answers the FIRST only where the condition is already
+satisfied at the strike — as it was here, 3 of 3 at that moment.
+An invalid inference whose re-entry condition is not yet true
+still stands, and nothing in the corpus yet asks whether a basis
+ENTAILS its verdict.
+
+**Interaction with the convergence cycle, graded.** It does not
+cover this, and more strongly than expected: that cycle requires
+NEW SURFACES, defined as citing a file path or region no prior
+cycle cited, and explicitly calls a cycle producing only
+re-attestations of prior surfaces MALFORMED. Re-reading a struck
+hypothesis is a re-attestation. So the convergence cycle would not
+merely fail to catch this — counting such a re-read as its work
+would make the cycle malformed under its own rule.
+
+**Consumer + drain seam.** Every strike of a hypothesis, at the
+moment the verdict is written. Drains at the fire-rate review.
+Fourth instance today of restoration arriving from the operator
+rather than the run.
