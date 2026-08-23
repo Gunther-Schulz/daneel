@@ -12,6 +12,23 @@ bindings (`bindings.md`).
 
 ---
 
+## Reproduction-first
+
+*Question:* has the operator's own observed state been
+reproduced, in their configuration and their sequence, before
+any improvement is investigated? Their report is testimony
+ABOUT a measurement, not the measurement — believed, and
+verified. Reproduction is what converts it into a finding,
+and gives every later comparison a baseline on the system
+that matters; a run opening on an improvement hypothesis
+measures a system nobody reported a problem with. Divergence
+between the report and the reproduction is the run's most
+informative first finding — a detail the report omitted, or a
+cause it attributed wrongly — and it surfaces nowhere else.
+
+*Scope:* the first cycle of any run whose symptom is an
+operator observation rather than a failing check.
+
 ## Source-before-result
 
 *Question:* has the state at the source of the wrong behavior
@@ -48,6 +65,32 @@ doing the verification work (per the basis rule,
 
 *Scope:* any cycle that locks a hypothesis verdict ([VERIFIED]
 or [INVALIDATED]).
+
+## Arrangement-parity
+
+*Question:* does each measured finding record the configuration
+it was taken under, and — for every variable the operator's own
+report pins — their value beside it? A measurement establishes
+something about the arrangement that produced it and nothing
+about any other; a finding taken under a different configuration
+than the operator runs reads complete and answers a question
+nobody asked.
+
+*Scope:* any finding whose basis is a behavioral test result or
+an execution trace.
+
+## Measurement-floor
+
+*Question:* has the noise floor been established before two
+measurements are compared? One arrangement repeated unchanged,
+at least three times, its spread recorded as a finding — that
+spread is what a claimed difference between arms must clear.
+Arms measured once each produce a curve whatever the variance
+is, and every row reads complete either way; the floor is what
+separates a result from the floor itself.
+
+*Scope:* any cycle whose verdict rests on comparing measurements
+taken in separate runs.
 
 ## Single-focus
 

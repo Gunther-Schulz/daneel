@@ -10,11 +10,19 @@ Every load-bearing claim and every hypothesis carries a named
 query, OR (b) a file:line range citation paired with **one
 observable fact** about the cited range (count, identifier, type) that the citation grounds, OR (c) a state
 observation (database query with its output, log entry, execution
-trace) OR (d) a behavioral test result. Verify (`verify.md`) and
+trace) OR (d) a behavioral test result OR (e) for a **derived
+figure** — a rate, ratio, average, or difference computed from
+other evidence — the OPERATION over its inputs as well as the
+inputs. Verify (`verify.md`) and
 convergence cycles re-open citations to verify both the location
 AND the observable fact. A free-text claim of having looked, a
 paraphrase of what was read, or a summary without an observable
 fact is not a basis.
+
+A derived figure's cited inputs ground its terms, never the
+figure: what the operation assumes about those inputs is part of
+the basis too — a total divided by a time window is a rate only
+where the window carried nothing but the measured work.
 
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"

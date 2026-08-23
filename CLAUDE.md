@@ -6,7 +6,8 @@ Rules for maintaining the DANEEL plugin itself.
 
 DANEEL is an *instance* of the Anneal framework — parallel to
 Clippy. The skill files — `plugin/skills/daneel/SKILL.md`, `phases/`,
-and `references/` — are **rendered** from the framework spec (the
+and `references/` except `references/foundations.md` (**maintained
+locally**, see below) — are **rendered** from the framework spec (the
 `anneal-framework` repo, `spec/`). They are not authored here, and
 are never where a behavior change originates.
 
@@ -27,6 +28,14 @@ anneal-framework `development-process.md` "The three levels", every
 load-bearing rule in the plugin originates in one of two specs —
 framework spec OR DANEEL's `spec/`. A plugin edit without a cited
 spec origin is drift.
+
+**`references/foundations.md` is maintained locally, not rendered.**
+Operator decision 2026-08-23: the Anneal framework is being
+deprecated in its current form, and DANEEL is updated in place under
+`skill-craft`. Edits to that file land here directly, invoking
+`skill-craft` first per "Rule-corpus edits" below and citing their
+own incident as origin. Do not route a change to it through the
+framework spec, and do not re-render it from there.
 
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, `marketplace.json`, `legacy/` — is
