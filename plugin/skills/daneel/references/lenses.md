@@ -24,6 +24,15 @@ is the run's most informative first finding — a detail the report
 omitted, or a cause it attributed wrongly — and it surfaces
 nowhere else.
 
+Discharge is a WRITTEN PAIR, never a matching number: the
+operator's sequence as steps, the arm's sequence beside it. A
+symptom of the right size is what a wrong arrangement also
+produces, so a number in the reported range reads as arrival and
+stops the checking. Naming sequence in the question does not
+survive that moment — an unwritten comparison leaves nothing to
+tell a reproduction from a resemblance, and the lens then fires,
+is answered, and certifies the wrong arm.
+
 *Scope:* the first cycle of any run whose symptom is an operator
 observation rather than a failing check.
 
@@ -97,7 +106,7 @@ not announce itself at all, its output arriving already shaped
 like an answer.
 
 ONE LINE per cycle, covering the instruments THIS CYCLE LEANED ON
-and not every instrument in the run. The line answers two
+and not every instrument in the run. The line answers three
 questions:
 
 - **What is the number ABOUT?** The entity measured (this process,
@@ -113,6 +122,19 @@ questions:
   to rather than replaced, so an earlier cycle's row counts as
   this cycle's first result. Each returns exactly what a fresh
   correct run returns.
+- **What does the instrument's own text say it CANNOT do?** A limit
+  written into a tool's header, docstring or comments is a claim
+  about THIS cycle's question, not a disclaimer discharged by having
+  been written. Stating a gap honestly makes it read as handled — to
+  its author first, because the sentence is evidence of rigor — so it
+  survives every later read as a credit rather than as an open
+  finding, while the tool's own parameter names become the interface
+  and the prose above them goes unread. Weigh the text as its
+  author's TESTIMONY, in both directions: a stated limit is graded
+  like any other claim and can be over-cautious or stale, and its
+  ABSENCE clears nothing — no author enumerates the gaps they did not
+  see. Where a named limit touches this cycle's question, the
+  instrument does not answer it whatever number it returns.
 
 A FRESH query, filter, sort or tally built this cycle carries in
 addition a known-positive/known-negative PAIR drawn from the REAL
