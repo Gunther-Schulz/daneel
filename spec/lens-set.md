@@ -89,9 +89,21 @@ Read before building: a discriminating observable is often
 already collected and unread, because an instrument reports
 prominently what it was built to watch and carries the rest
 quietly. An unread field is indistinguishable from an absent one
-from inside the run — the instrument does not go silent, it
-keeps returning confident, correct numbers about the wrong
-quantity. The remedy there is a query, not a build.
+from within the investigation — the instrument does not go
+silent, it keeps returning confident, correct numbers about the
+wrong quantity. The remedy there is a query, not a build.
+
+Ask where the instrument observes FROM, not only what it
+records. Extending along the axis it already has is a different
+act from changing its vantage, and only the first feels like
+progress: an instrument outside the system generates hypotheses
+about the system's surroundings, discriminates between them
+successfully, and never generates the internal ones — each round
+reads as sufficient, against a hypothesis set the instrument
+itself produced. Where the system's own source,
+symbols or runtime are reachable, measuring only its environment
+is choosing the weaker method: black-box technique is for black
+boxes.
 
 Where two hypotheses then still predict the same observable
 under the current tracing, extending the instrument IS this
