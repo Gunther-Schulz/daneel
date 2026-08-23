@@ -37,6 +37,13 @@ deprecated in its current form, and DANEEL is updated in place under
 own incident as origin. Do not route a change to it through the
 framework spec, and do not re-render it from there.
 
+The carve-out **lapses** if an Anneal successor lands and
+`foundations.md` is rendered from it again. At that point the
+clauses maintained locally here are carried INTO the successor
+spec, not dropped — the carve-out suspends the render contract for
+this file, it does not exempt the file's content from having a
+spec origin.
+
 This rule covers the skill *content*. The plugin's packaging — this
 file, the READMEs, `plugin.json`, `marketplace.json`, `legacy/` — is
 repo-local, maintained here directly under the rules below.
@@ -105,6 +112,21 @@ When DANEEL identifies a complex fix that requires architectural
 changes, it hands off to Clippy's implement phase via explicit
 cross-instance handoff. The framework's loopback semantics govern
 this transition.
+
+## Improvement journal
+
+`dev-notes/OBSERVATIONS.md` is this repo's improvement journal: the
+provenance of every minted lens and basis-rule clause, and the
+firing log that later decides whether a capability patch has earned
+its place (skill-craft, Lifecycle and Durability classes).
+
+It is a **maintenance file — a write target, never a read
+dependency.** No operational file (`SKILL.md`, `phases/`,
+`references/`) points at it, and none may: the journal must not
+load during a run. Naming it here, as a role, is not a pointer on
+any operational read path.
+
+Mint a rule, land its entry in the same commit.
 
 ## Rule-corpus edits
 

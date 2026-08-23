@@ -24,6 +24,12 @@ figure: what the operation assumes about those inputs is part of
 the basis too — a total divided by a time window is a rate only
 where the window carried nothing but the measured work.
 
+A basis that is a behavioral test result or an execution trace
+carries HOW MANY observations it rests on. Otherwise a verdict
+resting on one run and a verdict resting on six read identically,
+and the confidence in the wording does not degrade with the
+thinness of the evidence.
+
 A basis that resolves to recall — "assumed," "inferred,"
 "obviously so" — or to deferral — "will verify in cycle N,"
 "impl-phase will produce," "TBD" — is an **assumption**, not a
