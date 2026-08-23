@@ -16,6 +16,25 @@ Firings are appended under their entry as dated lines naming what
 the rule caught. An entry with no firing since the last
 consolidation is a cut candidate, not a fixture.
 
+**Zero firings means two different things, and the cut-candidate
+rule cannot tell them apart on its own.** A patch that has had
+opportunities and caught nothing is evidence against itself. A
+patch minted last week has zero firings BY CONSTRUCTION, and
+reads identically. As of 2026-08-23 that is not hypothetical:
+every mechanism in the 0.2.52-0.2.64 batch was minted in one day
+from one investigation, so the whole corpus below currently reads
+to a fire-rate review as cut-eligible — including the entries
+that have since been shown to work. Absence of a firing line is
+a vote, and here it is a vote nobody cast.
+
+So the reviewer's first question is not "did it fire" but **has
+anything exercised it yet** — how many runs have entered this
+rule's scope since it was minted. Zero runs, zero firings, no
+information. The discriminator is the run count, and a rule
+whose scope no run has entered is not depreciating; it is
+unmeasured, and stays so until a run uses it. The successor
+entry that supplies those runs is booked in `BACKLOG.md`.
+
 ---
 
 ## 1. Reproduction-first
