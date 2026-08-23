@@ -109,7 +109,29 @@ none. The basis is the evidence the verdict rests on — a
 basis-rule artifact, not prose describing one — or, where it
 rests on an assumption, that assumption named. The basis is
 mandatory; a verdict whose basis is an assumption cannot reach
-[VERIFIED]. A verdict the operator could resolve is recorded
+[VERIFIED].
+
+**A basis grounds a verdict only where it ENTAILS it.** Mandatory
+and real is not sufficient: the basis field asks whether evidence
+EXISTS, and the defect sits between the evidence and the verdict,
+where no field looks. So the basis states what it ESTABLISHES and
+not only which artifact it is — `basis: F29, two byte-identical
+specs differing; establishes that an unconfigured variable
+exists` — and the verdict stands only where what is established
+covers what the summary claims. A verdict wider than its basis is
+malformed whatever its status, and its status is what makes it
+look sound.
+
+The recurring shape, and the expensive one: evidence that an
+UNKNOWN variable EXISTS, read as evidence that the KNOWN ones are
+INERT. Identical arrangements producing different results prove
+an additional variable; they demote nothing that was configured.
+"Not necessary" collapsed into "not causal" is the same move on
+the elimination track. The `re-entry:` condition does not catch
+it: a condition not yet true reads as a live check while the
+verdict it guards is already wrong.
+
+A verdict the operator could resolve is recorded
 [CONDITIONAL] — the AI's committed recommendation carrying the
 operator-resolvable assumption — never a posed choice; the
 operator overrides it free-form from the tracker.

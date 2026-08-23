@@ -430,11 +430,18 @@ terminal with no route back. The tracker performed exactly as
 designed, which is what makes this an amendment rather than a
 compliance failure.
 
-**Rule text.** `tracker.md`, the design-decision `[INVALIDATED]`
-definition — landed. An eliminated hypothesis carries a
-`re-entry:` sub-line naming the observation that would return it
-to [PENDING], written AT the strike, and self-refuting where that
-observation already holds.
+**Rule text.** Two rules, landed in `tracker.md`, one per
+structural failure above.
+
+For the SECOND: the design-decision `[INVALIDATED]` definition. An
+eliminated hypothesis carries a `re-entry:` sub-line naming the
+observation that would return it to [PENDING], written AT the
+strike, and self-refuting where that observation already holds.
+
+For the FIRST: the design-decision basis rules gain the
+entailment clause — see "Coverage limit, and its closure" below,
+which is where that half is recorded, having been left open when
+this entry was first written.
 
 Found while placing it, and it is the deeper root: `[INVALIDATED]`
 carried TWO senses and the tracker defined only one. The
@@ -453,13 +460,38 @@ invented here. The two senses sit two lines apart at
 `investigate-design.md:147` and `:151`, one per track, which is
 why the overload went unnoticed: each track predominantly uses one.
 
-**Coverage limit, recorded so nobody credits the rule with more
-than it does.** The re-entry condition fully answers the second
-failure. It answers the FIRST only where the condition is already
-satisfied at the strike — as it was here, 3 of 3 at that moment.
-An invalid inference whose re-entry condition is not yet true
-still stands, and nothing in the corpus yet asks whether a basis
-ENTAILS its verdict.
+**Coverage limit, and its closure.** The re-entry condition fully
+answers the second failure. It answers the FIRST only where the
+condition is already satisfied at the strike — as it was here,
+3 of 3 at that moment. An invalid inference whose re-entry
+condition is not yet true still stands, so the re-entry rule was
+never the answer to it.
+
+The first failure is now answered in its own right, in
+`tracker.md`'s design-decision basis rules: **a basis grounds a
+verdict only where it ENTAILS it.** The basis field asks whether
+evidence EXISTS, and the defect sits between the evidence and the
+verdict where no field looks — so the basis states what it
+ESTABLISHES and not only which artifact it is, and the verdict
+stands only where what is established covers what the summary
+claims. The named shape is this incident's own: evidence that an
+UNKNOWN variable EXISTS, read as evidence that the KNOWN ones are
+INERT.
+
+Placed in `tracker.md` rather than in `foundations.md`'s basis
+rule because the gap is a relation between two FIELDS of the
+ledger line, and the ledger line is `tracker.md`'s. The basis rule
+governs what counts as evidence; nothing there is wrong, and
+widening it would have put the fix one level away from the shape
+it repairs. The compliance artifact is one clause inside a field
+that is already mandatory — no new field, and its omission is
+visible in the line.
+
+Graded against the re-entry rule above, since they now sit
+adjacent: neither subsumes. Entailment asks whether the verdict
+was ever entitled to be written; re-entry asks what would return
+it. A sound verdict still needs its route back, and an unsound one
+is caught before it is written rather than after.
 
 **Interaction with the convergence cycle, graded.** It does not
 cover this, and more strongly than expected: that cycle requires
