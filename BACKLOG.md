@@ -55,12 +55,21 @@ decision, or trigger.
   doc gap to fill. Cross-reference with Clippy's README, which does
   document both modes.
 
-- **PARKED — Effectiveness unmeasured against `diagnosing-bugs`.**
+- **PARKED — Effectiveness unmeasured against a bare model.**
   Missing: the operator decision on the interactivity confound, named
-  at the end of this entry. The pilot below is READY and needs it not
-  at all. Whether
-  DANEEL outperforms the machine-local `~/.claude/skills/`
-  `diagnosing-bugs` skill — or a bare model with no skill at all — on
+  at the end of this entry.
+
+  **Premise change, 2026-08-23: the `diagnosing-bugs` arm is dead.**
+  The operator uninstalled that skill the same day and wants none of
+  that author's skills. Measured, not assumed: `~/.claude/skills/`
+  holds only `close-session`, and no `diagnosing-bugs` exists anywhere
+  under `~/.claude/plugins/` (the same grep returns hits in other
+  repos' prose, so it can match). A comparison arm that will never be
+  installed grades nothing and its repairs are nobody's to make. What
+  survives is the operator's actual question, which never needed it.
+
+  Whether
+  DANEEL outperforms a bare model with no skill at all — on
   real diagnosis is ungraded in both directions. Basis: operator
   impression, raised twice on 2026-08-22 (this repo's session, and
   earlier the same day in `-home-g-wan2gp` session `c9cb011f`: "is it
@@ -73,14 +82,21 @@ decision, or trigger.
     fixed before inspection; symptom handed over in the original
     reporter's own words, never a summary written once the cause was
     known; recorded cause sealed from the arms.
-  - Three arms — bare model, `diagnosing-bugs`, DANEEL. The bare arm
-    is not optional: it is the coordinate the operator's actual
-    question ("adds anything over a model unprompted") is asked in.
+  - Two arms — bare model, DANEEL. The bare arm is the whole
+    coordinate the operator's actual question ("adds anything over a
+    model unprompted") is asked in.
     Separate sessions, same tier, worktree each, blind to one another.
+  - Two recorded diagnoses are already on disk and are candidate
+    replay bugs, selected under the rule above rather than because
+    they are to hand: the wan2gp perf diagnosis (session `48c328f5`,
+    2026-08-22) and the CachyOS mouse issue (`86cb95f3`, 2026-08-21).
+    Both transcripts verified present. Their causes must be sealed
+    from the arms before either is used.
   - Criteria pre-registered before any arm runs: cause
     correct/partial/wrong against the sealed record; executed red
-    repro present BEFORE the first hypothesis (`diagnosing-bugs`
-    makes this a hard gate — "no red-capable command, no Phase 2");
+    repro present BEFORE the first hypothesis (DANEEL's own
+    `Reproduction-first` lens demands it, so it is a criterion both
+    arms are graded on rather than one arm's imported gate);
     turns to verdict; symptom-fixed-not-cause count.
   - Grader runs fresh-context on transcript + sealed truth, blind to
     which arm produced it, and is proven red on a deliberately wrong
@@ -90,50 +106,41 @@ decision, or trigger.
     shape (crash, wrong output, perf regression, intermittent). n=1
     decides nothing and 8 will not reach significance — do not
     report it as a result.
-  Blocking decision, operator's: DANEEL is interactive by design
+  Blocking decision, operator's, and the two-arm design changes its
+  shape rather than removing it: DANEEL is interactive by design
   ("User Steers Direction" is one of its four stated principles;
-  menu-driven) while `diagnosing-bugs` runs unattended. Scoring both
-  in an unattended harness measures DANEEL's checkpoints as dead air,
-  not as discipline — so either the operator plays their part
-  identically in every arm, or the design is invalid before it
-  starts. Settle this first; everything else is decided.
+  menu-driven) and the bare arm has no protocol for the operator to
+  play a part in. So the confound is no longer "does every arm get the
+  same operator" — it is what the bare arm gets instead: the same
+  wall-clock and turn budget with an operator answering questions on
+  request, or a genuinely unattended run. Those measure different
+  things and only the operator can say which one their question means.
+  Settle this; everything else is decided.
   Tooling: `skill-craft:eval-skill` already implements Tier 1
   triggering and Tier 2 behaviour-delta — use it, do not hand-roll.
   Write-set: this repo (design, results, verdict). No plugin or spec
-  change until the measurement lands. Run the pilot below first.
+  change until the measurement lands.
 
-- **READY — Pilot: grade the two `diagnosing-bugs` runs on disk.**
-  Runnable without settling the confound above, and recommended
-  before any arm is spent. Grade what actually happened in the wan2gp
-  perf diagnosis (session `48c328f5`, 2026-08-22) and the CachyOS
-  mouse issue (`86cb95f3`, 2026-08-21) against what turned out to be
-  true. Verifier / done-criterion: for each run, a yes-or-no on
-  whether an executed red repro existed before the first hypothesis —
-  the skill's own Phase 1 gate — plus correct/partial/wrong on the
-  cause. That single question separates "the skill was ignored" from
-  "the skill is insufficient", which take opposite repairs. Costs no
-  new runs, and sharpens the criteria before the full matrix: criteria
-  that first meet reality during the real run are the ones that turn
-  out unmeasurable. Write-set: this repo (results + the sharpened
-  criteria, folded back into the entry above).
-
-- **READY — Trigger collision with `diagnosing-bugs`.** Verifier:
-  `skill-craft:eval-skill` Tier 1 over both descriptions. Done when a
+- **READY — Narrow DANEEL to explicit invocation.** Verifier:
+  `skill-craft:eval-skill` Tier 1 over the sibling set. Done when a
   bare "this is broken" routes deterministically to the intended
   skill. DANEEL's SKILL.md
   description claims `"debug X"`, `"investigate why X is wrong"`,
-  `"find the root cause of Y"`; the machine-local `diagnosing-bugs`
-  claims `"debug this"` plus broken/throwing/failing/slow. On a bare
-  "this is broken" which one fires is undetermined. DANEEL is also
-  the outlier in its own family: statiker, clippy, begehung and
+  `"find the root cause of Y"`, so it competes for the ambient
+  symptom-report lane. It is the outlier in its own family:
+  statiker, clippy, begehung and
   kaemmung all restrict themselves to explicit operator invocation —
-  DANEEL does not. Latent, not live, while DANEEL is uninstalled on
-  this machine (registered and removed again 2026-08-22); it becomes
-  real on install. Recommendation: narrow DANEEL to explicit
-  invocation, matching its siblings, leaving the ambient
-  symptom-report lane to the lightweight skill — but the
-  effectiveness item above may reverse which skill should own that
-  lane, so sequence after the pilot. Measurable TODAY with
+  DANEEL does not.
+
+  **Premise change, 2026-08-23.** This was booked as a collision with
+  the machine-local `diagnosing-bugs` skill, which is now uninstalled
+  (evidence in the effectiveness entry above), so the named
+  counterparty is gone and with it the sequencing dependency on a
+  pilot that no longer exists. What survives stands on its own and is
+  the reason to do it: sibling consistency, and an ambient trigger on
+  a heavyweight interactive protocol that nobody asked for. No other
+  entry gates this one now.
+  Measurable TODAY with
   `skill-craft:eval-skill` Tier 1, no debugging runs needed.
   Write-set: `spec/bindings.md` → re-render, never a hand-edit of
   `SKILL.md` (CLAUDE.md, "The skill content is rendered, not
