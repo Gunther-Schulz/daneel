@@ -456,6 +456,21 @@ ceiling holds in the common case — but the ceiling exists because
 the operator rejected an audit, and three growths in one day is
 the shape that becomes one. Theirs to confirm or trim.
 
+**RESOLVED — operator decision 2026-08-23: KEEP ALL FOUR.** Put
+to them with each question's actual content and a worked example
+of a filled-in line rather than a description of the shape, the
+shape-level version having not landed. Nothing trimmed.
+
+**And the cut condition, recorded WITH the keep, because a keep
+with no cut condition is how a thing becomes permanent by
+default.** The governing signal is not the COUNT: four answered
+concretely about a named instrument is cheap; two RECITED is
+already dead. So the trigger to cut is the line reading as a form
+being filled in — questions restated rather than answered against
+an instrument this cycle leaned on. If that starts, the fourth
+goes first, being newest and least exercised, and the repair is a
+narrower scope rather than a softer predicate.
+
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.
 
@@ -1109,6 +1124,35 @@ speech.
 **Consumer + drain seam.** The cycle, via the compose trigger.
 Drains at the fire-rate review.
 
+**Firing log.**
+
+- 2026-08-23, FIRST USE, and it fired through part (b) rather
+  than part (c). A1 was written in the grounding run against this
+  form, with (c) drafted BEFORE the discriminating result — and
+  what earned the form its keep was the REACH question. Forced to
+  name what the account does not explain, the author found that a
+  memory-pressure story has no account of F45's STRICT
+  alternation: four byte-identical rows give fast/SLOW/fast/SLOW
+  and 12 of 12 sweeps alternate, where pressure predicts drift and
+  noise, not a clean two-cycle oscillation. Their own words: it
+  fits everything else so neatly they would have shipped it
+  without noticing. Read and verified here, not taken on report —
+  A1 at the tracker's cycle-20 block cites nine [VERIFIED]
+  findings in (a), names the alternation in (b), and carries three
+  novel predictions in (c), one running and two unrun.
+- What that establishes, and it is the part worth keeping: the
+  three parts are not three ways of asking the same thing. (a)
+  grades FIT and (b) grades REACH, and an account can pass the
+  first completely while failing the second — which is exactly
+  what happened, on the first account anyone wrote. The clause
+  "an explanation that has never been asked what it leaves out
+  has not been tested for reach, only for fit" is now measured
+  rather than asserted.
+- What it does NOT establish: n=1; part (c)'s predictions are
+  unresolved, so the novel-prediction requirement — the part the
+  D28 failure motivated — is still unexercised. The form has
+  proven (b) and not yet (c).
+
 ## 15. The tracker cannot say who caught what
 
 **Incident + basis.** Operator decision, from their asking whether
@@ -1150,3 +1194,17 @@ its own file, at the time.
 
 **Consumer + drain seam.** Every finding, at the moment it is
 written. Drains at the post-run review and the fire-rate review.
+
+**Firing log.**
+
+- 2026-08-23, first use, same run. A1 carries
+  `by: SESSION (mechanism from source; the composing question
+  from OPERATOR)` — and the split inside that one token is the
+  token working: the mechanism was the session's, the question
+  that produced it was the operator's, and without the field that
+  distinction would have survived only in conversation, which is
+  precisely how the eight-to-ten under-count happened. Read in
+  the tracker, not taken on report.
+- Not yet established: no run has enough tokens to compute the
+  MECHANISM-against-OPERATOR ratio the post-run review reads. One
+  token is a form working, not a rate.
