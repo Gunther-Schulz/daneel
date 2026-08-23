@@ -185,6 +185,20 @@ OUTSTANDING. It is recorded in the finding's own `discharge:`
 sub-line (`tracker.md`), which is where a later reader and the
 [READY] check both find it.
 
+The sub-line is written WHEN THE FINDING IS, at OUTSTANDING —
+never added later when someone notices the observation is owed.
+A state added on noticing is a state nothing keeps, and
+everything keyed to it then reads an empty set: no finding marks
+as OUTSTANDING, so the [READY] check finds nothing to block on
+and the Testimony-discharge lens finds nothing in scope. Both
+look correctly written while switched off. Measured on the run
+that minted them: `discharge:` sub-lines = 0 across 101 entries,
+against `re-entry:` > 0 in the same file under the same pattern
+shape — the field was writable and never written, the lens fired
+twice in fourteen cycles, and the operator's strongest evidence
+(a FLIP, one variable changed and the effect seen to come and
+go) sat at entry two, untouched, for all fourteen.
+
 Recording the observation discharges nothing. A finding can be
 true, [VERIFIED], and never acted on, and a coherent run will not
 disturb it: scope re-opens when the failure surface GROWS, and a

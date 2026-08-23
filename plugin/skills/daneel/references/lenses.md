@@ -38,8 +38,9 @@ observation rather than a failing check.
 
 ## Testimony-discharge
 
-*Question:* does this cycle's investigation touch an outstanding
-operator observation — and where it does not, is the reason named?
+*Question:* does this cycle's investigation touch EACH outstanding
+operator observation — and for every one it does not, is the
+reason named?
 A frame set wrongly at the start never grows, so every mechanism
 that re-opens scope on a GROWING failure surface stays silent on
 it; each cycle reads internally coherent while the run measures a
@@ -49,9 +50,18 @@ failure; how often it fires on correct work is unmeasured —
 investigating a mechanism several levels below the reported
 symptom is proper, and trips it.)
 
+EACH, never AN: the answer is given against the outstanding LIST,
+not a representative of it. An indefinite article is satisfied by
+whichever observation the run already happens to be pursuing, so
+the lens keeps returning yes while a SIBLING observation goes
+untouched — and it reads as compliance every time, because one of
+them genuinely is being investigated. The list is small by
+construction, so EACH costs a line, not an audit.
+
 *Scope:* any cycle in a run holding at least one
 operator-observation finding whose discharge state
-(`foundations.md`) is OUTSTANDING.
+(`foundations.md`) is OUTSTANDING — which is every such finding
+from the moment it is written, since the state is born there.
 
 ## Source-before-result
 
