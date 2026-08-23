@@ -197,5 +197,30 @@ have missed the stall this entry records — the harness already
 existed and was excellent; it was simply not extended as the
 questions moved past what it could see.
 
+**Precondition clause, added on a second incident.** The bench
+recorded a sample block on every arm all day — machine state at
+`start`, at `after_model_load`, at `end`, and a
+`model_load_seconds` figure per run. Nine hours treated the ENCODE
+as the slow thing, because that is what the instrument reported
+prominently. The discriminating observable was
+`model_load_seconds`, present in every row from the first run and
+never compared across arms. Read at last: 53.6 s against 31.9 s
+for the same ~32.4 GB — the process was already slow before any
+encode, before the enhancer, before any configuration under test
+could apply. That comparison invalidated the run's whole framing
+and cost one query over data already on disk.
+
+The instrument never went silent. It kept returning confident,
+correct numbers about the wrong quantity while carrying the right
+one in a field nobody read — which is why "read before building"
+belongs INSIDE this lens as a precondition rather than beside it
+as a rule: it fires at the same moment, and its answer decides
+whether the lens's own remedy is even the right one.
+
+Stated precisely, and this is the sharpest form of the gap:
+DANEEL's tracker discipline is what CAUSED the discriminating
+data to exist. The corpus made the run collect the observable and
+never made it read one.
+
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.

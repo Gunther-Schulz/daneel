@@ -82,15 +82,24 @@ the verification work (per the basis rule, `foundations.md`).
 
 ## Instrument-sufficiency
 
-*Question:* can the instrumentation in place discriminate the live
-hypotheses? Where two of them predict the same observable under
+*Question:* has what the instrument ALREADY records been
+exhausted, and can it then discriminate the live hypotheses? Read
+before building: a discriminating observable is often already
+collected and unread, because an instrument reports prominently
+what it was built to watch and carries the rest quietly. An unread
+field is indistinguishable from an absent one from inside the
+run — the instrument does not go silent, it keeps returning
+confident, correct numbers about the wrong quantity. The remedy
+there is a query, not a build.
+
+Where two hypotheses then still predict the same observable under
 the current tracing, extending the instrument IS this cycle's
 work — a counter, a finer log, a probe at the divergence point —
 not a further experiment against an instrument that has already
 returned everything it can. An instrument is built once and
 improved every cycle: the questions sharpen faster than the
 tracing does, and a static one silently caps the investigation at
-the resolution it was born with. The extension is complete when it
+the resolution it was born with. Either route is complete when it
 produces an observable on which the live hypotheses DIFFER, each
 one's predicted value named BEFORE the run — not when more logging
 exists.

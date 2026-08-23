@@ -49,6 +49,22 @@ The field is optional — fabricating alternatives degrades the
 ledger. Use it where alternative hypotheses were genuinely
 weighed and naming them informs a later reader.
 
+A finding whose basis is an **operator observation** carries, in
+the same sub-line form, a required **discharge** field:
+`discharge: REPRODUCED | CONTRADICTED | DEFERRED (<reason>) |
+OUTSTANDING` (`foundations.md`, "Operator testimony"). It is
+required for that class of finding and appears on no other, so
+the fixed shape above is unchanged everywhere else.
+
+Discharge is **orthogonal to the status tag**, which is why it
+needs its own field rather than a new tag value: the tag records
+whether the observation was VERIFIED as reported, discharge
+records whether the run ACTED on it. A finding is routinely
+[VERIFIED] and OUTSTANDING at once — verified-as-reported and
+un-acted-on — and that combination is the exact state the
+[READY] gate exists to catch. A single tag cannot carry both
+without losing the distinction.
+
 ### Findings (the verification map)
 
 A finding is an observation recorded by inspection — typically a

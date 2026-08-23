@@ -24,6 +24,30 @@ figure: what the operation assumes about those inputs is part of
 the basis too — a total divided by a time window is a rate only
 where the window carried nothing but the measured work.
 
+Disclosing the operation does not make it correct. "660 MB/s —
+basis: 32.1 GB / 49.9 s model load" names its operation in full
+and is still wrong, because elapsed carried every dequantization,
+tensor conversion, pin and allocation the loader performed
+between reads. So a rate attributed to a RESOURCE cites that
+resource's own meter where one exists — the kernel's device
+service time for storage, scheduler time for CPU, the engine's
+own reported query time for a database. Bytes over elapsed
+measures the whole operation's throughput, never the resource's.
+
+A meter is not a substitute rate. Device-busy time sums
+per-request service across parallel queues and can EXCEED
+elapsed, so it does not divide into MB/s; it is a quantity
+comparable BETWEEN runs reading the same bytes. Where no meter
+exists, the figure is labeled for what it is — the operation's
+throughput — and no subsystem is named.
+
+That last clause is the load-bearing one. A rate naming a
+subsystem is a claim about WHERE the time went, and it does not
+fail by producing a wrong number — it fails by producing a wrong
+SUBSYSTEM. "The disk is slow" points the next cycle at storage
+while the cause sits above the device, and every measurement
+taken afterwards is valid and irrelevant.
+
 A basis that is a behavioral test result or an execution trace
 carries HOW MANY observations it rests on. Otherwise a verdict
 resting on one run and a verdict resting on six read identically,
@@ -115,7 +139,9 @@ runtime state before anything rests on them.
 An operator's report of observed behavior enters the run as a
 finding like any other, and carries in addition a **discharge
 state** — REPRODUCED, CONTRADICTED, DEFERRED with its reason, or
-OUTSTANDING.
+OUTSTANDING. It is recorded in the finding's own `discharge:`
+sub-line (`tracker.md`), which is where a later reader and the
+[READY] check both find it.
 
 Recording the observation discharges nothing. A finding can be
 true, [VERIFIED], and never acted on, and a coherent run will not
