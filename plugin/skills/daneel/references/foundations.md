@@ -125,6 +125,21 @@ Hypothesis-enumeration lens (`lenses.md`) — the lens's question
 becomes load-bearing on the hypothesis's own basis artifact, not
 on a separate cycle's standardized pass alone.
 
+A complete cause set spans **layers**, not only instances. An
+enumeration exhaustive within one layer reads complete —
+candidates named, eliminated on evidence, the discipline visibly
+followed — while a whole class of cause was never populated. At
+minimum the layers are: the system under test's own behaviour, its
+environment, and **the instrument producing the evidence**.
+
+The instrument is the layer that never nominates itself, because
+it is what every other candidate is graded against. A wrong
+instrument corrupts the list silently, and every elimination in it
+stays valid and worthless: the candidates really were killed, by
+evidence that was not measuring what it claimed. "The instrument
+is lying" belongs in the set whenever the verdict rests on what
+that instrument reports.
+
 ### Secondary sources
 
 A sub-agent report or a prior session's notes is not itself a

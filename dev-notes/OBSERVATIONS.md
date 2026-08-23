@@ -321,3 +321,66 @@ owes the cheap query first.
 
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review.
+
+## 10. A complete cause set spans layers
+
+**Incident + basis.** Two instances, same run.
+
+INSTANCE 1 — the environment layer crowding out the system layer.
+Sixteen hypotheses died across the run. Every one concerned either
+the program's CONFIGURATION or its ENVIRONMENT: profile, pinning,
+VRAM budgets, co-tenancy, page cache, swap, run order, a sync
+daemon, inherited process state. Not one concerned what the
+program's own code DOES differently, though its full source was on
+disk throughout. The list was exhaustively enumerated and
+eliminated inside two layers while a third was never populated.
+
+INSTANCE 2 — the instrument was never a candidate. Twice the true
+answer was "the measurement is wrong" rather than "the system does
+X": `/proc/diskstats` is SYSTEM-WIDE, so every disk figure
+attributed to the program for nine hours included every other
+process — caught only when one run reported a physically
+impossible 232 GB; and a rate was computed as bytes over ELAPSED
+and attributed to a device, twice, the second time an hour after a
+rule against exactly that had been committed. In both cases the
+hypothesis list held many candidates and none of them was "my
+instrument is lying".
+
+Basis: same run tracker as entry 1.
+
+**Class.** Single-layer enumeration reading as complete. The
+existing rules are satisfiable inside one layer:
+`foundations.md`'s complete-cause-set rule demands the enumerating
+search plus per-candidate elimination, and the
+Hypothesis-enumeration lens demands the list before investigating
+mechanisms — both hold perfectly while a whole class of cause goes
+unpopulated. The list has candidates, they die on evidence, and
+the discipline is visibly followed.
+
+**Rule text.** The layer-spanning paragraphs in `foundations.md`,
+"Complete cause-set as completeness claim" — landed. Placed there
+rather than as a lens because the sentence it repairs is that
+file's own: "all candidate origins have been enumerated and
+evaluated" is exactly what a single-layer list satisfies
+vacuously. Widening at the hollow sentence is amendment in place;
+a new lens would have left it hollow.
+
+**The instrument as a standing layer** is the half worth
+protecting from later pruning. It never nominates itself, being
+what every other candidate is graded against, so a wrong
+instrument corrupts the list silently while every elimination in
+it stays valid and worthless — the candidates really were killed,
+by evidence that was not measuring what it claimed.
+
+**Interaction with entry 9's vantage clause, graded.** Adjacent,
+neither subsuming. The vantage clause is about the RIG: where an
+instrument observes from bounds which hypotheses get generated at
+all. This is about the LIST: it must span layers whatever the rig
+generates, and it names the instrument itself as a standing layer
+the rig can never nominate. A run could fix its vantage and still
+never doubt its instrument; a run could doubt its instrument and
+still measure only from outside.
+
+**Consumer + drain seam.** The hypothesis list's basis artifact,
+at every cycle that locks a verdict. Drains at the fire-rate
+review.

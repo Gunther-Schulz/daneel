@@ -101,7 +101,9 @@ and never generates the internal ones — each round reads as
 sufficient, against a hypothesis set the instrument itself
 produced. Where the system's own source, symbols or runtime are
 reachable, measuring only its environment is choosing the weaker
-method: black-box technique is for black boxes.
+method: black-box technique is for black boxes. Environmental
+candidates stay legitimate and worth killing; what the vantage
+decides is whether any other KIND ever enters the set.
 
 Where two hypotheses then still predict the same observable under
 the current tracing, extending the instrument IS this cycle's
@@ -178,8 +180,10 @@ without testing others is the failure shape; the cycle would close
 on insufficient elimination.
 
 *Scope:* any cycle where a symptom has been identified but the
-hypothesis list is missing or has fewer than 2 candidates without
-cited reason.
+hypothesis list is missing, has fewer than 2 candidates without
+cited reason, or is exhaustive within a single layer
+(`foundations.md`, complete cause set) — a long list confined to
+one layer does not trip the count.
 
 ## Regression-awareness
 
