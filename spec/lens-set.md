@@ -146,6 +146,14 @@ Arms measured once each produce a curve whatever the variance
 is, and every row reads complete either way; the floor is what
 separates a result from the floor itself.
 
+The repeats span the same UNIT the comparison does. A floor built
+by repeating inside one process grades comparisons inside that
+process; arms taken in separate processes need a floor of
+separate processes. The wrong-grain floor is the quiet failure —
+it meets the repeat count, records a spread, and reads clean
+while grading nothing the comparison rests on (measured: 1.0x
+within a process against 3x between them, same arrangement).
+
 *Scope:* any cycle whose verdict rests on comparing measurements
 taken in separate runs.
 
@@ -184,9 +192,9 @@ shape; the cycle would close on insufficient elimination.
 
 *Scope:* any cycle where a symptom has been identified but the
 hypothesis list is missing, has fewer than 2 candidates without
-cited reason, or is exhaustive within a single layer
-(`foundations.md`, complete cause set) — a long list confined to
-one layer does not trip the count.
+cited reason, or leaves any of the minimum layers unpopulated
+(`foundations.md`, complete cause set) — a long list spanning
+some layers and not others does not trip the count.
 
 ## Regression-awareness
 

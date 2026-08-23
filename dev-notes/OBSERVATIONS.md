@@ -156,10 +156,21 @@ firing log.
 **Consumer + drain seam.** The standardized inspection pass, every
 cycle. Drains at the fire-rate review, which reads the log below.
 
-**Firing log.** No firings recorded. Per skill-craft's durability
-classes a capability patch with no logged firing since the last
-consolidation is a cut candidate; this lens is born as exactly that
-and stays one until dated lines appear here naming what it caught.
+**Firing log.**
+
+- 2026-08-23 (replay, entry 12) — cycle 1 of the H3-encode run:
+  F4 and F5 are operator observations, both OUTSTANDING, and the
+  cycle's whole investigation was profile 1 (F6) with no reason
+  named for not touching them. Correct fire.
+- 2026-08-23 (replay, entry 12) — cycle 2 of the same run: the
+  cycle amended scope (D1) and opened D12/F17 without touching F4
+  or F5 and without naming a reason. Correct fire.
+- Rate so far: 2 fires, 0 on legitimate work. The known risk
+  recorded at minting — firing on a cycle properly chasing a
+  mechanism below the reported symptom — did not materialise in
+  this run, where the cycles that tripped it were the ones
+  measuring the wrong configuration. n=1 run; the Path-2 mark
+  stands.
 
 ## 7. Instrument-sufficiency
 
@@ -463,3 +474,185 @@ would make the cycle malformed under its own rule.
 moment the verdict is written. Drains at the fire-rate review.
 Fourth instance today of restoration arriving from the operator
 rather than the run.
+
+## 12. Replay of the 2026-08-23 machinery against its own run
+
+**Incident + basis.** Entries 1-11 all landed on 2026-08-23 and
+none of them had ever fired. Three are enforcement, and a gate
+that has never blocked anything is indistinguishable from one that
+cannot. This entry is the replay: every mechanism applied to the
+recorded run it was minted from, which is red-first by
+construction — that run IS the defect each was built for, so a
+mechanism silent there cannot fire anywhere.
+
+Read, not cited: the run tracker
+`.daneel/runs/2026-08-23-h3-encode-after-generation.md` in the
+`wan2gp` repo, all 113 lines, 11 cycles, F1-F41 and D1-D20.
+Entries 1-11 above cite that file without having read it (entry
+1's own basis line says so); this entry read it.
+
+**The mechanism list is DERIVED, not restated.** The backlog entry
+commissioning this replay listed nine mechanisms as of 0.2.55, and
+a later lane counted thirteen at 0.2.59 — a restated set going
+stale between two readings is this corpus's own named failure
+class, so the list below comes from the commits instead.
+Derivation: `git log --date=short` bounds the 2026-08-23 work to
+nine commits, `2ea235b..7e92fee`, versions 0.2.52 through 0.2.60;
+`git diff f645e9a..HEAD -- plugin/skills/daneel/` gives their
+hunks in the operational files. Grain rule, stated so the count is
+reproducible: one mechanism = one separately-scoped rule with its
+own firing moment, as landed in an operational file. That yields
+**seventeen**, not nine and not thirteen; the earlier counts are
+the same body at coarser grain, not a different body.
+
+**Per-mechanism result.** Fixed-shape rows: mechanism, home,
+verdict, moment, tracker row.
+
+1. **Reproduction-first** (lens) — FIRED, cycle 1. F6 records that
+   every measurement the cycle took was profile 1; F4 and F5 are
+   the operator's own observations, taken under profile 3.
+   Reproduction finally ran at cycle 3 (F18, F20).
+2. **Measurement-floor** (lens) — FIRED, cycle 1, and again at
+   cycle 4. F15's two-class budget result rests on arms measured
+   in separate processes; the floor that graded it, F14, is four
+   repeats inside ONE process, spread 1.0x. Cycle 4's F23/F24
+   invalidated D8 on exactly that grain. See DEFECT A below.
+3. **Arrangement-parity** (lens) — FIRED, cycle 1. F12 and F13 are
+   behavioral findings recording their own configuration (profile
+   1) and not the value the operator's report pins (profile 3);
+   F6 is the row that makes the omission visible, one cycle's
+   worth of measurement late.
+4. **Testimony-discharge** (lens, Path 2) — FIRED, cycles 1 and 2.
+   Firing log landed under entry 6. Two fires, neither on
+   legitimate work.
+5. **Instrument-sufficiency**, core discriminate question (lens) —
+   FIRED, cycle 4. D14 pre-registers a ninth A/B while the live
+   hypotheses were separable by no instrument in place; F27 is the
+   wall it was run into — two startups whose logs are
+   byte-identical for 34 lines with first encodes of 19.6 s and
+   56.0 s.
+6. **Distribution-shape** (lens) — FIRED, cycles 5-8. F25 and F26
+   record two tight clusters with nothing between them, consistent
+   within a process and switching between processes; the run read
+   that as grounds to void every between-process comparison (D15,
+   D16) rather than as a branch to locate. The operator supplied
+   the reframing.
+7. **Instrument-sufficiency, read-before-build precondition**
+   (lens clause) — FIRED, cycle 1 onward, decisively at cycle 4.
+   F28 states it outright: `model_load_seconds` "was recorded on
+   EVERY bench row from the first run of the day and never read
+   until now". Cycle 4 spent a pre-registered new measurement
+   (D14) with the discriminating field already on disk.
+8. **Instrument-sufficiency, vantage clause** (lens clause) —
+   FIRED, cycles 5-10. F31, F33, F34 and F35 are four successive
+   instruments, all external; F41 records the consequence — every
+   hypothesis after D2's strike was environmental. The first
+   internal instrument is D20, cycle 11.
+9. **Hypothesis-enumeration, single-layer scope widening** (lens
+   scope) — DID NOT FIRE. F41 is the incident this widening was
+   minted from, and it records a list exhaustive within TWO
+   layers, not one. See DEFECT B below.
+10. **Basis rule kind (e), the derived-figure operation**
+    (foundations) — FIRED, cycle 1. F12 and F14 carry rates
+    ("250-257 MB/s") with no operation named beside them; F31
+    later established that every such figure all day was bytes
+    over elapsed.
+11. **Basis rule kind (e), the resource-meter half**
+    (foundations) — FIRED, cycles 5-8. F31 is both the fire and
+    the correction: device service time "was never sampled by any
+    instrument in this run", and F30's 1713 MB/s drive figure
+    sat beside model-load rates a third of it.
+12. **Basis rule, replicate-count clause** (foundations) —
+    FIRED, cycle 3. D8 reached [VERIFIED] on one run per arm
+    (F19, F21) and was [INVALIDATED] one cycle later by F23/F24.
+    The ledger line read identically at n=1 and at n=6.
+13. **Complete cause set spans layers** (foundations) — FIRED,
+    cycles 5-10, twice over. Instance 1: F41. Instance 2: F34 —
+    the list held many candidates and none of them was "my
+    instrument is lying" until an arithmetically impossible
+    232 GB forced it in.
+14. **Operator-observation discharge state + its `discharge:`
+    sub-line** (foundations + tracker) — FIRED, cycle 1. F2, F3,
+    F4 and F5 are operator observations and none carries a
+    discharge field. The run reached the vocabulary by hand at
+    F32, cycles 5-8, four cycles after it was needed.
+15. **[READY] gate: no operator-observation finding OUTSTANDING**
+    (foundations, ENFORCEMENT) — DID NOT FIRE, and COULD NOT.
+    See GAP C below.
+16. **[INVALIDATED]'s two senses** (tracker) — FIRED, whole run.
+    D8 moved [VERIFIED] (cycle 3) → [INVALIDATED] (cycle 4): the
+    OVERTURNED sense. D3, D4, D5, D6 and a dozen others were
+    struck without ever having been [VERIFIED]: the ELIMINATED
+    sense, which the pre-amendment definition did not cover, so
+    the run spent the whole day writing a state the tracker did
+    not define.
+17. **`re-entry:` sub-line at the strike** (tracker,
+    ENFORCEMENT) — FIRED, and red-proven on the run's most
+    expensive defect. D2 was struck at cycles 5-8 with no
+    re-entry condition; F40 is the observation that would have
+    returned it, and per entry 11 that observation was already
+    3-of-3 true at the moment of the strike. The self-refutation
+    clause therefore blocks this exact strike. Cost of its
+    absence: roughly a day, D2 restored only at cycle 11.
+
+**Score: 15 of 17 fired on the run they were minted from. One did
+not (defect B), one could not (gap C).**
+
+**DEFECT A — Measurement-floor does not pin the floor's GRAIN to
+the comparison's.** The lens asks for "one arrangement repeated
+unchanged, at least three times, its spread recorded as a
+finding". F14 satisfies that in full: four cold encodes, one
+arrangement, spread recorded, 1.0x. And it graded the wrong thing
+— F15 compares arms taken in SEPARATE processes, where the real
+spread is the 3x of F25 and F29. A within-process floor read as
+the floor for a between-process comparison is a premise the check
+does not pin, and it fails in the quiet direction: the lens reads
+CLEAN while exercising less than it claims. Fix landed in the
+lens: the floor is repeated at the same grain as the comparison it
+grades.
+
+**DEFECT B — the single-layer scope trigger misses its own
+incident.** `lenses.md` Hypothesis-enumeration now fires where the
+list "is exhaustive within a single layer". The incident that
+minted the clause is F41, and F41 says two: "the list was
+exhaustive within two layers and never populated a third."
+`foundations.md` names three minimum layers — the system's own
+behaviour, its environment, the instrument — and this run
+populated one of them across sixteen hypotheses. Under a plain
+reading of its own words the trigger does not fire on the run it
+was built from, which is the definition of an unproven check. Fix
+landed: the trigger fires on any of the named layers left
+unpopulated, which is the invariant, rather than on a count of
+layers occupied, which is the idiom of the one case in hand.
+
+**GAP C — the [READY] operator-observation gate has no firing
+moment in this run, and is surfaced rather than fixed.** Its
+anchor is [READY]. The tracker's header still reads
+`Status: in-progress` after eleven cycles; the run never reached
+[READY] and was ended by the operator. So the replay cannot grade
+it either way: silence here is not evidence the gate is inert, and
+it is not evidence it works. The mechanism remains unproven, and
+this incident cannot prove it — a second incident that actually
+closes is what it needs. Recorded rather than repaired, because
+the repair options (moving the anchor to a moment this run
+produced, or accepting an unproven gate) are a design decision on
+enforcement placement, not a defect with a determined fix.
+
+**Class.** Machinery minted from one incident and never run
+against it. The two things the replay found are both of the
+shape the corpus already names elsewhere: a check whose premise
+is unpinned (A) and a trigger keyed to the idiom of the members
+in hand rather than to the invariant every member carries (B).
+Neither is visible by reading the rule; both are visible the
+moment the rule is executed against the defect.
+
+**Rule text.** Two lens amendments, landed in `lenses.md` and
+`spec/lens-set.md` — Measurement-floor's grain clause and
+Hypothesis-enumeration's layer trigger. No new lens: both are
+widenings of the rule that already owned the question.
+
+**Consumer + drain seam.** The fire-rate review, which now has
+data for sixteen of the seventeen mechanisms instead of none. Gap
+C is the standing item: it drains when a DANEEL run reaches
+[READY] with an operator-observation finding outstanding, and not
+before.

@@ -12,41 +12,6 @@ decision, or trigger.
 
 ## Open
 
-- **READY — Replay the 2026-08-23 machinery against its own grounding
-  run.** None of it has fired. As of 0.2.55 that is five lenses
-  (Reproduction-first, Testimony-discharge, Instrument-sufficiency,
-  Arrangement-parity, Measurement-floor), three basis-rule widenings
-  (derived-figure operation and its resource-meter attribution rule;
-  replicate count on behavioral bases; operator-testimony discharge
-  states), and one [READY] gate (no operator-observation finding
-  OUTSTANDING).
-
-  Why this matters more than for ordinary additions. Three are
-  ENFORCEMENT, and a gate that has never blocked anything is
-  indistinguishable from one that CANNOT — a check is unproven until
-  it has gone red on the defect it was built for. One is explicitly
-  Path-2 (Testimony-discharge's per-cycle half, marked hypothesis in
-  its own text) and its whole disposition, keep or cut as ceremony,
-  turns on a firing rate for which no run has produced a single data
-  point.
-
-  Design decided: replay against the recorded run that grounds all of
-  them — the DANEEL tracker at
-  `.daneel/runs/2026-08-23-h3-encode-after-generation.md` in the
-  `wan2gp` repo, holding the findings, the operator-observation rows
-  and the measurements. No fresh debugging incident needed.
-  Done-criterion: for each of the nine mechanisms, either it fired at
-  the moment it was supposed to (cite the tracker row and the moment)
-  or it did not (state why).
-  Verifier: the replay's own per-mechanism table, red-first by
-  construction — the recorded run IS the defect each mechanism was
-  built from, so a mechanism that does not fire there cannot fire
-  anywhere.
-  Write-set: this repo — the replay result and the firing-log lines it
-  produces in `dev-notes/OBSERVATIONS.md`; no plugin file changes
-  unless the replay finds one, which is the point. It READS a tracker
-  in another repo; that read is the whole input.
-
 - **PARKED — The loop has a termination condition but no CONVERGENCE
   signal.** [READY] says stop when exactly one hypothesis is
   [VERIFIED] and the rest [INVALIDATED]. Nothing anywhere asks
