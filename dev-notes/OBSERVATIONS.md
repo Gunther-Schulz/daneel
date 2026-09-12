@@ -33,7 +33,7 @@ rule's scope since it was minted. Zero runs, zero firings, no
 information. The discriminator is the run count, and a rule
 whose scope no run has entered is not depreciating; it is
 unmeasured, and stays so until a run uses it. The successor
-entry that supplies those runs is booked in `BACKLOG.md`.
+entry that supplies those runs is booked as `da-5` in `ITEMS.md`.
 
 ---
 

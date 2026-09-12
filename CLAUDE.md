@@ -98,6 +98,25 @@ changes, it hands off to Clippy's implement phase via explicit
 cross-instance handoff. The framework's loopback semantics govern
 this transition.
 
+## Work carrier
+
+`ITEMS.md` is this repo's work-item carrier (lifecycle plugin; the
+declaration is `.claude/lifecycle.json`). Parked items carry their
+named missing evidence, ready items are decision-complete and
+dispatchable. Closures MOVE to `ITEMS-DONE.md` — nothing closes in
+place. Migrated from `BACKLOG.md` on 2026-09-12.
+
+`BACKLOG.md` is the FROZEN legacy carrier: never appended to and
+never edited. The migration report pins it by blob and every
+migrated item cites a line range into that exact content, so an
+edit here silently invalidates every citation. It is retained
+rather than deleted because three dated JOURNAL entries sit in its
+`## Open` section (lines 179, 198, 239) that are not work items and
+were correctly not migrated — their home is the improvement journal
+below, but the journal is lens-structured, so placing them needs a
+lens assignment rather than a move. Booked as `da-8`; deleting
+`BACKLOG.md` is that item's done-criterion.
+
 ## Improvement journal
 
 `dev-notes/OBSERVATIONS.md` is this repo's improvement journal: the
