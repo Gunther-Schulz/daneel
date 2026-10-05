@@ -11,6 +11,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:15-49
 blocked-by: decision regrade: fill goal, write-set, done-criterion and evidence, or drop
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: fill goal, write-set, done-criterion and evidence, or drop (item da-1)
 
 ## da-2
 grade: NEW
@@ -20,6 +23,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:50-57
 blocked-by: decision regrade: fill goal, write-set, done-criterion and evidence, or drop
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: fill goal, write-set, done-criterion and evidence, or drop (item da-2)
 
 ## da-3
 grade: NEW
@@ -29,6 +35,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:58-123
 blocked-by: decision regrade: fill goal, write-set, done-criterion and evidence, or drop
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: fill goal, write-set, done-criterion and evidence, or drop (item da-3)
 
 ## da-4
 grade: NEW
@@ -38,6 +47,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:124-148
 blocked-by: decision regrade: was READY under the old carrier: READY is judged, never inherited
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: was READY under the old carrier: READY is judged, never inherited (item da-4)
 
 ## da-5
 grade: NEW
@@ -47,6 +59,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:149-160
 blocked-by: decision regrade: was READY under the old carrier: READY is judged, never inherited
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: was READY under the old carrier: READY is judged, never inherited (item da-5)
 
 ## da-6
 grade: NEW
@@ -56,6 +71,9 @@ write-set: UNKNOWN
 done-criterion: UNKNOWN
 evidence: BACKLOG.md:161-178
 blocked-by: decision regrade: fill goal, write-set, done-criterion and evidence, or drop
+not-derivable: a re-grade is a judgment about this one entry's source body; no ledger line, audit or declaration settles it before the desk reads that body
+amend-reason: 2026-10-05 lc-312: the migrated question was shared by every item of its branch, so one ledger answer cleared all of them; it now names this item
+amended-blocked-by: 2026-10-05 decision regrade: fill goal, write-set, done-criterion and evidence, or drop (item da-6)
 
 ## da-8
 grade: READY
